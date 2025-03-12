@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-start;
+    /* space-between에서 flex-start로 변경 */
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    height: 50px;
+}
+
+.nav-items {
+    display: flex;
+    gap: 0.5rem;
+    /* 2rem에서 3.5rem으로 증가 */
+    margin-left: 2.5rem;
+}
+
+.nav-items button {
+    padding: 0.5rem 2rem;
+    /* 좌우 패딩을 1.5rem에서 2rem으로 증가 */
+    background: none;
+    border: none;
+    color: #000000;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    margin: 0 0.5rem;
+    /* 버튼 좌우에 추가 여백 */
+}
+
+.nav-items button:hover {
+    background-color: #f0f0f0;
+    border-radius: 4px;
+}
+
+.search-login {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: auto;
+}
+
+.search-login input {
+    padding: 0.4rem 0.5rem;
+    padding-right: 1rem;
+    border: 2px solid #3d6aff;
+    /* 테두리 색상 변경 */
+    border-radius: 6px;
+    background-color: transparent;
+    /* 배경색 투명으로 변경 */
+    color: #3d6aff;
+    /* 텍스트 색상도 테두리 색상과 맞춤 */
+    width: 180px;
+    transition: all 0.3s ease;
+}
+
+.search-login input::placeholder {
+    color: #3d6aff;
+    opacity: 0.7;
+    /* placeholder 투명도 조정 */
+}
+
+.search-login input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(85, 70, 64, 0.2);
+    /* 포커스 시 테두리 주변 그림자 */
+    width: 200px;
+}
+
+.login-btn,
+.signup-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login-btn {
+    background-color: transparent;
+    color: #333;
+}
+
+.login-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.signup-btn {
+    background-color: #3d6aff;
+    /* 회원가입 버튼 색상 변경 */
+    color: white;
+}
+
+.signup-btn:hover {
+    background-color: #244ac5;
+    /* 호버 시 약간 어두워지는 효과 */
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+}

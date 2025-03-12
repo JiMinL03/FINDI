@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/*login page style  */
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px);
+    background-color: white;
+    padding: 2rem;
+}
+
+.login-content {
+    background-color: white;
+    padding: 4rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.login-logo {
+    width: 200px;  /* 150px에서 200px로 증가 */
+    margin-bottom: 3rem;  /* 2rem에서 3rem으로 증가 */
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.input-group {
+    position: relative;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 1rem 1.2rem;  /* 패딩 증가 */
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 1.1rem;  /* 글자 크기 증가 */
+    transition: all 0.3s ease;
+}
+
+.login-submit-btn {
+    background-color: #554640;
+    color: white;
+    padding: 1rem;  /* 패딩 증가 */
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;  /* 글자 크기 증가 */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1.5rem;  /* 마진 증가 */
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #8DA7BE;
+    box-shadow: 0 0 0 2px rgba(141, 167, 190, 0.2);
+}
+
+.input-group input::placeholder {
+    color: #999;
+}
+
+.login-submit-btn:hover {
+    background-color: #443630;
+}
+
+.login-footer {
+    margin-top: 3rem;  /* 2rem에서 3rem으로 증가 */
+    color: #666;
+    font-size: 1.1rem;  /* 글자 크기 증가 */
+}
+
+.signup-link {
+    color: #8DA7BE;
+    text-decoration: none;
+    margin-left: 0.5rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.signup-link:hover {
+    color: #554640;
+}
+
+/* 반응형 디자인 */
+@media screen and (max-width: 480px) {
+    .login-content {
+        padding: 2rem;
+        margin: 1rem;
+    }
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echo Community</title>
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/nav.css">
+</head>
+<body>
+<div th:replace="~{nav}"></div>
+    <main>
+        <div class="post-detail">
+            <form class="post-container" method="post" action="/submit" enctype="multipart/form-data">
+                <div class="post-header">
+                    <input type="text" 
+                           class="post-title" 
+                           name="title" 
+                           placeholder="제목을 입력하세요" 
+                           required>
+                </div>
+            
+                <div class="post-content">
+                    <textarea name="content"    
+                              placeholder="내용을 입력하세요" 
+                              required></textarea>
+                </div>
+    
+                <div class="file-upload">
+                    <label for="file-input" class="file-label">첨부파일</label>
+                    <input type="file" id="file-input" name="attachment" multiple>
+                    <div class="file-list"></div>
+                </div>
+    
+                <div class="button-group">
+                    <button type="submit" class="submit-btn">질문하기</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <script src="js/fileupload.js"></script>
+</body>
+</html>

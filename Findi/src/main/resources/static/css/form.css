@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/*form.html style*/
+main {
+    margin: 0 250px; /* 메인 컨텐츠 좌우 여백 추가 */
+}
+.post-container {
+    margin: 40px 0;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.post-title {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    outline: none;
+    background: transparent;
+}
+
+.post-content {
+    margin-top: 20px;
+}
+
+.post-content textarea {
+    width: 100%;
+    min-height: 400px;
+    padding: 15px;
+    border: none;
+    resize: none;
+    outline: none;
+    font-size: 16px;
+    line-height: 1.6;
+    background: transparent;
+}
+
+.file-upload {
+    margin-top: 20px;
+    padding: 10px 0;
+    border-top: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.file-label {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #666;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+#file-input {
+    display: none;
+}
+
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.submit-btn {
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.submit-btn:hover {
+    background-color: #e0e0e0;
+}
+
+/* placeholder 스타일 */
+.post-title::placeholder,
+.post-content textarea::placeholder {
+    color: #999;
+}
+
+/* 스크롤바 스타일링 */
+.post-content textarea::-webkit-scrollbar {
+    width: 8px;
+}
+
+.post-content textarea::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.post-content textarea::-webkit-scrollbar-thumb {
+    background: #ddd;
+    border-radius: 4px;
+}
+
+.post-content textarea::-webkit-scrollbar-thumb:hover {
+    background: #ccc;
+}

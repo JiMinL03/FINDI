@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+/* 약관 페이지 스타일 */
+.term-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px);
+    padding: 2rem;
+}
+
+.term-content {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 800px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.term-logo {
+    width: 200px;
+    margin-bottom: 2rem;
+}
+
+.term-box {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 100%;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.term-box h2 {
+    color: #554640;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.term-section {
+    margin-bottom: 1.5rem;
+}
+
+.term-section h3 {
+    color: #8DA7BE;
+    margin-bottom: 0.5rem;
+}
+
+.term-section p, .term-section li {
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+.term-section ol {
+    padding-left: 1.5rem;
+}
+
+.confirm-btn {
+    margin-top: 2rem;
+    padding: 0.8rem 3rem;
+    background-color: #554640;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.confirm-btn:hover {
+    background-color: #443630;
+    transform: translateY(-2px);
+}
+
+/* 스크롤바 스타일링 */
+.term-box::-webkit-scrollbar {
+    width: 6px;
+}
+
+.term-box::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.term-box::-webkit-scrollbar-thumb {
+    background: #8DA7BE;
+    border-radius: 3px;
+}
