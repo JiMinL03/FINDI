@@ -1,8 +1,13 @@
+<th:block th:fragment="nav" xmlns:sec="http://www.w3.org/1999/xhtml">
 <header>
   <nav class="navbar">
-    <div class="logo">
-      <img src="/image/logo.png" alt="Echo Logo">
-    </div>
+
+      <form action="/home" method="get">
+        <button type="submit" class="logo" style="background: none; border: none;">
+          <img src="/image/logo.png" alt="Echo Logo">
+        </button>
+      </form>
+
     <div class="nav-items">
       <form action="/qa" method="get" style="display: inline;">
         <button type="submit">고민상담</button>
@@ -16,8 +21,14 @@
     </div>
     <div class="search-login">
       <input type="search" placeholder="검색">
-      <button class="login-btn">로그인</button>
-      <button class="signup-btn">회원가입</button>
+
+      <a sec:authorize="isAnonymous()" th:href="@{/member/login}" class="login-btn" style="text-decoration: none;">로그인</a>
+      <a sec:authorize="isAuthenticated()" th:href="@{/member/logout}" class="login-btn" style="text-decoration: none;">로그아웃</a>
+
+
+      <form action="/signup" method="get">
+      <button class="signup-btn" >회원가입</button></form>
     </div>
   </nav>
 </header>
+</th:block>

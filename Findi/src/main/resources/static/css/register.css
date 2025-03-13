@@ -75,7 +75,7 @@ body {
 .register-submit-btn {
     margin-top: 1rem;
     padding: 1rem;
-    background-color: #554640;
+    background-color: #3d6aff;
     color: white;
     border: none;
     border-radius: 6px;
@@ -85,7 +85,7 @@ body {
 }
 
 .register-submit-btn:hover {
-    background-color: #443630;
+    background-color: #2349d8;
 }
 
 /* 입력 필드 포커스 스타일 */
@@ -122,7 +122,7 @@ body {
 
 .upload-btn {
     padding: 0.8rem 2rem;
-    background-color: #8DA7BE;
+    background-color: #3d6aff;
     color: white;
     border: none;
     border-radius: 6px;
@@ -131,5 +131,5 @@ body {
 }
 
 .upload-btn:hover {
-    background-color: #7B95AC;
+    background-color: #b5b5b5;
 }

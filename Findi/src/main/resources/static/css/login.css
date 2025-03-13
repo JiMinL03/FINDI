@@ -54,7 +54,7 @@ body {
 }
 
 .login-submit-btn {
-    background-color: #554640;
+    background-color: #4b6fe4;
     color: white;
     padding: 1rem;  /* 패딩 증가 */
     border: none;
@@ -67,7 +67,7 @@ body {
 
 .input-group input:focus {
     outline: none;
-    border-color: #8DA7BE;
+    border-color: #3d6aff;
     box-shadow: 0 0 0 2px rgba(141, 167, 190, 0.2);
 }
 
@@ -76,7 +76,7 @@ body {
 }
 
 .login-submit-btn:hover {
-    background-color: #443630;
+    background-color: #254aca;
 }
 
 .login-footer {
@@ -86,7 +86,7 @@ body {
 }
 
 .signup-link {
-    color: #8DA7BE;
+    color: #3d6aff;
     text-decoration: none;
     margin-left: 0.5rem;
     font-weight: 500;
@@ -94,7 +94,7 @@ body {
 }
 
 .signup-link:hover {
-    color: #554640;
+    color: #c3c2c2;
 }
 
 /* 반응형 디자인 */
