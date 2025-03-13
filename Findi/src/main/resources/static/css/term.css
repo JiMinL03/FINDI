@@ -43,7 +43,7 @@ body {
 }
 
 .term-box h2 {
-    color: #554640;
+    color: #000000;
     margin-bottom: 1.5rem;
     text-align: center;
 }
@@ -53,7 +53,7 @@ body {
 }
 
 .term-section h3 {
-    color: #8DA7BE;
+    color: #3d6aff;
     margin-bottom: 0.5rem;
 }
 
@@ -70,7 +70,7 @@ body {
 .confirm-btn {
     margin-top: 2rem;
     padding: 0.8rem 3rem;
-    background-color: #554640;
+    background-color: #3d6aff;
     color: white;
     border: none;
     border-radius: 6px;
@@ -80,7 +80,7 @@ body {
 }
 
 .confirm-btn:hover {
-    background-color: #443630;
+    background-color: #1e40ae;
     transform: translateY(-2px);
 }
 
@@ -95,6 +95,6 @@ body {
 }
 
 .term-box::-webkit-scrollbar-thumb {
-    background: #8DA7BE;
+    background: #3d6aff;
     border-radius: 3px;
 }

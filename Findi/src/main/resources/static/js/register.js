@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     radioButtons.forEach(radio => {
         radio.addEventListener('change', function() {
-            if (this.value === '전문가') {
+            if (this.value === '졸업생' || this.value === '대학생') {
                 expertAuth.style.display = 'flex';
             } else {
                 expertAuth.style.display = 'none';

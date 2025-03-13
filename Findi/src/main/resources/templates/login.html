@@ -3,28 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Echo Community</title>
-    <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="css/nav.css">
+    <title>핀디</title>
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/nav.css">
 </head>
 <body>
-<div th:replace="~{nav}"></div>
+<div th:replace="~{nav::nav}"></div>
     <main>
         <div class="login-container">
             <div class="login-content">
-                <img src="image/logo.png" alt="Echo Logo" class="login-logo">
-                <form class="login-form">
+                <img src="/image/logo.png" alt="Echo Logo" class="login-logo">
+                <form class="login-form" method="POST" th:action="@{/member/login}">
                     <div class="input-group">
-                        <input type="text" placeholder="아이디를 입력하세요." required>
+                        <input type="text" name="username" placeholder="아이디를 입력하세요." required>
                     </div>
                     <div class="input-group">
-                        <input type="password" placeholder="비밀번호를 입력하세요." required>
+                        <input type="password" name="password" placeholder="비밀번호를 입력하세요." required>
                     </div>
                     <button type="submit" class="login-submit-btn">로그인</button>
                 </form>
                 <div class="login-footer">
                     <span>아직 회원이 아니신가요?</span>
-                    <a href="/signup" class="signup-link">회원가입</a>
+                    <a href="/member/register" class="signup-link">회원가입</a>
                 </div>
             </div>
         </div>

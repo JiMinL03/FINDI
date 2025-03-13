@@ -73,10 +73,9 @@ body {
 }
 
 .hero-image img {
-    width: 700px;
+    width: 550px;
     height: 500px;
     margin-right: 5rem;
-    margin-top: 8rem;
 }
 
 h1 {
@@ -154,3 +153,4 @@ h1 {
     padding: 0.5rem 0;
     border-bottom: 1px solid #eee;
 }
+
