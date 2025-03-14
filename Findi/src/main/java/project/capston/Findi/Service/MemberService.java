@@ -1,6 +1,7 @@
 package project.capston.Findi.Service;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import project.capston.Findi.Entity.Member;
@@ -26,5 +27,19 @@ public class MemberService {
     public boolean existsId(String id){
         Optional<Member> member = memberRepository.findById(id);
         return member.isPresent();
+    }
+
+    public boolean existsUsername(String username){
+        Optional<Member> member = memberRepository.findByUsername(username);
+        return member.isPresent();
+    }
+
+    public Member getMember(String username){
+        Optional<Member> member = memberRepository.findByUsername(username);
+        if(member.isPresent()){
+            return member.get();
+        }else{
+            throw new UsernameNotFoundException("Username not found");
+        }
     }
 }

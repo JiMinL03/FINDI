@@ -8,7 +8,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/*counsel.html style*/
+/*question_list.html style*/
 main {
     margin: 0 250px; /* 메인 컨텐츠 좌우 여백 추가 */
 }
@@ -105,5 +105,35 @@ main {
 
 .nickname, .date {
     color: #666;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+thead {
+    background-color: #5c79d6;  /* 사이트 테마 컬러 사용 */
+    color: white;
+}
+
+th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+}
+
+td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+tbody tr:hover {
+    background-color: #f8f9fa;
+    transition: background-color 0.2s ease;
 }
     

@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Echo Community</title>
-    <link rel="stylesheet" href="css/form.css">
-    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="/css/question_create.css">
+    <link rel="stylesheet" href="/css/nav.css">
 </head>
 <body>
 <div th:replace="~{nav}"></div>
     <main>
         <div class="post-detail">
-            <form class="post-container" method="post" action="/submit" enctype="multipart/form-data">
+            <form class="post-container" method="post" th:action="@{/question/create}" th:object="${questionForm}" enctype="multipart/form-data">
                 <div class="post-header">
                     <input type="text" 
                            class="post-title" 
-                           name="title" 
+                           name="subject"
                            placeholder="제목을 입력하세요" 
                            required>
                 </div>
@@ -38,6 +38,6 @@
             </form>
         </div>
     </main>
-    <script src="js/fileupload.js"></script>
+    <script src="/js/fileupload.js"></script>
 </body>
 </html>

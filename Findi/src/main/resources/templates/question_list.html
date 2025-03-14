@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echo Community</title>
+    <link rel="stylesheet" href="/css/question_list.css">
+    <link rel="stylesheet" href="/css/nav.css">
+</head>
+<body>
+<div th:replace="~{nav::nav}"></div>
+
+    <main>
+        <section class="hero">
+            <h1>고민상담 게시판</h1>
+            <div class="hero-image">
+                <img src="/image/counsel.png" alt="고민상담 이미지">
+            </div>
+        </section>
+
+        <div class="search-section">
+            <div class="search-box">
+                <input type="text" placeholder="검색">
+                <button type="submit" class="search-btn">검색</button>
+                <button sec:authorize="isAuthenticated()" class="write-btn"
+                        onclick="location.href='/question/create'">등록하기</button>
+            </div>
+        </div>
+
+        <!--게시판 리스트 제작 필요 (데이터베이스 연동 필요)-->
+        <table>
+            <thead>
+            <tr>
+                <th>제목</th>
+                <th>작성일자</th>
+                <th>작성자</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="question, index : ${questionList}">
+                <td>
+                    <a th:href="@{|/question/detail/${question.id}|}"
+                       th:text="${question.subject}"></a>
+                </td>
+                <td th:text="${question.createDate}"></td>
+                <td th:text="${question.author.getUsername()}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+</html>
