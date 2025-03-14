@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echo Community</title>
+    <link rel="stylesheet" href="/css/question_detail.css">
+    <link rel="stylesheet" href="/css/nav.css">
+</head>
+<body>
+<div th:replace="~{nav::nav}"></div>
+    <main>
+        <div class="post-detail">
+            <div class="post-container">
+                <div class="post-header">
+                    <h2 class="post-title" th:text="${question.subject}"></h2>
+                    <div class="post-info">
+                        <span class="author" th:text="${question.author.getUsername()}"></span>
+                        <span class="date" th:text="${question.createDate}"></span>
+                    </div>
+                </div>
+            
+                <div class="post-content">
+                    <p th:text="${question.content}"></p>
+                </div>
+
+                <!--게시글 작성자 수정 및 삭제 기능 -->
+                <button class="more-btn" onclick="toggleDropdown(this)">⋮</button>
+                <div class="dropdown-menu">
+                    <form th:action="@{|/question/modify/${question.id}|}" method="get">
+                    <button class="dropdown-item">수정하기</button></form>
+                    <form th:action="@{|/question/delete/${question.id}|}" method="get">
+                    <button class="dropdown-item delete">삭제하기</button></form>
+                </div>
+                <!--게시글 작성자 수정 및 삭제 기능 끝-->
+
+            </div>
+    
+            <div class="comments-section" >
+                <div class="comment-count" th:text="|${#lists.size(question.answerList)}개의 답변이 있습니다.|"></div>
+
+                <div class="comment" th:each="answer, index : ${question.answerList}">
+                    <div class="comment-header">
+                        <span class="comment-author" th:text="${answer.author.getUsername()}"></span>
+                        <span class="comment-date" th:text="${answer.createDate}"></span>
+                    </div>
+                    <p class="comment-text" th:text="${answer.content}"></p>
+
+                    <!--답변 작성자 수정 및 삭제 기능 -->
+                    <button class="more-btn" onclick="toggleDropdown(this)">⋮</button>
+                    <div class="dropdown-menu">
+                        <form th:action="@{|/answer/delete/${answer.id}|}" method="get">
+                        <button class="dropdown-item delete">삭제하기</button></form>
+                    </div>
+                    <!--답변 작성자 수정 및 삭제 기능 끝-->
+
+                </div>
+
+                <div class="comment-input">
+                    <form class="input-form" th:action="@{|/answer/create/${question.id}|}" method="post">
+                        <input type="text" name="content" placeholder="답변을 입력하세요">
+                        <button class="submit-btn">작성</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="/js/dropdown.js"></script>
+</body>
+</html>
