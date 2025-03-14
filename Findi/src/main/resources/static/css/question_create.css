@@ -19,10 +19,12 @@ main {
     border: 1px solid #ddd;
     border-radius: 4px;
 }
-
+.post-header{
+    margin-bottom: 0;
+}
 .post-title {
     width: 100%;
-    padding: 15px;
+    padding: 10px 15px 15px 15px;
     font-size: 18px;
     border: none;
     border-bottom: 1px solid #ddd;
@@ -31,7 +33,7 @@ main {
 }
 
 .post-content {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .post-content textarea {
