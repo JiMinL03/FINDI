@@ -2,6 +2,10 @@ package project.capston.Findi.Controller;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -10,6 +14,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.server.ResponseStatusException;
 import project.capston.Findi.Entity.Member;
 import project.capston.Findi.Entity.Question;
@@ -25,10 +30,20 @@ import java.util.List;
 public class QuestionController {
     private final QuestionService questionService;
     private final MemberService memberService;
-    @GetMapping("/question")
+
+    /*@GetMapping("/question")
     public String question(Model model) {
         List<Question> questionList = questionService.getList();
         model.addAttribute("questionList", questionList);
+        return "question_list";
+    }*/
+
+    @GetMapping("/question")
+    public String question(Model model, @RequestParam(value = "page", defaultValue = "0") int page) {
+        Page<Question> paging = this.questionService.getPage(page);
+        List<Question> questionList = questionService.getList();
+        model.addAttribute("questionList", questionList);
+        model.addAttribute("paging", paging);
         return "question_list";
     }
 

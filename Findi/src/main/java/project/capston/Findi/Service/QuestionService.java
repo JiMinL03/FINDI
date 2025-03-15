@@ -1,7 +1,13 @@
 package project.capston.Findi.Service;
 
+import jakarta.persistence.criteria.*;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
+import project.capston.Findi.Entity.Answer;
 import project.capston.Findi.Entity.Member;
 import project.capston.Findi.Entity.Question;
 import project.capston.Findi.Repository.QuestionRepository;
@@ -46,5 +52,10 @@ public class QuestionService {
         question.setContent(Content);
         question.setImg(img);
         questionRepository.save(question);
+    }
+
+    public Page<Question> getPage(int page){
+        Pageable pageable = PageRequest.of(page,10);
+        return this.questionRepository.findAll(pageable);
     }
 }
