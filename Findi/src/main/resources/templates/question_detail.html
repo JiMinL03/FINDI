@@ -26,11 +26,11 @@
 
                 <!--게시글 작성자 수정 및 삭제 기능 -->
                 <button class="more-btn" onclick="toggleDropdown(this)">⋮</button>
-                <div th:if="${question.author != null and #authentication.getPrincipal().username == question.author.getUsername()}" class="dropdown-menu">
-                    <form th:action="@{|/question/modify/${question.id}|}" method="get">
-                    <button class="dropdown-item">수정하기</button></form>
-                    <form th:action="@{|/question/delete/${question.id}|}" method="get">
-                    <button class="dropdown-item delete">삭제하기</button></form>
+                <div class="dropdown-menu">
+                    <a th:href="@{|/question/modify/${question.id}|}" class="dropdown-item" sec:authorize="isAuthenticated()"
+                       th:if="${question.author != null and #authentication.getPrincipal().username == question.author.getUsername()}" th:text="수정하기"></a>
+                    <a th:href="@{|/question/delete/${question.id}|}" class="dropdown-item delete" sec:authorize="isAuthenticated()"
+                       th:if="${question.author != null and #authentication.getPrincipal().username == question.author.getUsername()}" th:text="삭제하기"></a>
                 </div>
                 <!--게시글 작성자 수정 및 삭제 기능 끝-->
 
@@ -48,9 +48,11 @@
 
                     <!--답변 작성자 수정 및 삭제 기능 -->
                     <button class="more-btn" onclick="toggleDropdown(this)">⋮</button>
-                    <div th:if="${answer.author != null and #authentication.getPrincipal().username == answer.author.getUsername()}" class="dropdown-menu">
+                    <div class="dropdown-menu">
                         <form th:action="@{|/answer/delete/${answer.id}|}" method="get">
                         <button class="dropdown-item delete">삭제하기</button></form>
+                        <a th:href="@{|/answer/delete/${answer.id}|}" class="dropdown-item delete" sec:authorize="isAuthenticated()"
+                           th:if="${answer.author != null and #authentication.getPrincipal().username == answer.author.getUsername()}" th:text="삭제하기"></a>
                     </div>
                     <!--답변 작성자 수정 및 삭제 기능 끝-->
 

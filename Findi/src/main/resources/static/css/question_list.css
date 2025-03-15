@@ -136,4 +136,63 @@ tbody tr:hover {
     background-color: #f8f9fa;
     transition: background-color 0.2s ease;
 }
-    
+
+/* 페이징 컨테이너 스타일 */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.pagination .page-item {
+    margin: 0 5px;
+}
+
+.pagination .page-link {
+    padding: 8px 16px;
+    font-size: 16px;
+    text-decoration: none;
+    color: #007bff;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+    text-align: center;  /* 텍스트를 가로로 정렬 */
+}
+
+.pagination .page-link:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.pagination .page-item.disabled .page-link {
+    color: #ccc;
+    pointer-events: none;
+    background-color: #f8f9fa;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.pagination .page-item:first-child .page-link {
+    border-radius: 4px 0 0 4px;
+}
+
+.pagination .page-item:last-child .page-link {
+    border-radius: 0 4px 4px 0;
+}
+
+/* 이전, 다음 버튼에 대해 약간의 스타일 추가 */
+.pagination .page-item .page-link {
+    width: 50px;
+    text-align: center;
+}
+
+.pagination .page-item .page-link span {
+    font-weight: bold;
+}
