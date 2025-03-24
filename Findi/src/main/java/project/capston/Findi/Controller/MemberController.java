@@ -40,8 +40,12 @@ public class MemberController {
             return "redirect:/member/register?error=password_mismatch";
         }
 
-        if(memberService.existsId(memberForm.getId()) && memberService.existsUsername(memberForm.getUsername())){ //아이디 개체무결성 확인 여부
-            return "redirect:/member/register?error=id_exists||username_exists";
+        if(memberService.existsId(memberForm.getId())){ //아이디 개체무결성 확인 여부
+            return "redirect:/member/register?error=id_exists";
+        }
+
+        if(memberService.existsUsername(memberForm.getUsername())){ //아이디 개체무결성 확인 여부
+            return "redirect:/member/register?error=username_exists";
         }
 
         memberService.create(memberForm.getId(), memberForm.getPassword(), memberForm.getUsername(), memberForm.getJob(), memberForm.getImg());
