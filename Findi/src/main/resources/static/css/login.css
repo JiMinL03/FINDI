@@ -30,7 +30,7 @@ body {
 }
 
 .login-logo {
-    width: 200px;  /* 150px에서 200px로 증가 */
+    width: 230px;  /* 150px에서 200px로 증가 */
     margin-bottom: 3rem;  /* 2rem에서 3rem으로 증가 */
 }
 
@@ -54,7 +54,7 @@ body {
 }
 
 .login-submit-btn {
-    background-color: #4b6fe4;
+    background-color: #5c79d6;
     color: white;
     padding: 1rem;  /* 패딩 증가 */
     border: none;
@@ -67,7 +67,7 @@ body {
 
 .input-group input:focus {
     outline: none;
-    border-color: #3d6aff;
+    border-color: #5c79d6;
     box-shadow: 0 0 0 2px rgba(141, 167, 190, 0.2);
 }
 
@@ -86,7 +86,7 @@ body {
 }
 
 .signup-link {
-    color: #3d6aff;
+    color: #5c79d6;
     text-decoration: none;
     margin-left: 0.5rem;
     font-weight: 500;

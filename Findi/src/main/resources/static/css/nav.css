@@ -19,7 +19,7 @@ body {
 }
 
 .logo img {
-    height: 50px;
+    height: 70px;
 }
 
 .nav-items {
@@ -58,19 +58,19 @@ body {
 .search-login input {
     padding: 0.4rem 0.5rem;
     padding-right: 1rem;
-    border: 2px solid #3d6aff;
+    border: 2px solid #5c79d6;
     /* 테두리 색상 변경 */
     border-radius: 6px;
     background-color: transparent;
     /* 배경색 투명으로 변경 */
-    color: #3d6aff;
+    color: #5c79d6;
     /* 텍스트 색상도 테두리 색상과 맞춤 */
     width: 180px;
     transition: all 0.3s ease;
 }
 
 .search-login input::placeholder {
-    color: #3d6aff;
+    color: #5c79d6;
     opacity: 0.7;
     /* placeholder 투명도 조정 */
 }
@@ -101,7 +101,7 @@ body {
 }
 
 .signup-btn {
-    background-color: #3d6aff;
+    background-color: #5c79d6;
     /* 회원가입 버튼 색상 변경 */
     color: white;
 }

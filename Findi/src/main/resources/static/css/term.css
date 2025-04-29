@@ -70,7 +70,7 @@ body {
 .confirm-btn {
     margin-top: 2rem;
     padding: 0.8rem 3rem;
-    background-color: #3d6aff;
+    background-color: #5c79d6;
     color: white;
     border: none;
     border-radius: 6px;
@@ -80,7 +80,7 @@ body {
 }
 
 .confirm-btn:hover {
-    background-color: #1e40ae;
+    background-color: #3a52a3;
     transform: translateY(-2px);
 }
 
@@ -95,6 +95,6 @@ body {
 }
 
 .term-box::-webkit-scrollbar-thumb {
-    background: #3d6aff;
+    background: #3a52a3;
     border-radius: 3px;
 }
