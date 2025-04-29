@@ -9,4 +9,5 @@ import project.capston.Findi.Entity.Question;
 @Repository
 public interface QuestionRepository extends JpaRepository<Question, Integer> {
     Page<Question> findAll(Pageable pageable);
+
 }
