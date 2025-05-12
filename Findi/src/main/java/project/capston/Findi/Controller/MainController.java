@@ -6,12 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class MainController {
-    @GetMapping("/")
-    public String home() {
-        return "main";
-    }
-    @GetMapping("/home")
-    public String home(Model model) {
-        return "main";
+
+    @GetMapping(value = {"/", "/home"})
+    public String index() {
+        return "forward:/index.html"; // React 메인 진입점
     }
 }
