@@ -48,10 +48,10 @@ public class MemberController {
             return "redirect:/member/register?error=username_exists";
         }
 
-        memberService.create(memberForm.getId(), memberForm.getPassword(), memberForm.getUsername(), memberForm.getJob(), memberForm.getImg());
+        memberService.create(memberForm.getEmail(), memberForm.getId(), memberForm.getPassword(), memberForm.getUsername(), memberForm.getJob(), memberForm.getImg());
         //위 오류에 해당사항 없을 시, 회원 정보 저장
         System.out.println("새로운 회원 생성됨: " + memberForm.getUsername());
-        return "main";
+        return "redirect:/";
     }
 
     @GetMapping("/member/login")

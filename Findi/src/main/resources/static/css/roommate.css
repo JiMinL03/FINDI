@@ -1,0 +1,38 @@
+body {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px;
+    font-family: Arial, sans-serif;
+}
+.container {
+    width: 300px;
+    background-color: #7a8b91;
+    padding: 20px;
+}
+.container input[type="text"] {
+    display: block;
+    margin-bottom: 10px;
+    width: 90%;
+    padding: 5px;
+}
+.container button {
+    margin-top: 20px;
+    padding: 10px;
+}
+.result-container {
+    width: 300px;
+    background-color: #d3d3d3;
+    padding: 20px;
+}
+.checkbox-list {
+    margin-bottom: 20px;
+}
+.checkbox-list label {
+    display: block;
+    margin-bottom: 5px;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+}

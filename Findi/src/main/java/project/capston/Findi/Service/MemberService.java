@@ -15,9 +15,10 @@ public class MemberService {
     private final MemberRepository memberRepository;
     private final PasswordEncoder passwordEncoder;
     Member member = new Member();
-    public void create(String id, String password, String username, String job, byte[] img){
+    public void create(String email ,String id, String password, String username, String job, byte[] img){
         //회원정보 저장
         member.setId(id);
+        member.setEmail(email);
         member.setPassword(passwordEncoder.encode(password));
         member.setUsername(username);
         member.setJob(job);

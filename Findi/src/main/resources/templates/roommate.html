@@ -1,10 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8" />
+    <title>룸메이트 매칭</title>
+    <link rel="stylesheet" href="../styles/roommate.css" />
 </head>
 <body>
+<div class="container">
+    <form id="roommateForm">
+        <input type="text" id="input1" placeholder="이름">
+        <input type="text" id="input2" placeholder="성별">
+        <input type="text" id="input3" placeholder="출생년도">
+        <input type="text" id="input4" placeholder="학번">
+        <input type="text" id="input5" placeholder="학과">
+        <input type="text" id="input6" placeholder="MBTI">
+        <input type="text" id="input7" placeholder="생활패턴">
+        <input type="text" id="input8" placeholder="흡연여부">
+        <button type="submit">룸메이트 매칭</button>
+    </form>
+</div>
+
+<div class="result-container">
+    <div class="checkbox-list">
+        <label><input type="checkbox" checked> ___________________________</label>
+        <label><input type="checkbox"> </label>
+        <label><input type="checkbox"> </label>
+        <label><input type="checkbox"> </label>
+        <label><input type="checkbox"> </label>
+        <label><input type="checkbox"> </label>
+    </div>
+    <table id="resultTable">
+        <thead>
+        <tr>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+<script>
+    // 체크박스를 하나만 선택 가능하게 만드는 로직
+    document.querySelectorAll('.checkbox-list input[type="checkbox"]').forEach(checkbox => {
+        checkbox.addEventListener('change', function () {
+            if (this.checked) {
+                document.querySelectorAll('.checkbox-list input[type="checkbox"]').forEach(cb => {
+                    if (cb !== this) cb.checked = false;
+                });
+            }
+        });
+    });
+
+    function matchRoommate() {
+        const inputs = [
+            document.getElementById("input1").value,
+            document.getElementById("input2").value,
+            document.getElementById("input3").value,
+            document.getElementById("input4").value
+        ];
+        const tableBody = document.getElementById("resultTable").querySelector("tbody");
+        tableBody.innerHTML = "";
+
+        inputs.forEach(val => {
+            if (val.trim() !== "") {
+                const row = document.createElement("tr");
+                const cell = document.createElement("td");
+                cell.textContent = val;
+                row.appendChild(cell);
+                tableBody.appendChild(row);
+            }
+        });
+    }
+</script>
 
 </body>
 </html>
