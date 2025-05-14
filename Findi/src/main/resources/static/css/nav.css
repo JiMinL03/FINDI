@@ -124,3 +124,19 @@ body {
     transform: translateY(-50%);
     color: white;
 }
+
+h1.logo-text {
+    font-size: 25px; /* 글씨 크기 조정 */
+    font-weight: 700; /* 더 굵게 */
+    color: #007bff; /* 텍스트 색상: 파란색 */
+    text-transform: uppercase; /* 대문자로 변경 */
+    letter-spacing: 3px; /* 문자 간격 설정 */
+    text-shadow: 2px 2px 5px rgba(0, 123, 255, 0.7), 0 0 25px rgba(0, 123, 255, 0.5); /* 세련된 텍스트 그림자 효과 */
+    transition: all 0.3s ease; /* 전환 효과 */
+}
+
+h1.logo-text:hover {
+    color: #0056b3; /* 마우스를 올렸을 때 색상 변화 */
+    text-shadow: 0 0 15px rgba(0, 123, 255, 1), 0 0 20px rgba(0, 123, 255, 0.8); /* 더 강한 텍스트 그림자 */
+    transform: scale(1.1); /* 마우스를 올리면 텍스트 크기가 약간 커짐 */
+}
