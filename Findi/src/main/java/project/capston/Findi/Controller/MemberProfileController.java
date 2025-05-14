@@ -31,10 +31,11 @@ public class MemberProfileController {
             model.addAttribute("formErrors", bindingResult.getAllErrors());
             return "mattingForm";
         }
+
         String username = principal.getName();
         Member member = memberService.getMember(username);
         String memberId = member.getId();
-        memberProfileService.create(memberId, memberProfileForm.getName(), memberProfileForm.getStudent_id(), memberProfileForm.getGender(), memberProfileForm.getMajor(), memberProfileForm.getMbti(), memberProfileForm.getIsSmoking(),memberProfileForm.getLife_pattern(), memberProfileForm.getBirth());
+        memberProfileService.create(memberId, memberProfileForm.getName(), memberProfileForm.getStudent_id(), memberProfileForm.getGender(), memberProfileForm.getMajor(), memberProfileForm.getMbti(), memberProfileForm.getIsSmoking(),memberProfileForm.getLife_pattern(), memberProfileForm.getBirth(), member);
         return "redirect:/"; // 성공 후 보여줄 페이지 이름
     }
 }
