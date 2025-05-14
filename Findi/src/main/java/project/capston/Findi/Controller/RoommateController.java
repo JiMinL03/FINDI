@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class RoommateController {
     @GetMapping("/roommate")
     public String roommate() {
-        return "roommate";
+        return "mattingForm";
     }
 }

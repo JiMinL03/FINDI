@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" href="/css/mattingSuccess.css" />
+</head>
+<body>
+<div class="result-container">
+  <div class="checkbox-list">
+    <label><input type="checkbox" checked> ___________________________</label>
+    <label><input type="checkbox"> </label>
+    <label><input type="checkbox"> </label>
+    <label><input type="checkbox"> </label>
+    <label><input type="checkbox"> </label>
+    <label><input type="checkbox"> </label>
+  </div>
+  <table id="resultTable">
+    <thead>
+    <tr>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+</div>
+</body>
+
+<script>
+  // 체크박스를 하나만 선택 가능하게 만드는 로직
+  document.querySelectorAll('.checkbox-list input[type="checkbox"]').forEach(checkbox => {
+    checkbox.addEventListener('change', function () {
+      if (this.checked) {
+        document.querySelectorAll('.checkbox-list input[type="checkbox"]').forEach(cb => {
+          if (cb !== this) cb.checked = false;
+        });
+      }
+    });
+  });
+
+  function matchRoommate() {
+    const inputs = [
+      document.getElementById("input1").value,
+      document.getElementById("input2").value,
+      document.getElementById("input3").value,
+      document.getElementById("input4").value
+    ];
+    const tableBody = document.getElementById("resultTable").querySelector("tbody");
+    tableBody.innerHTML = "";
+
+    inputs.forEach(val => {
+      if (val.trim() !== "") {
+        const row = document.createElement("tr");
+        const cell = document.createElement("td");
+        cell.textContent = val;
+        row.appendChild(cell);
+        tableBody.appendChild(row);
+      }
+    });
+  }
+</script>
+</html>

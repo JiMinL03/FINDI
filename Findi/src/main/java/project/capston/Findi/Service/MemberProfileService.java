@@ -1,10 +1,13 @@
 package project.capston.Findi.Service;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import project.capston.Findi.Entity.Member;
 import project.capston.Findi.Entity.MemberProfile;
 import project.capston.Findi.Repository.MemberProfileRepository;
+
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -23,5 +26,14 @@ public class MemberProfileService {
         member.setBirth(birth);
         member.setMember(m);
         memberProfileRepository.save(member);
+    }
+
+    public MemberProfile getProfile(String userid){
+        Optional<MemberProfile> profile = memberProfileRepository.findById(userid);
+        if(profile.isPresent()){
+            return profile.get();
+        }else{
+            throw new UsernameNotFoundException("Username not found");
+        }
     }
 }

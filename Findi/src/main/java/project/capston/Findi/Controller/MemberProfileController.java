@@ -9,7 +9,10 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import project.capston.Findi.Entity.Member;
+import project.capston.Findi.Entity.MemberProfile;
 import project.capston.Findi.Form.MemberForm;
 import project.capston.Findi.Form.MemberProfileForm;
 import project.capston.Findi.Repository.MemberRepository;
@@ -23,6 +26,7 @@ import java.security.Principal;
 public class MemberProfileController {
     private final MemberProfileService memberProfileService;
     private final MemberService memberService;
+
     @PostMapping("/mattingForm")
     public String mattingForm(@Valid MemberProfileForm memberProfileForm,
                               BindingResult bindingResult,
@@ -36,6 +40,16 @@ public class MemberProfileController {
         Member member = memberService.getMember(username);
         String memberId = member.getId();
         memberProfileService.create(memberId, memberProfileForm.getName(), memberProfileForm.getStudent_id(), memberProfileForm.getGender(), memberProfileForm.getMajor(), memberProfileForm.getMbti(), memberProfileForm.getIsSmoking(),memberProfileForm.getLife_pattern(), memberProfileForm.getBirth(), member);
-        return "redirect:/"; // 성공 후 보여줄 페이지 이름
+        return "mattingSuccess"; // 성공 후 보여줄 페이지 이름
+    }
+
+    @GetMapping("/mattingSuccess")
+    public String mattingForm(Model model, Principal principal) {
+        String username = principal.getName();
+        Member member = memberService.getMember(username);
+        String memberId = member.getId();
+        MemberProfile profile = memberProfileService.getProfile(memberId);
+
+        return "mattingSuccess";  // mattingForm.html 뷰 렌더링
     }
 }
