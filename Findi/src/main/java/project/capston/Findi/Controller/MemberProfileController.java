@@ -42,7 +42,7 @@ public class MemberProfileController {
         memberProfileService.create(memberId, memberProfileForm.getName(), memberProfileForm.getStudent_id(), memberProfileForm.getGender(), memberProfileForm.getMajor(), memberProfileForm.getMbti(), memberProfileForm.getIsSmoking(),memberProfileForm.getLife_pattern(), memberProfileForm.getBirth(), member);
         return "redirect:/mattingForm"; // 성공 후 보여줄 페이지 이름
     }
-    @GetMapping("/mattingForm")
+    @GetMapping("/roommate")
     public String mattingForm(Model model, Principal principal) {
         String username = principal.getName();
         Member member = memberService.getMember(username);
