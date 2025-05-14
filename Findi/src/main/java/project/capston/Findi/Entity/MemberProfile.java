@@ -9,12 +9,12 @@ import lombok.Setter;
 @Setter
 public class MemberProfile {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(unique = true)
+    private String id;
 
     private String name; //이름
     private String student_id; //학번
-    private String gender; //성별
+    private int gender; //성별
     private String major; //학과
     private String mbti; //mbti
     private int isSmoking; //흡연여부

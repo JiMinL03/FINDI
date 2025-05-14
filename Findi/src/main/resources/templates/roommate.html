@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8" />
     <title>룸메이트 매칭</title>
-    <link rel="stylesheet" href="../resources/static/css/roommate.css" />
+    <link rel="stylesheet" href="/css/roommate.css" />
 </head>
 <body>
 <div class="container">
-    <form id="roommateForm">
-        <input type="text" id="input1" placeholder="이름">
-        <input type="text" id="input2" placeholder="성별">
-        <input type="text" id="input3" placeholder="출생년도">
-        <input type="text" id="input4" placeholder="학번">
-        <input type="text" id="input5" placeholder="학과">
-        <input type="text" id="input6" placeholder="MBTI">
-        <input type="text" id="input7" placeholder="생활패턴">
-        <input type="text" id="input8" placeholder="흡연여부">
+    <form action="/mattingForm" id="roommateForm" method="POST" >
+        <input type="text" name="name" placeholder="이름" required>
+        <input type="text" name="gender" placeholder="성별 (숫자)" required>
+        <input type="text" name="birth" placeholder="출생년도" required>
+        <input type="text" name="student_id" placeholder="학번" required>
+        <input type="text" name="major" placeholder="학과" required>
+        <input type="text" name="mbti" placeholder="MBTI" required>
+        <input type="text" name="life_pattern" placeholder="생활패턴 (숫자)" required>
+        <input type="text" name="isSmoking" placeholder="흡연여부 (숫자)" required>
         <button type="submit">룸메이트 매칭</button>
     </form>
 </div>
