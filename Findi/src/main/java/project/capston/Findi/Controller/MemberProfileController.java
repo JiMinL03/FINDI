@@ -40,11 +40,20 @@ public class MemberProfileController {
         Member member = memberService.getMember(username);
         String memberId = member.getId();
         memberProfileService.create(memberId, memberProfileForm.getName(), memberProfileForm.getStudent_id(), memberProfileForm.getGender(), memberProfileForm.getMajor(), memberProfileForm.getMbti(), memberProfileForm.getIsSmoking(),memberProfileForm.getLife_pattern(), memberProfileForm.getBirth(), member);
-        return "mattingSuccess"; // 성공 후 보여줄 페이지 이름
+        return "redirect:/mattingForm"; // 성공 후 보여줄 페이지 이름
+    }
+    @GetMapping("/mattingForm")
+    public String mattingForm(Model model, Principal principal) {
+        String username = principal.getName();
+        Member member = memberService.getMember(username);
+        String memberId = member.getId();
+        MemberProfile createdProfile = memberProfileService.getProfile(memberId);
+        model.addAttribute("createdProfile", createdProfile);
+        return "mattingForm";
     }
 
     @GetMapping("/mattingSuccess")
-    public String mattingForm(Model model, Principal principal) {
+    public String mattingSuccess(Model model, Principal principal) {
         String username = principal.getName();
         Member member = memberService.getMember(username);
         String memberId = member.getId();

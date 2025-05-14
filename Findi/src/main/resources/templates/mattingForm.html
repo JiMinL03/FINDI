@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
     <title>룸메이트 매칭</title>
@@ -7,20 +7,36 @@
 </head>
 <body>
 <div class="container">
-    <form action="/mattingForm" id="roommateForm" method="POST" >
-        <input type="text" name="name" placeholder="이름" required>
-        <input type="text" name="gender" placeholder="성별 (숫자)" required>
-        <input type="text" name="birth" placeholder="출생년도" required>
-        <input type="text" name="student_id" placeholder="학번" required>
-        <input type="text" name="major" placeholder="학과" required>
-        <input type="text" name="mbti" placeholder="MBTI" required>
-        <input type="text" name="life_pattern" placeholder="생활패턴 (숫자)" required>
-        <input type="text" name="isSmoking" placeholder="흡연여부 (숫자)" required>
+
+    <!-- ✅ 저장된 프로필이 있으면 결과 표시 -->
+    <div th:if="${createdProfile != null}">
+        <h2>프로필이 등록되었습니다!</h2>
+        <p>이름: <span th:text="${createdProfile.name}"></span></p>
+        <p>성별: <span th:text="${createdProfile.gender}"></span></p>
+        <p>출생년도: <span th:text="${createdProfile.birth}"></span></p>
+        <p>학번: <span th:text="${createdProfile.student_id}"></span></p>
+        <p>학과: <span th:text="${createdProfile.major}"></span></p>
+        <p>MBTI: <span th:text="${createdProfile.mbti}"></span></p>
+        <p>생활패턴: <span th:text="${createdProfile.life_pattern}"></span></p>
+        <p>흡연여부: <span th:text="${createdProfile.isSmoking}"></span></p>
+    </div>
+
+    <!-- ✅ 프로필이 없으면 폼 표시 -->
+    <form th:if="${createdProfile == null}" action="/mattingForm" id="roommateForm" method="POST">
+        <input type="text" name="name" placeholder="이름" required />
+        <input type="text" name="gender" placeholder="성별 (숫자)" required />
+        <input type="text" name="birth" placeholder="출생년도" required />
+        <input type="text" name="student_id" placeholder="학번" required />
+        <input type="text" name="major" placeholder="학과" required />
+        <input type="text" name="mbti" placeholder="MBTI" required />
+        <input type="text" name="life_pattern" placeholder="생활패턴 (숫자)" required />
+        <input type="text" name="isSmoking" placeholder="흡연여부 (숫자)" required />
         <button type="submit">매칭 요소 입력</button>
     </form>
+
+    <form method="get" action="/mattingSuccess">
+        <button type="submit">룸메이트 매칭</button>
+    </form>
 </div>
-<form method="get" action="/mattingSuccess">
-    <button type="submit">룸메이트 매칭</button>
-</form>
 </body>
 </html>
