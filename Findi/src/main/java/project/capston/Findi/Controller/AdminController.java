@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import project.capston.Findi.Service.AdminService;
 
+import java.util.Collections;
 import java.util.List;
 
 @Controller
@@ -18,7 +19,7 @@ public class AdminController {
     @GetMapping("/admin")
     public String admin(Model model) {
         List<MemberView> memberViews = adminService.getAllMembersForAdmin();
-        model.addAttribute("members", memberViews);
+        model.addAttribute("members", memberViews != null ? memberViews : Collections.emptyList());
         return "admin";
     }
 
