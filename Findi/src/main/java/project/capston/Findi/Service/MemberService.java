@@ -22,6 +22,7 @@ public class MemberService {
         member.setUsername(username);
         member.setJob(job);
         member.setImg(img);
+        member.setActive(false);
         memberRepository.save(member);
     }
     public boolean existsId(String id){
