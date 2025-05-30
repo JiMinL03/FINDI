@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <title>관리자 - 회원 이미지 확인</title>
+    <link rel="stylesheet" th:href="@{/css/admin.css}" />
+</head>
+<body>
+
+<h1>회원 이미지 확인</h1>
+
+<!-- members가 null이 아닐 때만 출력 -->
+<div th:if="${members != null}">
+    <div th:each="member : ${members}" class="member-card">
+        <p><strong>회원 ID:</strong> <span th:text="${member.id}">ID</span></p>
+        <p><strong>이름:</strong> <span th:text="${member.username}">이름</span></p>
+        <p><strong>직업:</strong> <span th:text="${member.job}">직업</span></p>
+
+        <button class="view-btn" onclick="toggleImage(this)">이미지 확인</button>
+
+        <!-- base64Img가 있을 때만 이미지 태그 보여주기 -->
+        <img th:if="${member.base64Img != null}"
+             th:src="|data:image/png;base64,${member.base64Img}|"
+             alt="회원 이미지 미리보기"
+             class="preview-img"
+             style="display:none; max-width: 200px; margin-top: 10px;" />
+
+        <form class="action-buttons" th:action="@{/admin/accept}" method="post">
+            <input type="hidden" name="id" th:value="${member.id}" />
+            <button class="accept-btn">수락</button>
+        </form>
+        <form class="action-buttons" th:action="@{/admin/reject}" method="post">
+            <input type="hidden" name="id" th:value="${member.id}" />
+            <button class="reject-btn">거절</button>
+        </form>
+    </div>
+</div>
+
+<!-- members가 비어있거나 null일 경우 메시지 -->
+<div th:if="${members == null or #lists.isEmpty(members)}">
+    <p>대기중인 회원이 없습니다.</p>
+</div>
+
+<script>
+    function toggleImage(button) {
+        const img = button.nextElementSibling;
+        if (!img) return;  // img가 없으면 함수 종료
+
+        if (img.style.display === 'none' || img.style.display === '') {
+            img.style.display = 'block';
+            button.textContent = '이미지 닫기';
+        } else {
+            img.style.display = 'none';
+            button.textContent = '이미지 확인';
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -12,7 +12,7 @@
     <main>
         <div class="register-container">
             <div class="register-content">
-                <form th:action="@{/member/register}" th:object="${memberForm}" method="post" class="register-form">
+                <form th:action="@{/member/register}" th:object="${memberForm}" method="post" class="register-form" enctype="multipart/form-data">
                     <div class="input-group">
                         <label>아이디</label>
                         <input name="id" type="text" required>
@@ -45,7 +45,7 @@
                     <div class="input-group expert-auth" style="display: none;">  <!-- 전문가 선택시 보이도록 -->
                         <label>인증문서</label>
                         <div class="file-upload">
-                            <input name="img" type="file" id="fileInput" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" required>
+                            <input name="img" type="file" id="fileInput" accept=".pdf,.jpg,.jpeg,.png" required>
                             <button type="button" class="upload-btn">첨부</button>
                         </div>
                     </div>

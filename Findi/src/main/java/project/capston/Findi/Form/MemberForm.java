@@ -3,6 +3,7 @@ package project.capston.Findi.Form;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.web.multipart.MultipartFile;
 
 @Getter
 @Setter
@@ -20,5 +21,6 @@ public class MemberForm {
     private String username;
 
     private String job;
-    private byte[] img;
+
+    private MultipartFile img;
 }
