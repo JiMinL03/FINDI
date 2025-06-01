@@ -45,6 +45,7 @@ body {
 
 .input-group input[type="text"],
 .input-group input[type="password"],
+.input-group input[type="email"],
 .input-group input[type="date"] {
     padding: 0.8rem 1rem;
     border: none;

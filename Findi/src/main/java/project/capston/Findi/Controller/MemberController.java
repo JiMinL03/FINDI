@@ -49,7 +49,7 @@ public class MemberController {
             return "redirect:/member/register?error=username_exists";
         }
         byte[] imgBytes = memberForm.getImg().getBytes();
-        memberService.create(memberForm.getId(), memberForm.getPassword(), memberForm.getUsername(), memberForm.getJob(), imgBytes);
+        memberService.create(memberForm.getId(), memberForm.getPassword(), memberForm.getUsername(), memberForm.getJob(), imgBytes, memberForm.getEmail());
         System.out.println("새로운 회원 생성됨: " + memberForm.getUsername());
         return "main";
     }
