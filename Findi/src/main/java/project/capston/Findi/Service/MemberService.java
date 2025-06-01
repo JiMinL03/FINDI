@@ -15,7 +15,7 @@ public class MemberService {
     private final MemberRepository memberRepository;
     private final PasswordEncoder passwordEncoder;
     Member member = new Member();
-    public void create(String id, String password, String username, String job, byte[] img){
+    public void create(String id, String password, String username, String job, byte[] img, String email){
         //회원정보 저장
         member.setId(id);
         member.setPassword(passwordEncoder.encode(password));
@@ -23,6 +23,7 @@ public class MemberService {
         member.setJob(job);
         member.setImg(img);
         member.setActive(false);
+        member.setEmail(email);
         memberRepository.save(member);
     }
     public boolean existsId(String id){

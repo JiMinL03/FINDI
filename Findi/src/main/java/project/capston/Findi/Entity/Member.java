@@ -26,4 +26,6 @@ public class Member {
 
     private boolean active; // 수락 여부 (true: 수락, false: 거절)
 
+    private String email;
+
 }
