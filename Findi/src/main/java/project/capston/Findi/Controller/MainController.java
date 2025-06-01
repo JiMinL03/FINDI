@@ -7,10 +7,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class MainController {
 
-    @GetMapping(value = {"/", "/home"})
-    @RequestMapping({"/", "/roommate", "/roommate/**", "/roommate/match"
+    // React의 모든 경로를 index.html로 포워딩
+    @RequestMapping({
+            "/", "/home","/register/**", "/roommate", "/roommate/**",
+            "/chatbot", "/question","/member/**"
     })
-    public String index() {
-        return "forward:/index.html"; // React 메인 진입점
+    public String forwardReactRoutes() {
+        return "forward:/index.html";
     }
 }
