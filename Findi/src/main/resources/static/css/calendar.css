@@ -1,0 +1,204 @@
+/* 전체 달력 컨테이너 - 양 옆 마진만 */
+.fc {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fff;
+    color: #2c3e50;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.07);
+    padding: 20px;
+    margin: 100px auto 2rem auto;  /* 위쪽 마진 유지, 좌우 여유 확보 */
+    max-width: 1000px;
+    transition: box-shadow 0.3s ease;
+}
+
+/* 달력 주변 hover 시 그림자 약간 진해짐 */
+.fc:hover {
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* 헤더 타이틀 */
+.fc-toolbar-title {
+    font-weight: 900;
+    font-size: 1.9rem;
+    color: #34495e;
+    text-transform: uppercase;
+    user-select: none;
+}
+
+/* 네비게이션 버튼 - 단색 파란색 */
+.fc-button {
+    background-color: #2980b9;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(41, 128, 185, 0.4);
+    transition: background-color 0.3s ease, transform 0.15s ease;
+}
+
+.fc-button:hover {
+    background-color: #1c5980;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(28, 89, 128, 0.6);
+}
+
+.fc-button:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 6px rgba(28, 89, 128, 0.5);
+}
+
+/* 오늘 날짜 강조 */
+.fc-day-today {
+    background-color: #d6e9f8 !important;
+    border-radius: 12px;
+    font-weight: 700;
+    color: #2471a3 !important;
+    box-shadow: 0 0 10px rgba(36, 113, 163, 0.6);
+    transition: background-color 0.3s ease;
+}
+
+/* 요일 헤더 */
+.fc-col-header-cell-cushion {
+    font-weight: 600;
+    color: #7f8c8d;
+    text-transform: uppercase;
+    letter-spacing: 1.1px;
+    user-select: none;
+    padding: 10px 0;
+    border-bottom: 2px solid #ecf0f1;
+}
+
+/* 이벤트 스타일 - 은은한 파란색 단색, 약간의 그림자 */
+.fc-event {
+    background-color: #3498db !important;
+    border: none !important;
+    border-radius: 10px !important;
+    color: white !important;
+    font-weight: 700 !important;
+    padding: 6px 14px !important;
+    box-shadow: 0 6px 12px rgba(52, 152, 219, 0.5) !important;
+    cursor: pointer !important;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.fc-event:hover {
+    transform: scale(1.07);
+    box-shadow: 0 10px 22px rgba(52, 152, 219, 0.75) !important;
+}
+
+/* 시간 그리드 */
+.fc-timegrid-slot {
+    border-bottom: 1px solid #e1e8ed;
+}
+
+/* 좌측 타임라인 */
+.fc-timegrid-axis {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #95a5a6;
+    user-select: none;
+}
+
+/* 리소스 영역 배경 */
+.fc-resource-area {
+    background-color: #f7f9fc;
+    border-right: 1px solid #dfe6ec;
+}
+
+/* 드래그 하이라이트 */
+.fc-highlight {
+    background-color: rgba(52, 152, 219, 0.15);
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+/* 스크롤바 커스텀 (웹킷 브라우저) */
+.fc-scroller::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.fc-scroller::-webkit-scrollbar-thumb {
+    background: #2980b9;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.fc-scroller::-webkit-scrollbar-thumb:hover {
+    background: #1c5980;
+}
+
+/* 반응형 폰트 크기 조절 */
+@media (max-width: 768px) {
+    .fc-toolbar-title {
+        font-size: 1.5rem;
+    }
+    .fc-button {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+    .fc-event {
+        font-size: 0.85rem !important;
+    }
+}
+.calendar-sidebar {
+    position: fixed;
+    top: 100px;
+    right: -400px; /* 처음엔 숨김 */
+    width: 400px;
+    height: calc(100% - 120px); /* 상단 타이머 & 여백 감안 */
+    background-color: #fdfefe;
+    border-left: 2px solid #ecf0f1;
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.08);
+    transition: right 0.4s ease;
+    z-index: 999;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.calendar-sidebar.active {
+    right: 0;
+}
+
+.sidebar-content h3 {
+    font-size: 1.5rem;
+    color: #2980b9;
+    margin-bottom: 1rem;
+}
+
+.sidebar-content button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 2rem;
+}
+
+#notificationButtons {
+    text-align: center; /* 가운데 정렬 */
+    margin-top: 50px;
+}
+
+#notificationButtons button {
+    display: block;
+    margin: 10px auto;        /* 두 버튼 간 간격 유지 */
+    padding: 12px 24px;
+    font-size: 16px;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(41, 128, 185, 0.4);
+    transition: background-color 0.3s ease;
+    width: fit-content;
+    user-select: none;
+}
+
+#notificationButtons button:hover {
+    background-color: #1c5980;
+}

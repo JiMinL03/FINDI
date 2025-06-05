@@ -40,6 +40,8 @@ dependencies {
 
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
+
+	implementation 'org.jsoup:jsoup:1.17.2'
 }
 
 tasks.named('test') {

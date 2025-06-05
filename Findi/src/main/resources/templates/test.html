@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <title>Notification API 테스트</title>
+</head>
+<body>
+<h1>Notification API 데모</h1>
+<button id="requestPermission">알림 권한 요청</button>
+
+<script>
+    const events = [
+        { title: "오늘 일정 1", startDate: new Date().toISOString().split('T')[0] },
+        { title: "내일 일정 1", startDate: (() => {
+                const d = new Date();
+                d.setDate(d.getDate() + 1);
+                return d.toISOString().split('T')[0];
+            })()},
+        { title: "지난 일정", startDate: "2020-01-01" }
+    ];
+
+    function showNotification(title, body) {
+        new Notification(title, { body });
+    }
+
+    function notifyUpcomingEvents(events) {
+        const todayStr = new Date().toISOString().split('T')[0];
+        const upcoming = events.filter(ev => ev.startDate >= todayStr);
+        upcoming.forEach(ev => {
+            if (ev.startDate === todayStr) {
+                showNotification("동의대 일정 알림", ev.title);
+            }
+        });
+    }
+
+    document.getElementById('requestPermission').addEventListener('click', () => {
+        Notification.requestPermission().then(permission => {
+            if (permission === 'granted') {
+                notifyUpcomingEvents(events);
+            } else {
+                alert('알림 권한이 거부되었습니다.');
+            }
+        });
+    });
+</script>
+</body>
+</html>
