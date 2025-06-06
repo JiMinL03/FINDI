@@ -1,0 +1,548 @@
+[
+  {
+    "DEPARTMENT_NAME": "국어국문학과",
+    "COLLEGE_ID": 1,
+    "DEPARTMENT_ID": 1,
+    "DEPARTMENT_PHONE": "051-890-1308"
+  },
+  {
+    "DEPARTMENT_NAME": "유아교육과",
+    "COLLEGE_ID": 1,
+    "DEPARTMENT_ID": 2,
+    "DEPARTMENT_PHONE": "051-890-2709"
+  },
+  {
+    "DEPARTMENT_NAME": "중어중국학과",
+    "COLLEGE_ID": 1,
+    "DEPARTMENT_ID": 3,
+    "DEPARTMENT_PHONE": "051-890-1222"
+  },
+  {
+    "DEPARTMENT_NAME": "광고홍보학과",
+    "COLLEGE_ID": 1,
+    "DEPARTMENT_ID": 4,
+    "DEPARTMENT_PHONE": "051-890-1310"
+  },
+  {
+    "DEPARTMENT_NAME": "일본학과",
+    "COLLEGE_ID": 1,
+    "DEPARTMENT_ID": 5,
+    "DEPARTMENT_PHONE": "051-890-1222"
+  },
+  {
+    "DEPARTMENT_NAME": "미디어커뮤니케이션학과",
+    "COLLEGE_ID": 1,
+    "DEPARTMENT_ID": 6,
+    "DEPARTMENT_PHONE": "051-890-1310"
+  },
+  {
+    "DEPARTMENT_NAME": "영어영문학과",
+    "COLLEGE_ID": 1,
+    "DEPARTMENT_ID": 7,
+    "DEPARTMENT_PHONE": "051-890-1222"
+  },
+  {
+    "DEPARTMENT_NAME": "법학과",
+    "COLLEGE_ID": 1,
+    "DEPARTMENT_ID": 8,
+    "DEPARTMENT_PHONE": "051-890-2190"
+  },
+  {
+    "DEPARTMENT_NAME": "문헌정보학과",
+    "COLLEGE_ID": 1,
+    "DEPARTMENT_ID": 9,
+    "DEPARTMENT_PHONE": "051-890-2709"
+  },
+  {
+    "DEPARTMENT_NAME": "경찰행정학과",
+    "COLLEGE_ID": 1,
+    "DEPARTMENT_ID": 10,
+    "DEPARTMENT_PHONE": "051-890-2036"
+  },
+  {
+    "DEPARTMENT_NAME": "평생교육·청소년상담학과",
+    "COLLEGE_ID": 1,
+    "DEPARTMENT_ID": 11,
+    "DEPARTMENT_PHONE": "051-890-1292"
+  },
+  {
+    "DEPARTMENT_NAME": "소방방재행정학과",
+    "COLLEGE_ID": 1,
+    "DEPARTMENT_ID": 12,
+    "DEPARTMENT_PHONE": "051-890-2190"
+  },
+  {
+    "DEPARTMENT_NAME": "심리학과",
+    "COLLEGE_ID": 1,
+    "DEPARTMENT_ID": 13,
+    "DEPARTMENT_PHONE": "051-890-1292"
+  },
+  {
+    "DEPARTMENT_NAME": "행정학과",
+    "COLLEGE_ID": 1,
+    "DEPARTMENT_ID": 14,
+    "DEPARTMENT_PHONE": "051-890-2190"
+  },
+  {
+    "DEPARTMENT_NAME": "아동학과",
+    "COLLEGE_ID": 1,
+    "DEPARTMENT_ID": 15,
+    "DEPARTMENT_PHONE": "051-890-1580"
+  },
+  {
+    "DEPARTMENT_NAME": "사회복지학과",
+    "COLLEGE_ID": 1,
+    "DEPARTMENT_ID": 16,
+    "DEPARTMENT_PHONE": "051-890-2036"
+  },
+  {
+    "DEPARTMENT_NAME": "디지털콘텐츠학과",
+    "COLLEGE_ID": 1,
+    "DEPARTMENT_ID": 17,
+    "DEPARTMENT_PHONE": "051-890-2720"
+  },
+  {
+    "DEPARTMENT_NAME": "금융경영학과",
+    "COLLEGE_ID": 2,
+    "DEPARTMENT_ID": 18,
+    "DEPARTMENT_PHONE": "051-890-2200"
+  },
+  {
+    "DEPARTMENT_NAME": "경영정보학과",
+    "COLLEGE_ID": 2,
+    "DEPARTMENT_ID": 19,
+    "DEPARTMENT_PHONE": "051-890-2062"
+  },
+  {
+    "DEPARTMENT_NAME": "재무부동산학과",
+    "COLLEGE_ID": 2,
+    "DEPARTMENT_ID": 20,
+    "DEPARTMENT_PHONE": "051-890-2200"
+  },
+  {
+    "DEPARTMENT_NAME": "e비즈니스학과",
+    "COLLEGE_ID": 2,
+    "DEPARTMENT_ID": 21,
+    "DEPARTMENT_PHONE": "051-890-2062"
+  },
+  {
+    "DEPARTMENT_NAME": "스마트항만물류학과",
+    "COLLEGE_ID": 2,
+    "DEPARTMENT_ID": 22,
+    "DEPARTMENT_PHONE": "051-890-1404"
+  },
+  {
+    "DEPARTMENT_NAME": "국제관광경영학과",
+    "COLLEGE_ID": 2,
+    "DEPARTMENT_ID": 23,
+    "DEPARTMENT_PHONE": "051-890-2094"
+  },
+  {
+    "DEPARTMENT_NAME": "창업투자경영학과",
+    "COLLEGE_ID": 2,
+    "DEPARTMENT_ID": 24,
+    "DEPARTMENT_PHONE": "051-890-1404"
+  },
+  {
+    "DEPARTMENT_NAME": "호텔·컨벤션경영학과",
+    "COLLEGE_ID": 2,
+    "DEPARTMENT_ID": 25,
+    "DEPARTMENT_PHONE": "051-890-2094"
+  },
+  {
+    "DEPARTMENT_NAME": "무역학과",
+    "COLLEGE_ID": 2,
+    "DEPARTMENT_ID": 26,
+    "DEPARTMENT_PHONE": "051-890-2062"
+  },
+  {
+    "DEPARTMENT_NAME": "외식경영학과",
+    "COLLEGE_ID": 2,
+    "DEPARTMENT_ID": 27,
+    "DEPARTMENT_PHONE": "051-890-2094"
+  },
+  {
+    "DEPARTMENT_NAME": "유통물류학과",
+    "COLLEGE_ID": 2,
+    "DEPARTMENT_ID": 28,
+    "DEPARTMENT_PHONE": "051-890-2200"
+  },
+  {
+    "DEPARTMENT_NAME": "스마트호스피탈리티학과 (조기취업형 계약학과)",
+    "COLLEGE_ID": 2,
+    "DEPARTMENT_ID": 29,
+    "DEPARTMENT_PHONE": "051-890-3390"
+  },
+  {
+    "DEPARTMENT_NAME": "경영학과",
+    "COLLEGE_ID": 2,
+    "DEPARTMENT_ID": 30,
+    "DEPARTMENT_PHONE": "051-890-1429"
+  },
+  {
+    "DEPARTMENT_NAME": "회계학과",
+    "COLLEGE_ID": 2,
+    "DEPARTMENT_ID": 31,
+    "DEPARTMENT_PHONE": "051-890-1429"
+  },
+  {
+    "DEPARTMENT_NAME": "글로벌호스피탈리티경영학과",
+    "COLLEGE_ID": 2,
+    "DEPARTMENT_ID": 32,
+    "DEPARTMENT_PHONE": "051-890-3810"
+  },
+  {
+    "DEPARTMENT_NAME": "부동산자산경영학부",
+    "COLLEGE_ID": 3,
+    "DEPARTMENT_ID": 33,
+    "DEPARTMENT_PHONE": "051-890-1840"
+  },
+  {
+    "DEPARTMENT_NAME": "라이프융합학부",
+    "COLLEGE_ID": 3,
+    "DEPARTMENT_ID": 34,
+    "DEPARTMENT_PHONE": "051-890-1840"
+  },
+  {
+    "DEPARTMENT_NAME": "부동산개발경영학",
+    "COLLEGE_ID": 3,
+    "DEPARTMENT_ID": 35,
+    "DEPARTMENT_PHONE": "051-890-1840"
+  },
+  {
+    "DEPARTMENT_NAME": "뷰티비즈니스학",
+    "COLLEGE_ID": 3,
+    "DEPARTMENT_ID": 36,
+    "DEPARTMENT_PHONE": "051-890-1840"
+  },
+  {
+    "DEPARTMENT_NAME": "부동산투자학",
+    "COLLEGE_ID": 3,
+    "DEPARTMENT_ID": 37,
+    "DEPARTMENT_PHONE": "051-890-1840"
+  },
+  {
+    "DEPARTMENT_NAME": "라이프생활문화학",
+    "COLLEGE_ID": 3,
+    "DEPARTMENT_ID": 38,
+    "DEPARTMENT_PHONE": "051-890-1841"
+  },
+  {
+    "DEPARTMENT_NAME": "스타트업창업투자학",
+    "COLLEGE_ID": 3,
+    "DEPARTMENT_ID": 39,
+    "DEPARTMENT_PHONE": "051-890-1841"
+  },
+  {
+    "DEPARTMENT_NAME": "간호학과",
+    "COLLEGE_ID": 4,
+    "DEPARTMENT_ID": 40,
+    "DEPARTMENT_PHONE": "051-890-1554, 4254"
+  },
+  {
+    "DEPARTMENT_NAME": "임상병리학과",
+    "COLLEGE_ID": 4,
+    "DEPARTMENT_ID": 41,
+    "DEPARTMENT_PHONE": "051-890-2680"
+  },
+  {
+    "DEPARTMENT_NAME": "치위생학과",
+    "COLLEGE_ID": 4,
+    "DEPARTMENT_ID": 42,
+    "DEPARTMENT_PHONE": "051-890-4236"
+  },
+  {
+    "DEPARTMENT_NAME": "방사선학과",
+    "COLLEGE_ID": 4,
+    "DEPARTMENT_ID": 43,
+    "DEPARTMENT_PHONE": "051-890-2675"
+  },
+  {
+    "DEPARTMENT_NAME": "의료경영학과",
+    "COLLEGE_ID": 4,
+    "DEPARTMENT_ID": 44,
+    "DEPARTMENT_PHONE": "051-890-4205"
+  },
+  {
+    "DEPARTMENT_NAME": "물리치료학과",
+    "COLLEGE_ID": 4,
+    "DEPARTMENT_ID": 45,
+    "DEPARTMENT_PHONE": "051-890-4230"
+  },
+  {
+    "DEPARTMENT_NAME": "식품영양학과",
+    "COLLEGE_ID": 4,
+    "DEPARTMENT_ID": 46,
+    "DEPARTMENT_PHONE": "051-890-1588"
+  },
+  {
+    "DEPARTMENT_NAME": "한의예과",
+    "COLLEGE_ID": 5,
+    "DEPARTMENT_ID": 47,
+    "DEPARTMENT_PHONE": "051-890-3306"
+  },
+  {
+    "DEPARTMENT_NAME": "한의학과",
+    "COLLEGE_ID": 5,
+    "DEPARTMENT_ID": 48,
+    "DEPARTMENT_PHONE": "051-890-3305"
+  },
+  {
+    "DEPARTMENT_NAME": "기계공학과",
+    "COLLEGE_ID": 6,
+    "DEPARTMENT_ID": 49,
+    "DEPARTMENT_PHONE": "051-890-1641"
+  },
+  {
+    "DEPARTMENT_NAME": "로봇공학과",
+    "COLLEGE_ID": 6,
+    "DEPARTMENT_ID": 50,
+    "DEPARTMENT_PHONE": "051-890-2255"
+  },
+  {
+    "DEPARTMENT_NAME": "자동차공학과",
+    "COLLEGE_ID": 6,
+    "DEPARTMENT_ID": 51,
+    "DEPARTMENT_PHONE": "051-890-2255"
+  },
+  {
+    "DEPARTMENT_NAME": "조선해양공학과",
+    "COLLEGE_ID": 6,
+    "DEPARTMENT_ID": 52,
+    "DEPARTMENT_PHONE": "051-890-2590"
+  },
+  {
+    "DEPARTMENT_NAME": "신소재공학과",
+    "COLLEGE_ID": 6,
+    "DEPARTMENT_ID": 53,
+    "DEPARTMENT_PHONE": "051-890-2285"
+  },
+  {
+    "DEPARTMENT_NAME": "고분자나노공학과",
+    "COLLEGE_ID": 6,
+    "DEPARTMENT_ID": 54,
+    "DEPARTMENT_PHONE": "051-890-2285"
+  },
+  {
+    "DEPARTMENT_NAME": "건축학과",
+    "COLLEGE_ID": 6,
+    "DEPARTMENT_ID": 55,
+    "DEPARTMENT_PHONE": "051-890-1606"
+  },
+  {
+    "DEPARTMENT_NAME": "건축공학과",
+    "COLLEGE_ID": 6,
+    "DEPARTMENT_ID": 56,
+    "DEPARTMENT_PHONE": "051-890-1970"
+  },
+  {
+    "DEPARTMENT_NAME": "토목공학과",
+    "COLLEGE_ID": 6,
+    "DEPARTMENT_ID": 57,
+    "DEPARTMENT_PHONE": "051-890-1970"
+  },
+  {
+    "DEPARTMENT_NAME": "도시공학과",
+    "COLLEGE_ID": 6,
+    "DEPARTMENT_ID": 58,
+    "DEPARTMENT_PHONE": "051-890-2590"
+  },
+  {
+    "DEPARTMENT_NAME": "환경공학과",
+    "COLLEGE_ID": 6,
+    "DEPARTMENT_ID": 59,
+    "DEPARTMENT_PHONE": "051-890-2076"
+  },
+  {
+    "DEPARTMENT_NAME": "화학공학과",
+    "COLLEGE_ID": 6,
+    "DEPARTMENT_ID": 60,
+    "DEPARTMENT_PHONE": "051-890-2076"
+  },
+  {
+    "DEPARTMENT_NAME": "화장품공학과",
+    "COLLEGE_ID": 6,
+    "DEPARTMENT_ID": 61,
+    "DEPARTMENT_PHONE": "051-890-1520"
+  },
+  {
+    "DEPARTMENT_NAME": "의생명공학과",
+    "COLLEGE_ID": 6,
+    "DEPARTMENT_ID": 62,
+    "DEPARTMENT_PHONE": "051-890-2275"
+  },
+  {
+    "DEPARTMENT_NAME": "바이오의약학과",
+    "COLLEGE_ID": 6,
+    "DEPARTMENT_ID": 63,
+    "DEPARTMENT_PHONE": "051-890-2275"
+  },
+  {
+    "DEPARTMENT_NAME": "식품공학과",
+    "COLLEGE_ID": 6,
+    "DEPARTMENT_ID": 64,
+    "DEPARTMENT_PHONE": "051-890-1520"
+  },
+  {
+    "DEPARTMENT_NAME": "인간공학과",
+    "COLLEGE_ID": 6,
+    "DEPARTMENT_ID": 65,
+    "DEPARTMENT_PHONE": "051-890-2305"
+  },
+  {
+    "DEPARTMENT_NAME": "산업ICT기술공학",
+    "COLLEGE_ID": 6,
+    "DEPARTMENT_ID": 66,
+    "DEPARTMENT_PHONE": "051-890-1520"
+  },
+  {
+    "DEPARTMENT_NAME": "산업경영빅데이터공학과",
+    "COLLEGE_ID": 6,
+    "DEPARTMENT_ID": 67,
+    "DEPARTMENT_PHONE": "051-890-1611"
+  },
+  {
+    "DEPARTMENT_NAME": "제품디자인공학과",
+    "COLLEGE_ID": 6,
+    "DEPARTMENT_ID": 68,
+    "DEPARTMENT_PHONE": "051-890-2305"
+  },
+  {
+    "DEPARTMENT_NAME": "전기공학과",
+    "COLLEGE_ID": 6,
+    "DEPARTMENT_ID": 69,
+    "DEPARTMENT_PHONE": "051-890-1674"
+  },
+  {
+    "DEPARTMENT_NAME": "전자공학과",
+    "COLLEGE_ID": 6,
+    "DEPARTMENT_ID": 70,
+    "DEPARTMENT_PHONE": "051-890-1674"
+  },
+  {
+    "DEPARTMENT_NAME": "정보통신공학과",
+    "COLLEGE_ID": 6,
+    "DEPARTMENT_ID": 71,
+    "DEPARTMENT_PHONE": "051-890-1611"
+  },
+  {
+    "DEPARTMENT_NAME": "미래모빌리티학과 (조기취업형 계약학과)",
+    "COLLEGE_ID": 6,
+    "DEPARTMENT_ID": 72,
+    "DEPARTMENT_PHONE": "051-890-3387"
+  },
+  {
+    "DEPARTMENT_NAME": "소프트웨어융합대학(자유전공)",
+    "COLLEGE_ID": 7,
+    "DEPARTMENT_ID": 73,
+    "DEPARTMENT_PHONE": "051-890-2870, 2873"
+  },
+  {
+    "DEPARTMENT_NAME": "컴퓨터공학과",
+    "COLLEGE_ID": 7,
+    "DEPARTMENT_ID": 74,
+    "DEPARTMENT_PHONE": "051-890-1704"
+  },
+  {
+    "DEPARTMENT_NAME": "컴퓨터소프트웨어공학과",
+    "COLLEGE_ID": 7,
+    "DEPARTMENT_ID": 75,
+    "DEPARTMENT_PHONE": "051-890-1987"
+  },
+  {
+    "DEPARTMENT_NAME": "응용소프트웨어공학과",
+    "COLLEGE_ID": 7,
+    "DEPARTMENT_ID": 76,
+    "DEPARTMENT_PHONE": "051-890-1987"
+  },
+  {
+    "DEPARTMENT_NAME": "인공지능학과",
+    "COLLEGE_ID": 7,
+    "DEPARTMENT_ID": 77,
+    "DEPARTMENT_PHONE": "051-890-1987"
+  },
+  {
+    "DEPARTMENT_NAME": "게임공학과",
+    "COLLEGE_ID": 7,
+    "DEPARTMENT_ID": 78,
+    "DEPARTMENT_PHONE": "051-890-2176"
+  },
+  {
+    "DEPARTMENT_NAME": "소프트웨어융합학과 (조기취업형계약학과)",
+    "COLLEGE_ID": 7,
+    "DEPARTMENT_ID": 79,
+    "DEPARTMENT_PHONE": "051-890-3387"
+  },
+  {
+    "DEPARTMENT_NAME": "지능형컴퓨팅학과",
+    "COLLEGE_ID": 7,
+    "DEPARTMENT_ID": 80,
+    "DEPARTMENT_PHONE": "051-890-3809"
+  },
+  {
+    "DEPARTMENT_NAME": "음악학과",
+    "COLLEGE_ID": 8,
+    "DEPARTMENT_ID": 81,
+    "DEPARTMENT_PHONE": "051-890-1598"
+  },
+  {
+    "DEPARTMENT_NAME": "디자인조형학과",
+    "COLLEGE_ID": 8,
+    "DEPARTMENT_ID": 82,
+    "DEPARTMENT_PHONE": "051-890-1342"
+  },
+  {
+    "DEPARTMENT_NAME": "패션디자인학과",
+    "COLLEGE_ID": 8,
+    "DEPARTMENT_ID": 83,
+    "DEPARTMENT_PHONE": "051-890-1598"
+  },
+  {
+    "DEPARTMENT_NAME": "체육학과",
+    "COLLEGE_ID": 8,
+    "DEPARTMENT_ID": 84,
+    "DEPARTMENT_PHONE": "051-890-1542"
+  },
+  {
+    "DEPARTMENT_NAME": "레저스포츠학과",
+    "COLLEGE_ID": 8,
+    "DEPARTMENT_ID": 85,
+    "DEPARTMENT_PHONE": "051-890-2210"
+  },
+  {
+    "DEPARTMENT_NAME": "태권도학과",
+    "COLLEGE_ID": 8,
+    "DEPARTMENT_ID": 86,
+    "DEPARTMENT_PHONE": "051-890-2210"
+  },
+  {
+    "DEPARTMENT_NAME": "경기지도학과",
+    "COLLEGE_ID": 8,
+    "DEPARTMENT_ID": 87,
+    "DEPARTMENT_PHONE": "051-890-1542"
+  },
+  {
+    "DEPARTMENT_NAME": "K-뷰티학과",
+    "COLLEGE_ID": 8,
+    "DEPARTMENT_ID": 88,
+    "DEPARTMENT_PHONE": "051-890-1965"
+  },
+  {
+    "DEPARTMENT_NAME": "영화학과",
+    "COLLEGE_ID": 8,
+    "DEPARTMENT_ID": 89,
+    "DEPARTMENT_PHONE": "051-890-2176"
+  },
+  {
+    "DEPARTMENT_NAME": "자유전공",
+    "COLLEGE_ID": 9,
+    "DEPARTMENT_ID": 90,
+    "DEPARTMENT_PHONE": "051-890-1965"
+  },
+  {
+    "DEPARTMENT_NAME": "동의지천융합대학",
+    "COLLEGE_ID": 10,
+    "DEPARTMENT_ID": 91,
+    "DEPARTMENT_PHONE": "051-890-2421,2422,2311"
+  }
+]

@@ -1,0 +1,202 @@
+[
+  {
+    "SERVICE_LINK": "https://door.deu.ac.kr/Account/Index",
+    "SERVICE_NAME": "학습관리시스템(DOOR)",
+    "SERVICE_ID": 1
+  },
+  {
+    "SERVICE_LINK": "https://dap.deu.ac.kr/sso/login.aspx",
+    "SERVICE_NAME": "비교과프로그램(DAP)",
+    "SERVICE_ID": 2
+  },
+  {
+    "SERVICE_LINK": "https://urp.deu.ac.kr/SSO/loginDeuF.aspx",
+    "SERVICE_NAME": "종합정보시스템(대학원)",
+    "SERVICE_ID": 3
+  },
+  {
+    "SERVICE_LINK": "http://sugang.deu.ac.kr:8080/DEUSugang_LogIn.aspx",
+    "SERVICE_NAME": "수강신청시스템",
+    "SERVICE_ID": 4
+  },
+  {
+    "SERVICE_LINK": "https://dorm.deu.ac.kr/",
+    "SERVICE_NAME": "동의대학교 생활관",
+    "SERVICE_ID": 5
+  },
+  {
+    "SERVICE_LINK": "https://lib.deu.ac.kr/main_main.mir",
+    "SERVICE_NAME": "중앙도서관",
+    "SERVICE_ID": 6
+  },
+  {
+    "SERVICE_LINK": "https://safe.deu.ac.kr/",
+    "SERVICE_NAME": "연구실안전관리시스템",
+    "SERVICE_ID": 7
+  },
+  {
+    "SERVICE_LINK": "https://www.youtube.com/watch?v=zTfvP_Hgjwk",
+    "SERVICE_NAME": "개인형 이동장치 이용자 안전교육",
+    "SERVICE_ID": 8
+  },
+  {
+    "SERVICE_LINK": "https://www.deu.ac.kr/www/scheduleList.do",
+    "SERVICE_NAME": "학사일정",
+    "SERVICE_ID": 9
+  },
+  {
+    "SERVICE_LINK": "https://campus.heyoung.co.kr/admin/screen/HCO0101M01",
+    "SERVICE_NAME": "전자출결",
+    "SERVICE_ID": 10
+  },
+  {
+    "SERVICE_LINK": "https://dap.deu.ac.kr/Popup/ComIDSearch.aspx",
+    "SERVICE_NAME": "학번찾기",
+    "SERVICE_ID": 11
+  },
+  {
+    "SERVICE_LINK": "https://dess.deu.ac.kr/",
+    "SERVICE_NAME": "학적변동안내",
+    "SERVICE_ID": 12
+  },
+  {
+    "SERVICE_LINK": "https://unc.doculink.co.kr/index/activeX.do?GIWANNO=022609",
+    "SERVICE_NAME": "인터넷증명발급",
+    "SERVICE_ID": 13
+  },
+  {
+    "SERVICE_LINK": "https://dess.deu.ac.kr/?mid=Page9",
+    "SERVICE_NAME": "모바일 학생증",
+    "SERVICE_ID": 14
+  },
+  {
+    "SERVICE_LINK": "https://www.deu.ac.kr/www/deu-wifi.do",
+    "SERVICE_NAME": "무선 인터넷",
+    "SERVICE_ID": 15
+  },
+  {
+    "SERVICE_LINK": "https://dap.deu.ac.kr/popup/ComIDSearch_fresher.aspx",
+    "SERVICE_NAME": "신·편입생 학번조회",
+    "SERVICE_ID": 16
+  },
+  {
+    "SERVICE_LINK": "https://gw.deu.ac.kr/sso/login.aspx",
+    "SERVICE_NAME": "그룹웨어시스템",
+    "SERVICE_ID": 17
+  },
+  {
+    "SERVICE_LINK": "https://urp.deu.ac.kr/SSO/loginDeuF.aspx",
+    "SERVICE_NAME": "종합정보시스템",
+    "SERVICE_ID": 18
+  },
+  {
+    "SERVICE_LINK": "https://door.deu.ac.kr/Account/Index",
+    "SERVICE_NAME": "교수학습지원시스템(DOOR)",
+    "SERVICE_ID": 19
+  },
+  {
+    "SERVICE_LINK": "https://dap.deu.ac.kr/sso/login.aspx",
+    "SERVICE_NAME": "학생경력관리포털(DAP)",
+    "SERVICE_ID": 20
+  },
+  {
+    "SERVICE_LINK": "https://dhub.deu.ac.kr/",
+    "SERVICE_NAME": "성과확산시스템(D-hub)",
+    "SERVICE_ID": 21
+  },
+  {
+    "SERVICE_LINK": "https://faculty.deu.ac.kr/prof/index.do",
+    "SERVICE_NAME": "교수협의회",
+    "SERVICE_ID": 22
+  },
+  {
+    "SERVICE_LINK": "https://harmony.deu.ac.kr",
+    "SERVICE_NAME": "직원협의회",
+    "SERVICE_ID": 23
+  },
+  {
+    "SERVICE_LINK": "https://campus.heyoung.co.kr/admin/screen/HCO0101M01",
+    "SERVICE_NAME": "전자출결시스템(교수자용)",
+    "SERVICE_ID": 24
+  },
+  {
+    "SERVICE_LINK": "https://www.deu.ac.kr/www/deu-today.do",
+    "SERVICE_NAME": "동의소식",
+    "SERVICE_ID": 25
+  },
+  {
+    "SERVICE_LINK": "https://www.deu.ac.kr/www/deu-history-2020.do",
+    "SERVICE_NAME": "학교연혁",
+    "SERVICE_ID": 26
+  },
+  {
+    "SERVICE_LINK": "https://www.deu.ac.kr/www/deu-ui.do",
+    "SERVICE_NAME": "학교상징",
+    "SERVICE_ID": 27
+  },
+  {
+    "SERVICE_LINK": "https://ipsi.deu.ac.kr/sub/attend/2025_jungshi_habu/intro.html",
+    "SERVICE_NAME": "입학안내",
+    "SERVICE_ID": 28
+  },
+  {
+    "SERVICE_LINK": "https://www.deu.ac.kr/www/deu-college.do",
+    "SERVICE_NAME": "대학",
+    "SERVICE_ID": 29
+  },
+  {
+    "SERVICE_LINK": "https://www.deu.ac.kr/www/deu-graduate-school.do",
+    "SERVICE_NAME": "대학원",
+    "SERVICE_ID": 30
+  },
+  {
+    "SERVICE_LINK": "https://lifelong.deu.ac.kr/",
+    "SERVICE_NAME": "미래교육원",
+    "SERVICE_ID": 31
+  },
+  {
+    "SERVICE_LINK": "https://ipsi.deu.ac.kr/universityDetail.do",
+    "SERVICE_NAME": "학부(과)안내",
+    "SERVICE_ID": 32
+  },
+  {
+    "SERVICE_LINK": "https://ipsi.deu.ac.kr/submenu.do?menuUrl=Cf5PbokbyGk5VfLO98MtrA%3d%3d&",
+    "SERVICE_NAME": "고교-대학연계",
+    "SERVICE_ID": 33
+  },
+  {
+    "SERVICE_LINK": "https://ipsi.deu.ac.kr/submenu.do?menuUrl=D7EPTlGdxFK4P%2f8rp%2fWA9g%3d%3d&",
+    "SERVICE_NAME": "입시상담",
+    "SERVICE_ID": 34
+  },
+  {
+    "SERVICE_LINK": "https://ipsi.deu.ac.kr/apply.do",
+    "SERVICE_NAME": "입시자료신청",
+    "SERVICE_ID": 35
+  },
+  {
+    "SERVICE_LINK": "https://www.deu.ac.kr/www/deu-campus-map.do",
+    "SERVICE_NAME": "캠퍼스맵",
+    "SERVICE_ID": 36
+  },
+  {
+    "SERVICE_LINK": "https://www.deu.ac.kr/www/deu-campus-gaya.do",
+    "SERVICE_NAME": "오시는길",
+    "SERVICE_ID": 37
+  },
+  {
+    "SERVICE_LINK": "https://www.youtube.com/channel/UCCRCvoJT9kDxXUi8sAB3zng",
+    "SERVICE_NAME": "YouTube",
+    "SERVICE_ID": 38
+  },
+  {
+    "SERVICE_LINK": "https://www.instagram.com/we_deu_/",
+    "SERVICE_NAME": "Instagram",
+    "SERVICE_ID": 39
+  },
+  {
+    "SERVICE_LINK": "https://pf.kakao.com/_aWKkxb",
+    "SERVICE_NAME": "카카오톡 입학상담",
+    "SERVICE_ID": 40
+  }
+]

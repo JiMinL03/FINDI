@@ -1,0 +1,61 @@
+version: "3.1"
+
+stories:
+    - story: 학교 위치 안내 스토리
+      steps:
+        - intent: ask_category_school
+        - action: utter_category_school
+        - intent: get_school_location
+        - action: action_school_location
+
+    - story: 학교 연락처 안내 스토리
+      steps:
+        - intent: ask_category_school
+        - action: utter_category_school
+        - intent: get_school_contact
+        - action: action_school_contact
+
+    - story: 학교 교통편 안내 스토리
+      steps:
+        - intent: ask_category_school
+        - action: utter_category_school
+        - intent: get_school_transport
+        - action: action_school_transport
+#-----------------------------------------------
+    - story: 단대별 학과목록 스토리
+      steps:
+        - intent: ask_category_faculty
+        - action: utter_category_faculty
+        - intent: get_faculty_info
+        - action: action_faculty_info
+
+    - story: 학과별 정보 스토리
+      steps:
+        - intent: ask_category_department
+        - action: utter_category_department
+        - intent: get_department_info
+        - action: action_department_info
+
+#--------------------------------------------------
+    - story: 학사일정 정보 스토리
+      steps:
+        - intent: ask_category_calendar
+        - action: utter_category_calendar
+        - intent: get_academic_calendar
+        - action: action_academic_calendar
+#----------------------------------------
+    - story: 캠퍼스맵 정보 스토리
+      steps:
+        - intent: ask_category_facility
+        - action: utter_ask_building
+        - intent: select_building
+          entities:
+            - building_name: "대학본관"
+        - action: action_facility_info
+#----------------------------------------------
+    - story: 공지사항 정보 스토리
+      steps:
+        - intent: ask_category_notice
+        - action: utter_category_notice
+        - intent: get_notice
+        - action: action_notice
