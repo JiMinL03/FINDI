@@ -1,15 +1,10 @@
-import json
-import os
-import logging
 from typing import Any, Text, Dict, List
-
 from rasa_sdk import Tracker
 from rasa_sdk.executor import CollectingDispatcher
 
 from utils.base_action import BaseAction
-from utils.fuzzy_matcher import *
 from utils.json_loader import load_json
-from utils.logging_utils import get_logger  # 이렇게 가져온다고 가정
+from utils.logging_utils import get_logger
 
 logger = get_logger(__name__)
 
@@ -22,35 +17,33 @@ class ActionFacilityInfo(BaseAction):
 
     def run(self, dispatcher, tracker, domain) -> List[Dict[Text, Any]]:
         try:
-            user_input = tracker.get_slot("building_name") or tracker.latest_message.get("text")
-            logger.info(f"[INPUT] user_input: {user_input}")
+            building_name = tracker.get_slot("building_name")
+            logger.info(f"[INPUT] building_name slot: {building_name}")
 
-            if not user_input:
-                logger.warning("[WARN] 건물명 입력 없음")
-                return self.fail(dispatcher, "건물명을 입력해 주세요.")
+            if not building_name:
+                logger.warning("[WARN] building_name 슬롯 비어 있음")
+                return self.fail(dispatcher, "건물명을 선택해 주세요.")
 
-            # 전처리 및 매칭
-            processed_input = preprocess_text(user_input)
+            # building.json 에서 건물 정보 검색
             building_data = load_json("building.json")
-            building_names = [item["BUILDING_NAME"] for item in building_data]
-
-            if processed_input not in building_names:
-                return self.fail(dispatcher, f"'{user_input}'과 일치하는 건물을 찾을 수 없습니다.")
-
-            matched_name = processed_input
-            building_info = next((item for item in building_data if item["BUILDING_NAME"] == matched_name), None)
+            building_info = next(
+                (item for item in building_data if item["BUILDING_NAME"] == building_name), None
+            )
 
             if not building_info:
-                return self.fail(dispatcher, f"{matched_name}의 정보를 찾을 수 없습니다.")
+                return self.fail(dispatcher, f"'{building_name}'에 대한 정보를 찾을 수 없습니다.")
 
             building_id = building_info["BUILDING_ID"]
+
+            # campus_map.json 에서 층별 정보 가져오기
             campus_map_data = load_json("campus_map.json")
-            campus_info = next((item for item in campus_map_data if item["BUILDING_ID"] == building_id), None)
+            campus_info = next(
+                (item for item in campus_map_data if item["BUILDING_ID"] == building_id), None
+            )
 
             if not campus_info:
-                return self.fail(dispatcher, f"{matched_name}의 층별 정보를 찾을 수 없습니다.")
+                return self.fail(dispatcher, f"{building_name}의 층별 정보를 찾을 수 없습니다.")
 
-            # 층 정보: 정렬된 리스트
             ordered_keys = [
                 "ONE_LAYER", "TWO_LAYER", "THREE_LAYER", "FOUR_LAYER",
                 "FIVE_LAYER", "SIX_LAYER", "SEVEN_LAYER", "EIGHT_LAYER", "NINE_LAYER"
@@ -64,8 +57,8 @@ class ActionFacilityInfo(BaseAction):
             etc_info = campus_info.get("ETC", "")
             content_info = campus_info.get("CONTENT", "")
 
-            # 7. 메시지 조립
-            dispatcher.utter_message(text=f"🏢 {matched_name} 정보입니다:")
+            # 메시지 조립
+            dispatcher.utter_message(text=f"🏢 {building_name} 정보입니다:")
 
             if content_info:
                 dispatcher.utter_message(text=f"📌 주요 기관: {content_info}")
@@ -76,7 +69,7 @@ class ActionFacilityInfo(BaseAction):
             if etc_info:
                 dispatcher.utter_message(text=f"🛠️ 기타 정보: {etc_info}")
 
-            logger.info("[SUCCESS] 정보 전달 완료, 슬롯 초기화")
+            logger.info("[SUCCESS] 건물 정보 응답 완료, 슬롯 초기화")
             return self.reset_slots()
 
         except Exception as e:

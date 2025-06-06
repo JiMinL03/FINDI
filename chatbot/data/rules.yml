@@ -41,21 +41,25 @@ rules:
     - action: action_school_transport
 
 # --- 학과 관련-----------------------------------------------------
-- rule: 단대/학과 카테고리 안내
+- rule: 단과대학 카테고리 안내
   steps:
-    - intent: ask_category_department
-    - action: utter_category_department
+    - intent: ask_category_faculty
+    - action: utter_category_faculty
 
-- rule: 단과대학별 학과목록 정보 요청
+- rule: 단과대학 학과목록 정보 요청
   steps:
     - intent: get_faculty_info
     - action: action_faculty_info
+
+- rule: 학과 카테고리 안내
+  steps:
+    - intent: ask_category_department
+    - action: utter_category_department
 
 - rule: 각 학과별 정보 요청
   steps:
     - intent: get_department_info
     - action: action_department_info
-
 #---------------------------------------------
 - rule: 유저 서비스 링크 정보 요청
   steps:
@@ -73,40 +77,15 @@ rules:
     - action: action_notice
 
 #-------교수님 정보----------------------------------
-#- rule: 테스트 폼 실행
-#  steps:
-#  - intent: ask_category_professor
-#  - action: professor_info_form
-#  - active_loop: professor_info_form
-
-#- rule: 교수 정보 폼 실행
-#  steps:
-#  - intent: ask_category_professor
-#  - action: professor_info_form
-#  - active_loop: professor_info_form
-#  - slot_was_set:
-#    - decision_slot: null
-
-- rule: 교수 정보 폼 완료 후 라우팅 (이름)
-  condition:
-  - active_loop: professor_info_form
+- rule: 교수 정보 카테고리 안내
   steps:
-  - action: professor_info_form
-  - active_loop: null
-  - slot_was_set:
-    - decision_slot: professor
-  - action: action_professor_by_name
+    - intent: ask_category_professor
+    - action: utter_ask_professor
 
-- rule: 교수 정보 폼 완료 후 라우팅 (학과)
-  condition:
-  - active_loop: professor_info_form
+- rule: 이름으로 교수 정보 요청
   steps:
-  - action: professor_info_form
-  - active_loop: null
-  - slot_was_set:
-    - decision_slot: department
-  - action: action_professor_by_department
-
+    - intent: get_professor_info_by_name
+    - action: action_professor_by_name
 #-----------------------------------------
 - rule: 학사 카테고리 안내
   steps:
@@ -121,130 +100,14 @@ rules:
 - rule: 캠퍼스맵 카테고리 안내
   steps:
     - intent: ask_category_facility
-    - action: utter_category_facility
+    - action: utter_ask_building
 
-- rule: 건물 정보 요청
+- rule: 응답용 빌딩 선택 처리
   steps:
-    - intent: get_facility_info
+    - intent: select_building
     - action: action_facility_info
 
-#- rule: faculty_form 실행
-#  steps:
-#    - intent: get_faculty_info
-#    - action: utter_category_school
-#    - action: faculty_form
-#    - active_loop: faculty_form
-#
-#- rule: faculty_form 완료 후 액션
-#  condition:
-#    - active_loop: faculty_form
-#  steps:
-#    - action: faculty_form
-#    - active_loop: null
-#    - slot_was_set:
-#        - requested_slot: faculty_name
-#    - action: action_faculty_info
-#
-#- rule: department_form 실행
-#  steps:
-#    - intent: get_department_info
-#    - action: department_form
-#    - active_loop: department_form
-#
-#- rule: department_form 완료 후 액션
-#  condition:
-#    - active_loop: department_form
-#  steps:
-#    - action: department_form
-#    - active_loop: null
-#    - action: action_department_info
-#
-## --- 교수 관련 폼 ---
-#- rule: professor_form 실행
-#  steps:
-#    - intent: get_professor_info
-#    - action: professor_form
-#    - active_loop: professor_form
-#
-#- rule: professor_form 완료 후 액션
-#  condition:
-#    - active_loop: professor_form
-#  steps:
-#    - action: professor_form
-#    - active_loop: null
-#    - action: action_professor_info
-#
-## --- 학사 일정 폼 ---
-#- rule: month_form 실행
-#  steps:
-#    - intent: get_academic_calendar
-#    - action: month_form
-#    - active_loop: month_form
-#
-#- rule: month_form 완료 후 액션
-#  condition:
-#    - active_loop: month_form
-#  steps:
-#    - action: month_form
-#    - active_loop: null
-#    - action: action_academic_calendar
-#
-## --- 시설 정보 폼 ---
-#- rule: facility_form 실행
-#  steps:
-#    - intent: get_facility_info
-#    - action: facility_form
-#    - active_loop: facility_form
-#
-#- rule: facility_form 완료 후 액션
-#  condition:
-#    - active_loop: facility_form
-#  steps:
-#    - action: facility_form
-#    - active_loop: null
-#    - action: action_facility_info
-#
-## --- 서비스 폼 ---
-#- rule: service_form 실행
-#  steps:
-#    - intent: get_user_services
-#    - action: service_form
-#    - active_loop: service_form
-#
-#- rule: service_form 완료 후 액션
-#  condition:
-#    - active_loop: service_form
-#  steps:
-#    - action: service_form
-#    - active_loop: null
-#    - action: action_user_services
-#
-## --- 공지사항 폼 ---
-#- rule: notice_form 실행
-#  steps:
-#    - intent: get_notice
-#    - action: notice_form
-#    - active_loop: notice_form
-#
-#- rule: notice_form 완료 후 액션
-#  condition:
-#    - active_loop: notice_form
-#  steps:
-#    - action: notice_form
-#    - active_loop: null
-#    - action: action_notice
-#
-## --- 단순 액션 호출 ---
-#- rule: 교통 안내 요청
-#  steps:
-#    - intent: ask_category_transport
-#    - action: action_category_transport
-#
-#- rule: 카테고리 캘린더 질문 처리
-#  steps:
-#    - intent: ask_category_calendar
-#    - action: utter_category_calendar
-#
+#---------------------------------------------
 
 - rule: Fallback 처리
   steps:

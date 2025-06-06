@@ -45,7 +45,7 @@ class ActionAcademicCalendar(BaseAction):
             logger.info(f"[MATCH] 연도 매칭됨: {year}")
             for item in calendar_data:
                 # 2026년 일정은 "2026년 ..." 으로 되어있으니 필터
-                if item["MONTHVALUE"].startswith(year) or not re.match(r"\d{4}년", item["MONTHVALUE"]):
+                if item["MONTHVALUE"].startswith(f"{year}년"):
                     result.append(f"{item['MONTHVALUE']}: {item['CONTENTS']}")
             logger.debug(f"[RESULT] {year}년 일정 개수: {len(result)}")
             if not result:

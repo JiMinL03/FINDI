@@ -24,8 +24,8 @@ stories:
 #-----------------------------------------------
     - story: 단대별 학과목록 스토리
       steps:
-        - intent: ask_category_department
-        - action: utter_category_department
+        - intent: ask_category_faculty
+        - action: utter_category_faculty
         - intent: get_faculty_info
         - action: action_faculty_info
 
@@ -35,6 +35,7 @@ stories:
         - action: utter_category_department
         - intent: get_department_info
         - action: action_department_info
+
 #--------------------------------------------------
     - story: 학사일정 정보 스토리
       steps:
@@ -46,8 +47,10 @@ stories:
     - story: 캠퍼스맵 정보 스토리
       steps:
         - intent: ask_category_facility
-        - action: utter_category_facility
-        - intent: get_facility_info
+        - action: utter_ask_building
+        - intent: select_building
+          entities:
+            - building_name: "대학본관"
         - action: action_facility_info
 #----------------------------------------------
     - story: 공지사항 정보 스토리

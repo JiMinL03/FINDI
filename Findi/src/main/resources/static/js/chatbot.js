@@ -51,7 +51,7 @@ async function sendMessage() {
     const data = await response.json();
 
     if (!data.length) {
-      addMessage("🤖 챗봇이 응답하지 않았습니다.", "bot");
+      addMessage("🤖 챗봇에 오류가 발생하였습니다.", "bot");
     } else {
       for (let i = 0; i < data.length; i++) {
         const msg = data[i];
@@ -82,7 +82,7 @@ const quickReplies = [
   { label: "학교 정보", message: "학교 정보 궁금해" },
   { label: "단과대학 정보", message: "단과대학 정보 궁금해" },
   { label: "학과 정보", message: "전공 관련 정보 궁금해" },
-  { label: "교수 정보", message: "교수 정보 궁금해" },
+  { label: "교수 정보", message: "교수님 정보 궁금해" },
   { label: "학사일정", message: "학사일정 궁금해" },
   { label: "건물 정보", message: "건물 정보 궁금해" },
   { label: "사용자 링크 정보", message: "사용자 링크 정보 궁금해" },
@@ -125,10 +125,22 @@ function addQuickReplies() {
 async function sendMessageWithCustomMessage(customMsg) {
   if (!customMsg) return;
 
-  addMessage(inputField.value, "user"); // inputField.value는 버튼 라벨
+  //대화 상태 초기화
+  await fetch("http://localhost:5005/conversations/user/trigger_intent", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      name: "restart", // 또는 custom_reset
+      policy: "MappingPolicy",
+      confidence: 1.0,
+    }),
+  });
 
+  //유저메시지 출력
+  addMessage(inputField.value, "user"); // inputField.value는 버튼 라벨
   inputField.value = "";
   inputField.focus();
+
   sendBtn.disabled = true;
   sendBtn.classList.add("loading");
 

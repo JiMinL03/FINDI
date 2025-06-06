@@ -6,9 +6,9 @@ intents:
   - fallback
   - ask_category_school
   - ask_category_department
+  - ask_category_faculty
   - ask_category_professor
   - ask_category_calendar
-#  - ask_category_transport
   - ask_category_facility
   - ask_category_services
   - ask_category_notice
@@ -18,10 +18,10 @@ intents:
   - get_faculty_info
   - get_department_info
   - get_professor_info_by_name
-  - get_professor_info_by_department
   - get_academic_calendar
   - get_facility_info
   - get_notice
+  - select_building
 
 entities:
   - faculty_name
@@ -29,7 +29,6 @@ entities:
   - professor_name
   - month
   - building_name
-#  - service_type
   - notice_type
 
 
@@ -49,16 +48,6 @@ slots:
     mappings:
       - type: from_entity
         entity: professor_name
-  decision_slot:
-    type: categorical
-    values:
-      - professor
-      - department
-    mappings:
-      - type: from_entity
-        entity: professor_name
-      - type: from_entity
-        entity: department_name
   month:
     type: text
     mappings:
@@ -69,11 +58,6 @@ slots:
     mappings:
       - type: from_entity
         entity: building_name
-#  service_type:
-#    type: text
-#    mappings:
-#      - type: from_entity
-#        entity: service_type
   notice_type:
     type: text
     mappings:
@@ -85,34 +69,6 @@ slots:
     mappings:
       - type: custom
 
-forms:
-#  faculty_form:
-#    required_slots:
-#      - faculty_name
-#  school_form:
-#    required_slots:
-#      - service_type
-#  facility_form:
-#    required_slots:
-#      - building_name
-#  department_form:
-#    required_slots:
-#      - department_name
-
-  professor_info_form:
-    required_slots:
-      - decision_slot
-
-#  month_form:
-#    required_slots:
-#      - month
-#  service_form:
-#    required_slots:
-#      - service_type
-#  notice_form:
-#    required_slots:
-#      - notice_type
-
 responses:
   utter_hi:
     - text: "안녕하세요 ;)"
@@ -122,26 +78,29 @@ responses:
     - text: |
         원하시는 정보를 입력하세요.
         - 학교 위치
-        - 대표 전화번호 연락처
+        - 대표 전화번호
         - 대중교통 경로
+  utter_category_faculty:
+    - text: |
+        정보를 원하는 단과대학의 이름을 알려주세요.
+        예: 상경대학, 공과대학 등
   utter_category_department:
     - text: |
-        단과대학이나 학과 정보를 알고 싶으신가요?
-        예: 경영대학, 컴퓨터공학과 등
-
-  utter_ask_professor_or_department:
+        정보를 원하는 학과의 이름을 알려주세요.
+        예: 간호학과, 컴퓨터공학과 등
+  utter_ask_professor:
     - text: |
-        교수님 정보를 원하시면 이름을, 교수님 목록을 원하시면 학과명을 알려주세요.
+        정보를 원하는 교수님의 이름을 알려주세요.
   utter_no_info_exit:
     - text: "정보를 받지 못했습니다. 폼을 종료합니다."
   utter_category_calendar:
     - text: |
         어떤 월의 학사 일정을 확인할까요?
-        예: 3월, 6월 등
-  utter_category_facility:
-    - text: |
-        건물명을 알려주시면 해당 시설 정보를 알려드릴게요.
-        예: 본관, 도서관 등
+        예: 3월, 6월, 2025년 등
+#  utter_category_facility:
+#    - text: |
+#        건물명을 알려주시면 해당 시설 정보를 알려드릴게요.
+#        예: 본관, 도서관 등
   utter_category_notice:
     - text: |
         어떤 종류의 공지사항이 궁금하신가요?
@@ -149,6 +108,64 @@ responses:
         - 교육모집
         - 기숙사
         - 장학
+  utter_ask_building:
+    - text: "정보를 원하는 건물을 고르세요."
+      buttons:
+  utter_ask_building_name:
+    - text: "어떤 건물 정보를 원하시나요? 아래에서 선택해주세요:"
+      buttons:
+        - title: "대학본관"
+          payload: '/select_building{"building_name":"대학본관"}'
+        - title: "법정관"
+          payload: '/select_building{"building_name":"법정관"}'
+        - title: "상경관"
+          payload: '/select_building{"building_name":"상경관"}'
+        - title: "동의의료원"
+          payload: '/select_building{"building_name":"동의의료원"}'
+        - title: "국제관"
+          payload: '/select_building{"building_name":"국제관"}'
+        - title: "동의스포츠센터"
+          payload: '/select_building{"building_name":"동의스포츠센터"}'
+        - title: "상영관(제2학생회관)"
+          payload: '/select_building{"building_name":"상영관(제2학생회관)"}'
+        - title: "수덕전(학생회관)"
+          payload: '/select_building{"building_name":"수덕전(학생회관)"}'
+        - title: "제1인문관"
+          payload: '/select_building{"building_name":"제1인문관"}'
+        - title: "제2인문관"
+          payload: '/select_building{"building_name":"제2인문관"}'
+        - title: "효민체육관"
+          payload: '/select_building{"building_name":"효민체육관"}'
+        - title: "중앙도서관"
+          payload: '/select_building{"building_name":"중앙도서관"}'
+        - title: "여대생커리어개발관"
+          payload: '/select_building{"building_name":"여대생커리어개발관"}'
+        - title: "제2효민생활관"
+          payload: '/select_building{"building_name":"제2효민생활관"}'
+        - title: "제1효민생활관"
+          payload: '/select_building{"building_name":"제1효민생활관"}'
+        - title: "의료보건관"
+          payload: '/select_building{"building_name":"의료보건관"}'
+        - title: "생활과학관"
+          payload: '/select_building{"building_name":"생활과학관"}'
+        - title: "음악관"
+          payload: '/select_building{"building_name":"음악관"}'
+        - title: "창의관"
+          payload: '/select_building{"building_name":"창의관"}'
+        - title: "지천관"
+          payload: '/select_building{"building_name":"지천관"}'
+        - title: "산학협력관"
+          payload: '/select_building{"building_name":"산학협력관"}'
+        - title: "건윤관"
+          payload: '/select_building{"building_name":"건윤관"}'
+        - title: "공학관"
+          payload: '/select_building{"building_name":"공학관"}'
+        - title: "정보공학관"
+          payload: '/select_building{"building_name":"정보공학관"}'
+        - title: "학생군사교육단"
+          payload: '/select_building{"building_name":"학생군사교육단"}'
+        - title: "행복기숙사(미래생활관)"
+          payload: '/select_building{"building_name":"행복기숙사(미래생활관)"}'
 
 actions:
   - action_school_location
@@ -157,9 +174,6 @@ actions:
   - action_faculty_info
   - action_department_info
   - action_professor_by_name
-  - action_professor_by_department
-  - action_route_professor_info
-  - validate_professor_info_form
   - action_academic_calendar
 #  - action_category_transport
   - action_facility_info

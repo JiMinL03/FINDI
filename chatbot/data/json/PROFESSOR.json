@@ -20274,5 +20274,78 @@
     "EMAIL": "insu.shin@gmail.com",
     "LAB": "-",
     "NAME": "신인수"
+  },
+  {
+    "RESEARCH_AREA": "인공지능, 컴퓨터 네트워크, 정보 보호",
+    "PHONE": "051-890-1725",
+    "ID": 2301,
+    "EMAIL": "ojkwon@deu.ac.kr",
+    "LAB": "정보공학관 903호",
+    "NAME": "권오준"
+  },
+  {
+    "RESEARCH_AREA": "멀티미디어 정보처리, 영상통신",
+    "PHONE": "051-890-1727",
+    "ID": 2302,
+    "EMAIL": "skkwon@deu.ac.kr",
+    "LAB": "정보공학관 904호",
+    "NAME": "권순각"
+  },
+  {
+    "RESEARCH_AREA": "임베디드시스템, 운영체제",
+    "PHONE": "051-890-1728",
+    "ID": 2303,
+    "EMAIL": "libero@deu.ac.kr",
+    "LAB": "정보공학관 905호",
+    "NAME": "김성우"
+  },
+  {
+    "RESEARCH_AREA": "데이터베이스, 자료구조, 웹 시스템",
+    "PHONE": "051-890-1729",
+    "ID": 2304,
+    "EMAIL": "junghwa@deu.ac.kr",
+    "LAB": "정보공학관 906호",
+    "NAME": "이중화"
+  },
+  {
+    "RESEARCH_AREA": "모바일 컴퓨팅, 병렬처리(GPU컴퓨팅), S/W공학, OOAD",
+    "PHONE": "051-890-1736",
+    "ID": 2305,
+    "EMAIL": "jongmin@deu.ac.kr",
+    "LAB": "정보공학관 907호",
+    "NAME": "이종민"
+  },
+  {
+    "RESEARCH_AREA": "인터넷 시스템, 클라우드 시스템",
+    "PHONE": "051-890-1737",
+    "ID": 2306,
+    "EMAIL": "yhpark@deu.ac.kr",
+    "LAB": "정보공학관 901호",
+    "NAME": "박유현"
+  },
+  {
+    "RESEARCH_AREA": "컴퓨터 응용, 컨텐츠 제작 기술",
+    "PHONE": "051-890-1847",
+    "ID": 2307,
+    "EMAIL": "yhleem@deu.ac.kr",
+    "LAB": "정보공학관 808호",
+    "NAME": "임영호"
+  },
+  {
+    "RESEARCH_AREA": "소프트웨어공학, 시스템 분석 설계, 네트워크 프로토콜",
+    "PHONE": "051-890-1815",
+    "ID": 2308,
+    "EMAIL": "jang1052@deu.ac.kr",
+    "LAB": "정보공학관 902호",
+    "NAME": "장희숙"
+  },
+  {
+    "RESEARCH_AREA": "자연어처리, 프로그래밍 언어",
+    "PHONE": "-",
+    "ID": 2309,
+    "EMAIL": "tskim@deu.ac.kr",
+    "LAB": "-",
+    "NAME": "김태석"
   }
+
 ]

@@ -14,7 +14,7 @@ class ActionFacultyInfo(BaseAction):
     def name(self) -> Text:
         return "action_faculty_info"
 
-    slots_to_reset = ["faculty_name", "department_name"]
+    slots_to_reset = ["faculty_name"]
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
