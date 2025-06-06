@@ -1,46 +1,57 @@
 package project.capston.Findi.Controller;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.*;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
-import project.capston.Findi.dto.RoommateRequestDto;
+import project.capston.Findi.Entity.Roommate;
+import project.capston.Findi.Service.RoommateService;
+import java.util.Map;
 
-@Controller
+@RestController
+@RequestMapping("/roommate")
+@CrossOrigin(origins = "http://localhost:5173")
+@RequiredArgsConstructor
 public class RoommateController {
-    @GetMapping("/roommate/match")
-    public String roommate() {
-        return "roommate";
+
+    private final RoommateService roommateService;
+
+    // ✅ DB에 저장
+    @PostMapping
+    public ResponseEntity<Roommate> submitRoommate(@RequestBody Roommate form) {
+        System.out.println("👉 POST /roommate 호출됨");
+        Roommate roommate = new Roommate();
+        roommate.setGender(form.getGender());
+        roommate.setName(form.getName());
+        roommate.setBirth(form.getBirth());
+        roommate.setStudent_id(form.getStudent_id());
+        roommate.setMbti(form.getMbti());
+        roommate.setMajor(form.getMajor());
+        roommate.setIs_Smoking(form.getIs_Smoking());
+        roommate.setLife_pattern(form.getLife_pattern());
+
+        Roommate saved = roommateService.saveRoommate(roommate);
+        return ResponseEntity.ok(saved);
     }
 
-    @PostMapping("/roommate/match")
-    public ResponseEntity<?> matchRoommates(@RequestBody RoommateRequestDto requestDto) {
-        String pythonUrl = "http://192.168.0.18:5000/handleMatch";
-
-        RestTemplate restTemplate = new RestTemplate();
-
-        HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.APPLICATION_JSON);
-
-        HttpEntity<RoommateRequestDto> entity = new HttpEntity<>(requestDto, headers);
+    // ✅ Flask 매칭 요청
+    @PostMapping("/match")
+    public ResponseEntity<?> matchRoommate(@RequestBody Map<String, Object> payload) {
         try {
-            ResponseEntity<String> response = restTemplate.postForEntity(pythonUrl, entity, String.class);
+            RestTemplate restTemplate = new RestTemplate();
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_JSON);
 
-            // Flask 응답 코드가 200이 아닌 경우 직접 전달
-            if (!response.getStatusCode().is2xxSuccessful()) {
-                System.err.println("❌ Flask 응답 오류: " + response.getBody());
-                return ResponseEntity.status(response.getStatusCode()).body(response.getBody());
-            }
+            HttpEntity<Map<String, Object>> request = new HttpEntity<>(payload, headers);
+
+            ResponseEntity<String> response = restTemplate.postForEntity(
+                    "http://192.168.0.18:5000/handleMatch", request, String.class);
 
             return ResponseEntity.ok(response.getBody());
 
         } catch (Exception e) {
-            e.printStackTrace(); // 콘솔 로그
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("❌ Python 서버와 통신 실패: " + e.getMessage());
+                    .body("Flask 통신 오류: " + e.getMessage());
         }
     }
-
 }

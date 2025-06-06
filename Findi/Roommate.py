@@ -43,18 +43,6 @@ def recommend_roommates(user_vector, user_gender, user_mbti, user_isSmoking, wei
     similarities.sort(key=lambda x: x[1], reverse=True)
     return similarities[:top_n]
 
-# ✅ 가짜 사용자 DB
-users_data = {
-    "A": {"gender": 1, "name": "Alice", "birth_year": 2000, "student_id": "2021001", "major": "CS", "mbti": "INTJ", "life_pattern": 1, "is_Smoking": 0},
-    "B": {"gender": 1, "name": "Bob", "birth_year": 1999, "student_id": "2021002", "major": "Math", "mbti": "INTJ", "life_pattern": 1, "is_Smoking": 1},
-    "C": {"gender": 0, "name": "Charlie", "birth_year": 2001, "student_id": "2021003", "major": "Physics", "mbti": "ENTP", "life_pattern": 0, "is_Smoking": 0},
-    "D": {"gender": 1, "name": "David", "birth_year": 1998, "student_id": "2021004", "major": "CS", "mbti": "INTJ", "life_pattern": 0, "is_Smoking": 1},
-    "E": {"gender": 0, "name": "Eve", "birth_year": 2002, "student_id": "2021005", "major": "Bio", "mbti": "ENTP", "life_pattern": 0, "is_Smoking": 1},
-    "F": {"gender": 1, "name": "Frank", "birth_year": 2000, "student_id": "2021006", "major": "CS", "mbti": "ISTP", "life_pattern": 1, "is_Smoking": 0},
-    "G": {"gender": 0, "name": "Holly", "birth_year": 2003, "student_id": "2021007", "major": "CS", "mbti": "ISFJ", "life_pattern": 1, "is_Smoking": 1},
-    "H": {"gender": 0, "name": "Bolly", "birth_year": 2003, "student_id": "20220001", "major": "CS", "mbti": "ISTJ", "life_pattern": 1, "is_Smoking": 1}
-}
-
 # ✅ 매칭 API
 @app.route('/handleMatch', methods=['POST'])
 def match():
