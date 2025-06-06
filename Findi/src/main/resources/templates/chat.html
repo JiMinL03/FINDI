@@ -13,9 +13,11 @@
   <aside class="sidebar">
     <input type="text" class="search" placeholder="Search groups">
     <div class="chat-list">
-      <div class="chat-item"> <!-- 여러 개의 채팅방이 들어갈 수 있어야 함 -->
-        <h4>채팅방 1</h4>
-        <span>채팅방에 들어가서 자유롭게 대화를 나눠보세요.</span>
+      <div class="chat-item" th:each="chatRoom : ${chatRooms}">
+        <a th:href="@{/chat/room/{id}(id=${chatRoom.collegeId})}">
+          <h4 th:text="${chatRoom.name}"></h4>
+          <span>채팅방에 들어가서 자유롭게 대화를 나눠보세요.</span>
+        </a>
       </div>
     </div>
   </aside>
@@ -23,7 +25,7 @@
   <!-- 메인 채팅창 -->
   <main class="chat-main">
     <header class="chat-header">
-      <h2>채팅방 제목</h2>
+      <h2 th:text="${chatRoom}"></h2>
       <div class="tabs">
         <button class="tab active">Messages</button>
       </div>
@@ -36,13 +38,14 @@
 
     <div class="chat-input">
       <input type="text" id="messageInput" placeholder="보낼 메시지를 작성해주세요.">
-      <button onclick="sendMessage()">📨</button>
+      <button onclick="sendMessage()">보내기</button>
     </div>
   </main>
 </div>
 
 <script>
-  const socket = new WebSocket("ws://localhost:8080/ws/chat");
+  const roomId = '[[${roomId}]]';
+  const socket = new WebSocket("ws://localhost:8080/ws/chat/" + roomId);
 
   socket.onmessage = function(event) {
     const chatBox = document.getElementById("chat-box");
@@ -80,6 +83,13 @@
 
     input.value = "";
   }
+
+  document.getElementById("messageInput").addEventListener("keydown", function(e) {
+    if (e.key === "Enter") {
+      e.preventDefault(); // 줄바꿈 방지
+      sendMessage();
+    }
+  });
 </script>
 </body>
 </html>

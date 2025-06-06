@@ -5,18 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ed5ef50-32ac-4c0f-8b9b-63f3b2ac4455" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules/Findi.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Findi/src/main/java/project/capston/Findi/ChatHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Findi/src/main/java/project/capston/Findi/Controller/ChatController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Findi/src/main/java/project/capston/Findi/WebSocketConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Findi/src/main/resources/static/css/chat.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Findi/src/main/resources/templates/chat.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Findi/src/main/java/project/capston/Findi/ChatWebSocketHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Findi/src/main/java/project/capston/Findi/Entity/ChatRoom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Findi/src/main/java/project/capston/Findi/Repository/ChatRoomRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Findi/src/main/java/project/capston/Findi/Service/ChatRoomService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Findi/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Findi/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Findi/src/main/java/project/capston/Findi/ChatHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Findi/src/main/java/project/capston/Findi/Controller/ChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Findi/src/main/java/project/capston/Findi/Controller/ChatroomController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Findi/src/main/java/project/capston/Findi/WebSocketConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Findi/src/main/java/project/capston/Findi/WebSocketConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Findi/src/main/resources/static/css/chat.css" beforeDir="false" afterPath="$PROJECT_DIR$/Findi/src/main/resources/static/css/chat.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Findi/src/main/resources/templates/chat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Findi/src/main/resources/templates/chat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Findi/src/main/resources/templates/nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/Findi/src/main/resources/templates/nav.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,8 +48,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="Class" />
         <option value="CSS File" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -120,7 +120,7 @@
       <option name="presentableId" value="Default" />
       <updated>1749179704729</updated>
       <workItem from="1749179705824" duration="441000" />
-      <workItem from="1749199748455" duration="6160000" />
+      <workItem from="1749199748455" duration="13599000" />
     </task>
     <servers />
   </component>
