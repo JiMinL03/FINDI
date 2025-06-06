@@ -5,20 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ed5ef50-32ac-4c0f-8b9b-63f3b2ac4455" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Findi.iml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/Findi.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Findi/src/main/java/project/capston/Findi/ChatHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Findi/src/main/java/project/capston/Findi/Controller/ChatController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Findi/src/main/java/project/capston/Findi/WebSocketConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Findi/src/main/resources/static/css/chat.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Findi/src/main/resources/templates/chat.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/Findi.main.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Findi/src/main/java/project/capston/Findi/Service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Findi/src/main/java/project/capston/Findi/Service/AdminService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Findi/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Findi/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,16 +45,25 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Class" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2y7JVrl80rRdM2pgVSW1yDCQIS7" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -64,13 +71,21 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "Gradle.Findi 빌드.executor": "Run",
+    "Gradle.소스 다운로드.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.FindiApplication.executor": "Run",
-    "git-widget-placeholder": "admin",
+    "git-widget-placeholder": "websocket",
     "last_opened_file_path": "C:/Users/jimin/OneDrive/Desktop/FINDI",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -105,6 +120,7 @@
       <option name="presentableId" value="Default" />
       <updated>1749179704729</updated>
       <workItem from="1749179705824" duration="441000" />
+      <workItem from="1749199748455" duration="6160000" />
     </task>
     <servers />
   </component>
