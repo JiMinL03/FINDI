@@ -36,10 +36,9 @@ public class AdminService {
         member.setActive(true);
         memberRepository.save(member);
     }
-    public void reject(String id){
+    public void reject(String id){ //member 엔티티에 해당 회원을 삭제해야 함
         Member member = memberRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("회원 없음"));
-        member.setActive(false);
-        memberRepository.save(member);
+        memberRepository.delete(member);
     }
 }
