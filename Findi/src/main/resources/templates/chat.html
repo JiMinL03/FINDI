@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>그룹 채팅</title>
+  <link rel="stylesheet" href="/css/chat.css">
+  <link rel="stylesheet" href="/css/nav.css">
+</head>
+<body>
+<div th:replace="~{nav::nav}"></div>
+<div class="chat-container">
+  <!-- 좌측 사이드바 -->
+  <aside class="sidebar">
+    <input type="text" class="search" placeholder="Search groups">
+    <div class="chat-list">
+      <div class="chat-item" th:each="chatRoom : ${chatRooms}">
+        <a th:href="@{/chat/room/{id}(id=${chatRoom.collegeId})}">
+          <h4 th:text="${chatRoom.name}"></h4>
+          <span>채팅방에 들어가서 자유롭게 대화를 나눠보세요.</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- 메인 채팅창 -->
+  <main class="chat-main">
+    <header class="chat-header">
+      <h2 th:text="${chatRoom}"></h2>
+      <div class="tabs">
+        <button class="tab active">Messages</button>
+      </div>
+    </header>
+
+    <div id="chat-box">
+      <div class="message received">
+      </div>
+    </div>
+
+    <div class="chat-input">
+      <input type="text" id="messageInput" placeholder="보낼 메시지를 작성해주세요.">
+      <button onclick="sendMessage()">보내기</button>
+    </div>
+  </main>
+</div>
+
+<script>
+  const roomId = '[[${roomId}]]';
+  const socket = new WebSocket("ws://localhost:8080/ws/chat/" + roomId);
+
+  socket.onmessage = function(event) {
+    const chatBox = document.getElementById("chat-box");
+
+    const data = JSON.parse(event.data);
+    const sender = data.sender;
+    const message = data.message;
+    const userCount = data.userCount;
+
+    // 내가 보낸 메시지가 서버에서 다시 올 경우 중복 방지 (간단 비교)
+    if (chatBox.lastChild && chatBox.lastChild.textContent.includes(message)) {
+      return; // 마지막 메시지랑 같으면 무시
+    }
+
+    const msgDiv = document.createElement("div");
+    msgDiv.className = "message received";
+    msgDiv.innerHTML = `<span class="sender">${sender}</span><p>${message}</p><small>현재 접속자 수: ${userCount}</small>`;
+    chatBox.appendChild(msgDiv);
+    chatBox.scrollTop = chatBox.scrollHeight;
+  };
+
+  function sendMessage() {
+    const input = document.getElementById("messageInput");
+    const message = input.value.trim();
+    if (message === "") return;
+
+    socket.send(message);
+
+    const chatBox = document.getElementById("chat-box");
+    const msgDiv = document.createElement("div");
+    msgDiv.className = "message sent";
+    msgDiv.innerHTML = `<span class="sender">You</span><p>${message}</p>`;
+    chatBox.appendChild(msgDiv);
+    chatBox.scrollTop = chatBox.scrollHeight;
+
+    input.value = "";
+  }
+
+  document.getElementById("messageInput").addEventListener("keydown", function(e) {
+    if (e.key === "Enter") {
+      e.preventDefault(); // 줄바꿈 방지
+      sendMessage();
+    }
+  });
+</script>
+</body>
+</html>
