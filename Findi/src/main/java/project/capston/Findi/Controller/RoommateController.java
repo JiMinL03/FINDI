@@ -1,22 +1,36 @@
 package project.capston.Findi.Controller;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.*;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
-import project.capston.Findi.dto.RoommateRequestDto;
+import project.capston.Findi.Entity.Roommate;
+import project.capston.Findi.Service.RoommateService;
 
-@Controller
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/roommate")
+@RequiredArgsConstructor
 public class RoommateController {
-    @GetMapping("/roommate/match")
-    public String roommate() {
-        return "roommate";
+
+    private final RoommateService roommateService;
+
+    @GetMapping("/all")
+    public ResponseEntity<List<Roommate>> getAllRoommates() {
+        List<Roommate> all = roommateService.findAll();
+        return ResponseEntity.ok(all);
     }
 
-    @PostMapping("/roommate/match")
-    public ResponseEntity<?> matchRoommates(@RequestBody RoommateRequestDto requestDto) {
+    @PostMapping
+    public ResponseEntity<String> save(@RequestBody Roommate roommate) {
+        System.out.println(" POST 요청 도착: " + roommate);
+        roommateService.save(roommate);
+        return ResponseEntity.ok(" 저장 성공!");
+    }
+
+    @PostMapping("/match")
+    public ResponseEntity<?> matchRoommates(@RequestBody Roommate roommate) {
         String pythonUrl = "http://192.168.0.18:5000/handleMatch";
 
         RestTemplate restTemplate = new RestTemplate();
@@ -24,11 +38,11 @@ public class RoommateController {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
 
-        HttpEntity<RoommateRequestDto> entity = new HttpEntity<>(requestDto, headers);
+        HttpEntity<Roommate> entity = new HttpEntity<>(roommate, headers);
+
         try {
             ResponseEntity<String> response = restTemplate.postForEntity(pythonUrl, entity, String.class);
 
-            // Flask 응답 코드가 200이 아닌 경우 직접 전달
             if (!response.getStatusCode().is2xxSuccessful()) {
                 System.err.println("❌ Flask 응답 오류: " + response.getBody());
                 return ResponseEntity.status(response.getStatusCode()).body(response.getBody());
@@ -37,10 +51,23 @@ public class RoommateController {
             return ResponseEntity.ok(response.getBody());
 
         } catch (Exception e) {
-            e.printStackTrace(); // 콘솔 로그
+            e.printStackTrace();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body("❌ Python 서버와 통신 실패: " + e.getMessage());
         }
     }
+    @GetMapping("/by-name/{name}")
+    public ResponseEntity<Roommate> getByName(@PathVariable String name) {
+        Roommate roommate = roommateService.findByName(name); // ✅ 수정!
+        if (roommate == null) return ResponseEntity.notFound().build();
+        return ResponseEntity.ok(roommate);
+    }
+
+    @PostMapping("/test")
+    public ResponseEntity<String> testPost() {
+        return ResponseEntity.ok(" POST 잘 들어옴");
+    }
+
+
 
 }
