@@ -1,0 +1,298 @@
+[
+  {
+    "SCHEDULE_ID": 1,
+    "MONTHVALUE": "2025년 3월 1일",
+    "CONTENTS": "학기개시일, 삼일절"
+  },
+  {
+    "SCHEDULE_ID": 2,
+    "MONTHVALUE": "2025년 3월 4일",
+    "CONTENTS": "개강일"
+  },
+  {
+    "SCHEDULE_ID": 3,
+    "MONTHVALUE": "2025년 3월 6 ~ 10일",
+    "CONTENTS": "수강정정"
+  },
+  {
+    "SCHEDULE_ID": 4,
+    "MONTHVALUE": "2025년 3월 27일",
+    "CONTENTS": "수업일수 1/4선"
+  },
+  {
+    "SCHEDULE_ID": 5,
+    "MONTHVALUE": "2025년 3월 30일",
+    "CONTENTS": "학기개시일 30일째"
+  },
+  {
+    "SCHEDULE_ID": 6,
+    "MONTHVALUE": "2025년 4월 7일",
+    "CONTENTS": "수업일수 1/3선"
+  },
+  {
+    "SCHEDULE_ID": 7,
+    "MONTHVALUE": "2025년 4월 22 ~ 28일",
+    "CONTENTS": "중간시험"
+  },
+  {
+    "SCHEDULE_ID": 8,
+    "MONTHVALUE": "2025년 4월 23일",
+    "CONTENTS": "수업일수 1/2선"
+  },
+  {
+    "SCHEDULE_ID": 9,
+    "MONTHVALUE": "2025년 4월 29일",
+    "CONTENTS": "학기경과일수 60일째"
+  },
+  {
+    "SCHEDULE_ID": 10,
+    "MONTHVALUE": "2025년 5월 1일",
+    "CONTENTS": "근로자의 날"
+  },
+  {
+    "SCHEDULE_ID": 11,
+    "MONTHVALUE": "2025년 5월 5일",
+    "CONTENTS": "어린이날, 부처님오신날"
+  },
+  {
+    "SCHEDULE_ID": 12,
+    "MONTHVALUE": "2025년 5월 6일",
+    "CONTENTS": "대체휴일(어린이날)"
+  },
+  {
+    "SCHEDULE_ID": 13,
+    "MONTHVALUE": "2025년 5월 15일",
+    "CONTENTS": "수업일수 2/3선"
+  },
+  {
+    "SCHEDULE_ID": 14,
+    "MONTHVALUE": "2025년 5월 23일",
+    "CONTENTS": "수업일수 3/4선"
+  },
+  {
+    "SCHEDULE_ID": 15,
+    "MONTHVALUE": "2025년 5월 29일",
+    "CONTENTS": "학기경과일수 90일째"
+  },
+  {
+    "SCHEDULE_ID": 16,
+    "MONTHVALUE": "2025년 6월 3일",
+    "CONTENTS": "대통령 선거일"
+  },
+  {
+    "SCHEDULE_ID": 17,
+    "MONTHVALUE": "2025년 6월 6일",
+    "CONTENTS": "현충일"
+  },
+  {
+    "SCHEDULE_ID": 18,
+    "MONTHVALUE": "2025년 6월 10일",
+    "CONTENTS": "지정보강일(5.6 대체휴일-어린이날)"
+  },
+  {
+    "SCHEDULE_ID": 19,
+    "MONTHVALUE": "2025년 6월 11일",
+    "CONTENTS": "지정보강일(5.5 어린이날)"
+  },
+  {
+    "SCHEDULE_ID": 20,
+    "MONTHVALUE": "2025년 6월 12일",
+    "CONTENTS": "지정보강일(5.1 근로자의날)"
+  },
+  {
+    "SCHEDULE_ID": 21,
+    "MONTHVALUE": "2025년 6월 13일",
+    "CONTENTS": "지정보강일(6.6 현충일)"
+  },
+  {
+    "SCHEDULE_ID": 22,
+    "MONTHVALUE": "2025년 6월 16일",
+    "CONTENTS": "지정보강일(6.3 대통령선거일)"
+  },
+  {
+    "SCHEDULE_ID": 23,
+    "MONTHVALUE": "2025년 6월 17 ~ 23일",
+    "CONTENTS": "기말시험"
+  },
+  {
+    "SCHEDULE_ID": 24,
+    "MONTHVALUE": "2025년 6월 24일",
+    "CONTENTS": "하계방학 시작"
+  },
+  {
+    "SCHEDULE_ID": 25,
+    "MONTHVALUE": "2025년 6월 24일 ~ 7월 14일",
+    "CONTENTS": "하계계절수업"
+  },
+  {
+    "SCHEDULE_ID": 27,
+    "MONTHVALUE": "2025년 8월 15일",
+    "CONTENTS": "광복절"
+  },
+  {
+    "SCHEDULE_ID": 28,
+    "MONTHVALUE": "2025년 8월 18 ~ 22일",
+    "CONTENTS": "수강신청"
+  },
+  {
+    "SCHEDULE_ID": 29,
+    "MONTHVALUE": "2025년 8월 21 ~ 26일",
+    "CONTENTS": "현금등록"
+  },
+  {
+    "SCHEDULE_ID": 30,
+    "MONTHVALUE": "2025년 8월 22일",
+    "CONTENTS": "2024학년도 후기 학위 수여식"
+  },
+  {
+    "SCHEDULE_ID": 31,
+    "MONTHVALUE": "2025년 9월 1일",
+    "CONTENTS": "학기개시일, 개강일"
+  },
+  {
+    "SCHEDULE_ID": 32,
+    "MONTHVALUE": "2025년 9월 3 ~ 5일",
+    "CONTENTS": "수강정정"
+  },
+  {
+    "SCHEDULE_ID": 33,
+    "MONTHVALUE": "2025년 9월 24일",
+    "CONTENTS": "수업일수 1/4선"
+  },
+  {
+    "SCHEDULE_ID": 34,
+    "MONTHVALUE": "2025년 9월 30일",
+    "CONTENTS": "학기경과일수 30일째"
+  },
+  {
+    "SCHEDULE_ID": 35,
+    "MONTHVALUE": "2025년 10월 3일",
+    "CONTENTS": "개천절"
+  },
+  {
+    "SCHEDULE_ID": 36,
+    "MONTHVALUE": "2025년 10월 5 ~ 7일",
+    "CONTENTS": "추석"
+  },
+  {
+    "SCHEDULE_ID": 37,
+    "MONTHVALUE": "2025년 10월 8일",
+    "CONTENTS": "대체휴일(추석)"
+  },
+  {
+    "SCHEDULE_ID": 38,
+    "MONTHVALUE": "2025년 10월 9일",
+    "CONTENTS": "한글날"
+  },
+  {
+    "SCHEDULE_ID": 39,
+    "MONTHVALUE": "2025년 10월 10일",
+    "CONTENTS": "수업일수 1/3선"
+  },
+  {
+    "SCHEDULE_ID": 40,
+    "MONTHVALUE": "2025년 10월 22일",
+    "CONTENTS": "개교기념일"
+  },
+  {
+    "SCHEDULE_ID": 41,
+    "MONTHVALUE": "2025년 10월 27 ~ 31일",
+    "CONTENTS": "중간시험"
+  },
+  {
+    "SCHEDULE_ID": 42,
+    "MONTHVALUE": "2025년 10월 29일",
+    "CONTENTS": "수업일수 1/2선"
+  },
+  {
+    "SCHEDULE_ID": 43,
+    "MONTHVALUE": "2025년 10월 30일",
+    "CONTENTS": "학기경과일수 60일째"
+  },
+  {
+    "SCHEDULE_ID": 44,
+    "MONTHVALUE": "2025년 11월 17일",
+    "CONTENTS": "수업일수 2/3선"
+  },
+  {
+    "SCHEDULE_ID": 45,
+    "MONTHVALUE": "2025년 11월 25일",
+    "CONTENTS": "수업일수 3/4선"
+  },
+  {
+    "SCHEDULE_ID": 46,
+    "MONTHVALUE": "2025년 11월 29일",
+    "CONTENTS": "학기경과일수 90일째"
+  },
+  {
+    "SCHEDULE_ID": 47,
+    "MONTHVALUE": "2025년 12월 8 ~ 9일",
+    "CONTENTS": "지정보강일(10.6/10.7 추석)"
+  },
+  {
+    "SCHEDULE_ID": 48,
+    "MONTHVALUE": "2025년 12월 10일",
+    "CONTENTS": "지정보강일(10.8 대체공휴일-추석)"
+  },
+  {
+    "SCHEDULE_ID": 49,
+    "MONTHVALUE": "2025년 12월 11일",
+    "CONTENTS": "지정보강일(10.9 한글날)"
+  },
+  {
+    "SCHEDULE_ID": 50,
+    "MONTHVALUE": "2025년 12월 12일",
+    "CONTENTS": "지정보강일(10.3 개천절)"
+  },
+  {
+    "SCHEDULE_ID": 51,
+    "MONTHVALUE": "2025년 12월 15일",
+    "CONTENTS": "지정보강일(10.22 개교기념일)"
+  },
+  {
+    "SCHEDULE_ID": 52,
+    "MONTHVALUE": "2025년 12월 16 ~ 22일",
+    "CONTENTS": "기말시험"
+  },
+  {
+    "SCHEDULE_ID": 53,
+    "MONTHVALUE": "2025년 12월 23일",
+    "CONTENTS": "동계방학 시작일"
+  },
+  {
+    "SCHEDULE_ID": 54,
+    "MONTHVALUE": "2025년 12월 25일",
+    "CONTENTS": "성탄절"
+  },
+  {
+    "SCHEDULE_ID": 55,
+    "MONTHVALUE": "2025년 12월 29일 ~ 1월 19일",
+    "CONTENTS": "동계계절수업"
+  },
+  {
+    "SCHEDULE_ID": 56,
+    "MONTHVALUE": "2026년 1월 12월29일 ~ 19일",
+    "CONTENTS": "동계계절수업"
+  },
+  {
+    "SCHEDULE_ID": 57,
+    "MONTHVALUE": "2026년 1월 1일",
+    "CONTENTS": "신정"
+  },
+  {
+    "SCHEDULE_ID": 58,
+    "MONTHVALUE": "2026년 2월 16 ~ 18일",
+    "CONTENTS": "설날"
+  },
+  {
+    "SCHEDULE_ID": 59,
+    "MONTHVALUE": "2026년 2월 19 ~ 24일",
+    "CONTENTS": "현금등록, 수강신청"
+  },
+  {
+    "SCHEDULE_ID": 60,
+    "MONTHVALUE": "2026년 2월 20일",
+    "CONTENTS": "2025학년도 전기 학위 수여식"
+  }
+]
+

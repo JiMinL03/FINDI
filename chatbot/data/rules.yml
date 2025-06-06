@@ -1,0 +1,115 @@
+version: "3.1"
+
+rules:
+
+# 기본 인사 및 fallback ------------------------------------------------
+- rule: 인사 응답
+  steps:
+    - intent: hi
+    - action: utter_hi
+
+- rule: 작별 인사
+  steps:
+    - intent: bye
+    - action: utter_bye
+
+- rule: 기본 fallback 응답
+  steps:
+    - intent: fallback
+    - action: action_default_fallback
+
+# --- 학과 관련-----------------------------------------------------
+
+- rule: 학교 카테고리 안내
+  steps:
+    - intent: ask_category_school
+    - action: utter_category_school
+
+- rule: 학교 위치 요청
+  steps:
+    - intent: get_school_location
+    - action: action_school_location
+
+- rule: 학교 연락처 요청
+  steps:
+    - intent: get_school_contact
+    - action: action_school_contact
+
+- rule: 학교 교통 요청
+  steps:
+    - intent: get_school_transport
+    - action: action_school_transport
+
+# --- 학과 관련-----------------------------------------------------
+- rule: 단과대학 카테고리 안내
+  steps:
+    - intent: ask_category_faculty
+    - action: utter_category_faculty
+
+- rule: 단과대학 학과목록 정보 요청
+  steps:
+    - intent: get_faculty_info
+    - action: action_faculty_info
+
+- rule: 학과 카테고리 안내
+  steps:
+    - intent: ask_category_department
+    - action: utter_category_department
+
+- rule: 각 학과별 정보 요청
+  steps:
+    - intent: get_department_info
+    - action: action_department_info
+#---------------------------------------------
+- rule: 유저 서비스 링크 정보 요청
+  steps:
+    - intent: ask_category_services
+    - action: action_user_services
+#---------------------------------------------
+- rule: 공지사항 카테고리 안내
+  steps:
+    - intent: ask_category_notice
+    - action: utter_category_notice
+
+- rule: 작성자별 공지사항 정보 요청
+  steps:
+    - intent: get_notice
+    - action: action_notice
+
+#-------교수님 정보----------------------------------
+- rule: 교수 정보 카테고리 안내
+  steps:
+    - intent: ask_category_professor
+    - action: utter_ask_professor
+
+- rule: 이름으로 교수 정보 요청
+  steps:
+    - intent: get_professor_info_by_name
+    - action: action_professor_by_name
+#-----------------------------------------
+- rule: 학사 카테고리 안내
+  steps:
+    - intent: ask_category_calendar
+    - action: utter_category_calendar
+
+- rule: 월별 학사일정 요청
+  steps:
+    - intent: get_academic_calendar
+    - action: action_academic_calendar
+#----------------------------------------
+- rule: 캠퍼스맵 카테고리 안내
+  steps:
+    - intent: ask_category_facility
+    - action: utter_ask_building
+
+- rule: 응답용 빌딩 선택 처리
+  steps:
+    - intent: select_building
+    - action: action_facility_info
+
+#---------------------------------------------
+
+- rule: Fallback 처리
+  steps:
+    - intent: "fallback"
+    - action: action_default_fallback

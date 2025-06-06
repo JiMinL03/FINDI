@@ -1,0 +1,106 @@
+[
+  {
+    "BUILDING_ID": 1,
+    "BUILDING_NAME": "대학본관"
+  },
+  {
+    "BUILDING_ID": 2,
+    "BUILDING_NAME": "법정관"
+  },
+  {
+    "BUILDING_ID": 3,
+    "BUILDING_NAME": "상경관"
+  },
+  {
+    "BUILDING_ID": 4,
+    "BUILDING_NAME": "동의의료원"
+  },
+  {
+    "BUILDING_ID": 5,
+    "BUILDING_NAME": "국제관"
+  },
+  {
+    "BUILDING_ID": 6,
+    "BUILDING_NAME": "동의스포츠센터"
+  },
+  {
+    "BUILDING_ID": 7,
+    "BUILDING_NAME": "상영관(제2학생회관)"
+  },
+  {
+    "BUILDING_ID": 8,
+    "BUILDING_NAME": "수덕전(학생회관)"
+  },
+  {
+    "BUILDING_ID": 9,
+    "BUILDING_NAME": "제1인문관"
+  },
+  {
+    "BUILDING_ID": 10,
+    "BUILDING_NAME": "제2인문관"
+  },
+  {
+    "BUILDING_ID": 11,
+    "BUILDING_NAME": "효민체육관"
+  },
+  {
+    "BUILDING_ID": 12,
+    "BUILDING_NAME": "중앙도서관"
+  },
+  {
+    "BUILDING_ID": 13,
+    "BUILDING_NAME": "여대생커리어개발관"
+  },
+  {
+    "BUILDING_ID": 14,
+    "BUILDING_NAME": "제2효민생활관"
+  },
+  {
+    "BUILDING_ID": 15,
+    "BUILDING_NAME": "의료보건관"
+  },
+  {
+    "BUILDING_ID": 16,
+    "BUILDING_NAME": "생활과학관"
+  },
+  {
+    "BUILDING_ID": 17,
+    "BUILDING_NAME": "음악관"
+  },
+  {
+    "BUILDING_ID": 18,
+    "BUILDING_NAME": "창의관"
+  },
+  {
+    "BUILDING_ID": 19,
+    "BUILDING_NAME": "지천관"
+  },
+  {
+    "BUILDING_ID": 20,
+    "BUILDING_NAME": "산학협력관"
+  },
+  {
+    "BUILDING_ID": 21,
+    "BUILDING_NAME": "건윤관"
+  },
+  {
+    "BUILDING_ID": 22,
+    "BUILDING_NAME": "공학관"
+  },
+  {
+    "BUILDING_ID": 23,
+    "BUILDING_NAME": "정보공학관"
+  },
+  {
+    "BUILDING_ID": 24,
+    "BUILDING_NAME": "제1효민생활관"
+  },
+  {
+    "BUILDING_ID": 25,
+    "BUILDING_NAME": "학생군사교육단"
+  },
+  {
+    "BUILDING_ID": 26,
+    "BUILDING_NAME": "행복기숙사(미래생활관)"
+  }
+]
