@@ -3,11 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>정보 알리미</title>
-  <link rel="stylesheet" href="/css/chatbot.css">
-  <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/chatbot.css">
+    <link rel="stylesheet" href="/css/nav.css">
 </head>
 <body>
 <div th:replace="~{nav::nav}"></div>
 
+<div class="chat-container">
+    <div class="chat-header">💬 Rasa Chatbot</div>
+
+    <div id="chatbox"></div>
+    <div id="quickReplies" class="quick-replies"></div>
+
+    <div class="input-area">
+        <input id="userInput" onkeydown="checkEnter(event)" placeholder="Type a message..." type="text"/>
+        <button id="sendBtn" onclick="sendMessage()">Send</button>
+    </div>
+
+</div>
+
+<script src="/js/chatbot.js"></script>
 </body>
 </html>

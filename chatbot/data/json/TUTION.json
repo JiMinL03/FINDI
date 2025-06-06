@@ -1,0 +1,27 @@
+[
+  {
+    "COLLEGE_ID": 1,
+    "TUITION_FRESHMAN1ST": "3,176,000원",
+    "TUITION_AFTER": "3,056,000원"
+  },
+  {
+    "COLLEGE_ID": 4,
+    "TUITION_FRESHMAN1ST": "3,766,000원",
+    "TUITION_AFTER": "3,646,000원"
+  },
+  {
+    "COLLEGE_ID": 5,
+    "TUITION_FRESHMAN1ST": "4,667,000원",
+    "TUITION_AFTER": "4,547,000원"
+  },
+  {
+    "COLLEGE_ID": 6,
+    "TUITION_FRESHMAN1ST": "4,251,000원",
+    "TUITION_AFTER": "4,131,000원"
+  },
+  {
+    "COLLEGE_ID": 9,
+    "TUITION_FRESHMAN1ST": "3,793,000원",
+    "TUITION_AFTER": "3,673,000원"
+  }
+]

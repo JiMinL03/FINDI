@@ -1,0 +1,38 @@
+recipe: default.v1
+
+language: "ko"
+
+pipeline:
+  - name: SpacyNLP
+    model: "ko_core_news_sm"       # 한국어 spaCy 모델 사용
+    case_sensitive: False
+
+  - name: SpacyTokenizer            # 형태소 기반 토큰화
+  - name: SpacyFeaturizer           # spaCy 벡터화
+
+  - name: RegexEntityExtractor      # 정규식 기반 엔티티 추출
+    # Optional: 정규식 패턴은 nlu.yml 또는 별도 파일에서 설정
+
+  - name: CountVectorsFeaturizer    # 단어 기반 벡터 특성 추출 (BoW)
+  - name: DIETClassifier
+    epochs: 50                      # 의도 분류 + 엔티티 추출 (딥러닝)
+    constrain_similarities: true
+
+  - name: EntitySynonymMapper       # 동의어 매핑
+  - name: ResponseSelector
+    epochs: 30                     # FAQ 스타일 응답 선택기
+
+  - name: RegexEntityExtractor
+    case_sensitive: False
+    use_lookup_tables: True
+    use_regexes: True
+
+policies:
+  - name: MemoizationPolicy         # 과거 대화 기억
+  - name: RulePolicy                # 룰 기반 응답 처리
+  - name: TEDPolicy
+    max_history: 5
+    epochs: 30
+    constrain_similarities: true
+
+assistant_id: 20250603-013017-ecru-rosemary

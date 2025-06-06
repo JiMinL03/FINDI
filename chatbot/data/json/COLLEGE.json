@@ -1,0 +1,42 @@
+[
+  {
+    "COLLEGE_ID": 1,
+    "NAME": "인문사회과학대학"
+  },
+  {
+    "COLLEGE_ID": 2,
+    "NAME": "상경대학"
+  },
+  {
+    "COLLEGE_ID": 3,
+    "NAME": "미래융합대학"
+  },
+  {
+    "COLLEGE_ID": 4,
+    "NAME": "의료보건생활대학"
+  },
+  {
+    "COLLEGE_ID": 5,
+    "NAME": "한의과대학"
+  },
+  {
+    "COLLEGE_ID": 6,
+    "NAME": "공과대학"
+  },
+  {
+    "COLLEGE_ID": 7,
+    "NAME": "소프트웨어융합대학"
+  },
+  {
+    "COLLEGE_ID": 8,
+    "NAME": "예술디자인체육대학"
+  },
+  {
+    "COLLEGE_ID": 9,
+    "NAME": "자유전공"
+  },
+  {
+    "COLLEGE_ID": 10,
+    "NAME": "동의지천융합대학"
+  }
+]

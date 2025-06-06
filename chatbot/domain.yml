@@ -1,0 +1,175 @@
+version: "3.1"
+
+intents:
+  - hi
+  - bye
+  - fallback
+  - ask_category_school
+  - ask_category_department
+  - ask_category_professor
+  - ask_category_calendar
+#  - ask_category_transport
+  - ask_category_facility
+  - ask_category_services
+  - ask_category_notice
+  - get_school_location
+  - get_school_contact
+  - get_school_transport
+  - get_faculty_info
+  - get_department_info
+  - get_professor_info_by_name
+  - get_professor_info_by_department
+  - get_academic_calendar
+  - get_facility_info
+  - get_notice
+
+entities:
+  - faculty_name
+  - department_name
+  - professor_name
+  - month
+  - building_name
+#  - service_type
+  - notice_type
+
+
+slots:
+  faculty_name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: faculty_name
+  department_name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: department_name
+  professor_name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: professor_name
+  decision_slot:
+    type: categorical
+    values:
+      - professor
+      - department
+    mappings:
+      - type: from_entity
+        entity: professor_name
+      - type: from_entity
+        entity: department_name
+  month:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: month
+  building_name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: building_name
+#  service_type:
+#    type: text
+#    mappings:
+#      - type: from_entity
+#        entity: service_type
+  notice_type:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: notice_type
+  notice_page:
+    type: any
+    initial_value: 1
+    mappings:
+      - type: custom
+
+forms:
+#  faculty_form:
+#    required_slots:
+#      - faculty_name
+#  school_form:
+#    required_slots:
+#      - service_type
+#  facility_form:
+#    required_slots:
+#      - building_name
+#  department_form:
+#    required_slots:
+#      - department_name
+
+  professor_info_form:
+    required_slots:
+      - decision_slot
+
+#  month_form:
+#    required_slots:
+#      - month
+#  service_form:
+#    required_slots:
+#      - service_type
+#  notice_form:
+#    required_slots:
+#      - notice_type
+
+responses:
+  utter_hi:
+    - text: "안녕하세요 ;)"
+  utter_bye:
+    - text: "감사합니다."
+  utter_category_school:
+    - text: |
+        원하시는 정보를 입력하세요.
+        - 학교 위치
+        - 대표 전화번호 연락처
+        - 대중교통 경로
+  utter_category_department:
+    - text: |
+        단과대학이나 학과 정보를 알고 싶으신가요?
+        예: 경영대학, 컴퓨터공학과 등
+
+  utter_ask_professor_or_department:
+    - text: |
+        교수님 정보를 원하시면 이름을, 교수님 목록을 원하시면 학과명을 알려주세요.
+  utter_no_info_exit:
+    - text: "정보를 받지 못했습니다. 폼을 종료합니다."
+  utter_category_calendar:
+    - text: |
+        어떤 월의 학사 일정을 확인할까요?
+        예: 3월, 6월 등
+  utter_category_facility:
+    - text: |
+        건물명을 알려주시면 해당 시설 정보를 알려드릴게요.
+        예: 본관, 도서관 등
+  utter_category_notice:
+    - text: |
+        어떤 종류의 공지사항이 궁금하신가요?
+        - 공지사항
+        - 교육모집
+        - 기숙사
+        - 장학
+
+actions:
+  - action_school_location
+  - action_school_contact
+  - action_school_transport
+  - action_faculty_info
+  - action_department_info
+  - action_professor_by_name
+  - action_professor_by_department
+  - action_route_professor_info
+  - validate_professor_info_form
+  - action_academic_calendar
+#  - action_category_transport
+  - action_facility_info
+  - action_user_services
+  - action_notice
+#  - action_default_fallback
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+fallback_action_name: "action_default_fallback"
