@@ -3,6 +3,7 @@ package project.capston.Findi.Controller;
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -61,25 +62,8 @@ public class MemberController {
         byte[] imgBytes = memberForm.getImg().getBytes();
         memberService.create(memberForm.getId(), memberForm.getPassword(), memberForm.getUsername(), memberForm.getJob(), imgBytes, memberForm.getEmail());
         System.out.println("새로운 회원 생성됨: " + memberForm.getUsername());
-        return "main";
+        return "redirect:/";
     }
-
-//📌세션
-@GetMapping("/api/member/session-info")
-@ResponseBody
-public Map<String, Object> getSessionInfo(HttpSession session) {
-    Member member = (Member) session.getAttribute("member");  // 세션에 저장된 로그인 사용자
-    Map<String, Object> response = new HashMap<>();
-
-    if (member != null) {
-        response.put("username", member.getUsername());
-        response.put("email", member.getEmail());
-    } else {
-        response.put("error", "로그인되어 있지 않음");
-    }
-
-    return response;
-}
 
     @GetMapping("/member/login")
     public String signin() {

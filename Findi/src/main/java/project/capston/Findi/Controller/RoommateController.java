@@ -1,14 +1,20 @@
 package project.capston.Findi.Controller;
 
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
+import project.capston.Findi.Entity.Member;
 import project.capston.Findi.Entity.Roommate;
 import project.capston.Findi.Service.RoommateService;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+@Slf4j
 @RestController
 @RequestMapping("/api/roommate")
 @RequiredArgsConstructor
@@ -67,7 +73,4 @@ public class RoommateController {
     public ResponseEntity<String> testPost() {
         return ResponseEntity.ok(" POST 잘 들어옴");
     }
-
-
-
 }
