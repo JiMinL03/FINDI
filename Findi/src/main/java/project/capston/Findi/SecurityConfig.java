@@ -20,7 +20,7 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers(new AntPathRequestMatcher("/api/roommate/**")).permitAll() // ✅ 중요
+                        .requestMatchers(new AntPathRequestMatcher("/api/roommate/**")).permitAll()
                         .requestMatchers(new AntPathRequestMatcher("/h2-console/**")).permitAll()
                         .anyRequest().permitAll() // ✅ 이걸로 모든 요청을 임시로 허용해도 됨
                 )
