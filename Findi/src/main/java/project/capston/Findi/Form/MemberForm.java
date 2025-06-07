@@ -23,4 +23,6 @@ public class MemberForm {
     private String job;
 
     private MultipartFile img;
+
+    private String email;
 }

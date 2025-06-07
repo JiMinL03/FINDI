@@ -14,8 +14,10 @@ import java.util.Optional;
 public class MemberService {
     private final MemberRepository memberRepository;
     private final PasswordEncoder passwordEncoder;
+
     Member member = new Member();
-    public void create(String id, String password, String username, String job, byte[] img){
+
+    public void create(String id, String password, String username, String job, byte[] img, String email){
         //회원정보 저장
         member.setId(id);
         member.setPassword(passwordEncoder.encode(password));
@@ -23,6 +25,7 @@ public class MemberService {
         member.setJob(job);
         member.setImg(img);
         member.setActive(false);
+        member.setEmail(email);
         memberRepository.save(member);
     }
     public boolean existsId(String id){
@@ -42,5 +45,16 @@ public class MemberService {
         }else{
             throw new UsernameNotFoundException("Username not found");
         }
+    }
+
+    public Member authenticate(String username, String password) {
+        Optional<Member> optionalMember = memberRepository.findByUsername(username);
+        if (optionalMember.isPresent()) {
+            Member member = optionalMember.get();
+            if (passwordEncoder.matches(password, member.getPassword())) {
+                return member;
+            }
+        }
+        return null;
     }
 }

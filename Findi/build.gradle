@@ -40,8 +40,9 @@ dependencies {
 
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
-
 	implementation 'org.springframework.boot:spring-boot-starter-mail'//웹메일시스템
+	implementation 'org.jsoup:jsoup:1.17.2'
+	implementation 'org.springframework.boot:spring-boot-starter-websocket'
 }
 
 tasks.named('test') {

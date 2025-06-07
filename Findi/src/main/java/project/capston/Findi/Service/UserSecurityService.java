@@ -47,6 +47,6 @@ public class UserSecurityService implements UserDetailsService {
         }
 
         // Security의 User 객체는 username, password, 권한 리스트가 필요
-        return new User(member.getId(), member.getPassword(), authorities);
+        return new User(member.getUsername(), member.getPassword(), authorities);
     }
 }

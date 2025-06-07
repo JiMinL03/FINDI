@@ -1,24 +1,34 @@
 package project.capston.Findi.Controller;
 
+import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import project.capston.Findi.Entity.Member;
 import project.capston.Findi.Form.MemberForm;
 import project.capston.Findi.Service.MemberService;
 
 import java.io.IOException;
 import java.security.Principal;
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 @RequiredArgsConstructor
 public class MemberController {
+
+    private final PasswordEncoder passwordEncoder;
     private final MemberService memberService;
+
     @GetMapping("/signup")
     public String signup() {
         return "term";
@@ -49,14 +59,43 @@ public class MemberController {
             return "redirect:/member/register?error=username_exists";
         }
         byte[] imgBytes = memberForm.getImg().getBytes();
-        memberService.create(memberForm.getId(), memberForm.getPassword(), memberForm.getUsername(), memberForm.getJob(), imgBytes);
+        memberService.create(memberForm.getId(), memberForm.getPassword(), memberForm.getUsername(), memberForm.getJob(), imgBytes, memberForm.getEmail());
         System.out.println("새로운 회원 생성됨: " + memberForm.getUsername());
         return "main";
     }
 
+//📌세션
+@GetMapping("/api/member/session-info")
+@ResponseBody
+public Map<String, Object> getSessionInfo(HttpSession session) {
+    Member member = (Member) session.getAttribute("member");  // 세션에 저장된 로그인 사용자
+    Map<String, Object> response = new HashMap<>();
+
+    if (member != null) {
+        response.put("username", member.getUsername());
+        response.put("email", member.getEmail());
+    } else {
+        response.put("error", "로그인되어 있지 않음");
+    }
+
+    return response;
+}
 
     @GetMapping("/member/login")
     public String signin() {
         return "login";
+    }
+
+    @PostMapping("/member/login")
+    public String login(@RequestParam String username, @RequestParam String password, HttpSession session, Model model) {
+        Member member = memberService.getMember(username);
+
+        if (member != null && passwordEncoder.matches(password, member.getPassword())) {
+            session.setAttribute("member", member); // ✅ 세션에 저장
+            return "redirect:/"; // 또는 홈으로 리디렉션
+        } else {
+            model.addAttribute("loginError", true);
+            return "login";
+        }
     }
 }
