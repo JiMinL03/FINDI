@@ -66,5 +66,23 @@ def match():
     except Exception as e:
         return jsonify({"status": "error", "message": str(e)}), 500
 
+#📌이메일 보내는 코드
+@app.route("/send_email", methods=["POST"])
+def send_email():
+    try:
+        data = request.get_json()
+        from_name = data["from_name"]
+        from_email = data["from_email"]
+        to_email = data["to_email"]
+        to_name = data["to_name"]
+
+        # 실제 메일 전송 로직은 생략 또는 SMTP 설정 필요
+        print(f"📨 {from_name} ({from_email}) → {to_name} ({to_email}) 메일 전송")
+
+        return jsonify({"status": "ok"})
+
+    except Exception as e:
+        return jsonify({"status": "error", "message": str(e)}), 500
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
