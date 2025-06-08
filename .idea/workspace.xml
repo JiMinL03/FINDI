@@ -5,13 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ed5ef50-32ac-4c0f-8b9b-63f3b2ac4455" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/Findi/src/main/java/project/capston/Findi/Controller/ReactMemberController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/Findi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/Findi.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Findi/src/main/java/project/capston/Findi/Controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Findi/src/main/java/project/capston/Findi/Controller/MemberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Findi/Roommate.py" beforeDir="false" afterPath="$PROJECT_DIR$/Findi/Roommate.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Findi/src/main/java/project/capston/Findi/Controller/RoommateController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Findi/src/main/java/project/capston/Findi/Controller/RoommateController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Findi/src/main/java/project/capston/Findi/Controller/WebmailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Findi/src/main/java/project/capston/Findi/Controller/WebmailController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Findi/src/main/java/project/capston/Findi/PythonServerRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/Findi/src/main/java/project/capston/Findi/PythonServerRunner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Findi/src/main/java/project/capston/Findi/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Findi/src/main/java/project/capston/Findi/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Findi/src/main/java/project/capston/Findi/Service/RoommateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Findi/src/main/java/project/capston/Findi/Service/RoommateService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Findi/src/main/resources/static/assets/index-BRjPhOpG.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Findi/src/main/resources/static/assets/index-RgI5CYvh.css" beforeDir="false" afterPath="$PROJECT_DIR$/Findi/src/main/resources/static/assets/index-RgI5CYvh.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Findi/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Findi/src/main/resources/static/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,13 +86,17 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;Spring Boot.FindiApplication.executor&quot;: &quot;Run&quot;,
     &quot;git-widget-placeholder&quot;: &quot;webmail&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/jimin/OneDrive/Desktop/FINDI&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jimin/OneDrive/Desktop/jebal/FINDI&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDK&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -119,6 +129,30 @@
       <workItem from="1749199748455" duration="13599000" />
       <workItem from="1749275764278" duration="2005000" />
       <workItem from="1749277854854" duration="5704000" />
+      <workItem from="1749304231569" duration="618000" />
+      <workItem from="1749304871122" duration="277000" />
+      <workItem from="1749305171541" duration="1579000" />
+      <workItem from="1749306818497" duration="418000" />
+      <workItem from="1749307353222" duration="433000" />
+      <workItem from="1749307801898" duration="399000" />
+      <workItem from="1749308231513" duration="1118000" />
+      <workItem from="1749309382031" duration="175000" />
+      <workItem from="1749309607526" duration="401000" />
+      <workItem from="1749310027993" duration="189000" />
+      <workItem from="1749310242748" duration="138000" />
+      <workItem from="1749370382652" duration="1860000" />
+      <workItem from="1749372343322" duration="730000" />
+      <workItem from="1749373095836" duration="139000" />
+      <workItem from="1749373246752" duration="398000" />
+      <workItem from="1749373661338" duration="245000" />
+      <workItem from="1749373922197" duration="687000" />
+      <workItem from="1749374728200" duration="179000" />
+      <workItem from="1749374917781" duration="259000" />
+      <workItem from="1749375185481" duration="127000" />
+      <workItem from="1749375322275" duration="333000" />
+      <workItem from="1749375718220" duration="187000" />
+      <workItem from="1749375959205" duration="439000" />
+      <workItem from="1749376418164" duration="1581000" />
     </task>
     <servers />
   </component>

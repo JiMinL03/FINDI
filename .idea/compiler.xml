@@ -10,13 +10,11 @@
         <module name="Findi.main" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="17" />
   </component>
-
   <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_STRING" value="-parameters" />
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="Findi" options="-parameters" />
-      <module name="Findi.main" options="-parameters" />
-      <module name="Findi.test" options="-parameters" />
       <module name="project.capston.Findi" options="-parameters" />
     </option>
   </component>

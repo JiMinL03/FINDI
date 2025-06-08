@@ -66,23 +66,35 @@ def match():
     except Exception as e:
         return jsonify({"status": "error", "message": str(e)}), 500
 
-#📌이메일 보내는 코드
-@app.route("/send_email", methods=["POST"])
+@app.route("/send_email", methods=['POST'])
 def send_email():
+    print("send_email 함수 호출됨")
+    data = request.get_json()
+    print("받은 JSON 데이터:", data)
+
+    to_name = data.get('to_name')
+
+    if not to_name:
+        return jsonify({"status": "fail", "message": "'to_name' 값이 없습니다."}), 400
+
     try:
-        data = request.get_json()
-        from_name = data["from_name"]
-        from_email = data["from_email"]
-        to_email = data["to_email"]
-        to_name = data["to_name"]
+        response = requests.post(
+            "http://localhost:8080/api/sendEmail",
+            json={
+                "toName": to_name,
+            }
+        )
+        print("응답 상태 코드:", response.status_code)
+        print("응답 텍스트:", response.text)
+        response.raise_for_status()
+        print("스프링부트 응답 텍스트:", response.text)
+        print("스프링부트 응답:", response.json())  # 디버깅용 출력
+        return jsonify(response.json())
 
-        # 실제 메일 전송 로직은 생략 또는 SMTP 설정 필요
-        print(f"📨 {from_name} ({from_email}) → {to_name} ({to_email}) 메일 전송")
+    except requests.exceptions.RequestException as e:
+        print("스프링부트 요청 실패:", str(e))
+        return jsonify({"status": "fail", "message": "스프링부트 요청 실패: " + str(e)}), 500
 
-        return jsonify({"status": "ok"})
-
-    except Exception as e:
-        return jsonify({"status": "error", "message": str(e)}), 500
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
