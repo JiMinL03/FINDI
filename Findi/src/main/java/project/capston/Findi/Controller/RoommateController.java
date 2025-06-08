@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 import project.capston.Findi.Entity.Member;
 import project.capston.Findi.Entity.Roommate;
+import project.capston.Findi.Service.MemberService;
 import project.capston.Findi.Service.RoommateService;
 
 import java.util.HashMap;
@@ -21,6 +22,7 @@ import java.util.Map;
 public class RoommateController {
 
     private final RoommateService roommateService;
+    private final MemberService memberService;
 
     @GetMapping("/all")
     public ResponseEntity<List<Roommate>> getAllRoommates() {
@@ -37,7 +39,7 @@ public class RoommateController {
 
     @PostMapping("/match")
     public ResponseEntity<?> matchRoommates(@RequestBody Roommate roommate) {
-        String pythonUrl = "http://192.168.0.18:5000/handleMatch";
+        String pythonUrl = "http://192.168.55.13:5000/handleMatch";
 
         RestTemplate restTemplate = new RestTemplate();
 

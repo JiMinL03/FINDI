@@ -22,18 +22,21 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authorizeRequests -> authorizeRequests
                         .requestMatchers(new AntPathRequestMatcher("/h2-console/**")).permitAll()
                         .requestMatchers(new AntPathRequestMatcher("/api/roommate/**")).permitAll()
+                        .requestMatchers(new AntPathRequestMatcher("/api/sendEmail")).permitAll()
                         .requestMatchers(new AntPathRequestMatcher("/api/member/**")).permitAll()
                         .requestMatchers(new AntPathRequestMatcher("/**")).permitAll()
                 )
                 .csrf(csrf -> csrf
                         .ignoringRequestMatchers(
                                 new AntPathRequestMatcher("/h2-console/**"),
+                                new AntPathRequestMatcher("/api/sendEmail/**"),
                                 new AntPathRequestMatcher("/api/roommate/**"),
                                 new AntPathRequestMatcher("/api/member/**")
                         )
                 )
                 .headers(headers -> headers
                         .addHeaderWriter(
+
                                 new XFrameOptionsHeaderWriter(XFrameOptionsHeaderWriter.XFrameOptionsMode.SAMEORIGIN)
                         )
                 )

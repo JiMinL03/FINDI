@@ -21,4 +21,6 @@ public class RoommateService {
     }
     public List<Roommate> findAll() { return roommateRepository.findAll(); }
 
+
+
 }
