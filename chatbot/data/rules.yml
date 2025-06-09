@@ -76,6 +76,11 @@ rules:
     - intent: get_notice
     - action: action_notice
 
+#- rule: 더보기 정보 요청
+#  steps:
+#    - intent: notice_page
+#    - action: action_notice
+#
 #-------교수님 정보----------------------------------
 - rule: 교수 정보 카테고리 안내
   steps:

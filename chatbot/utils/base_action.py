@@ -14,5 +14,5 @@ class BaseAction(Action):
 
     def fail(self, dispatcher: CollectingDispatcher, message: str) -> List[Dict[Text, Any]]:
         """오류 메시지 전송 후 슬롯 초기화"""
-        dispatcher.utter_message(text=message)
+        dispatcher.utter_message(text=f"{message}\u2063__END__")
         return self.reset_slots()
