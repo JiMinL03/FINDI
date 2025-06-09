@@ -22,7 +22,7 @@ class ActionFacilityInfo(BaseAction):
 
             if not building_name:
                 logger.warning("[WARN] building_name 슬롯 비어 있음")
-                return self.fail(dispatcher, "건물명을 선택해 주세요.")
+                return self.fail(dispatcher, "잘못된 입력입니다.")
 
             # building.json 에서 건물 정보 검색
             building_data = load_json("building.json")
@@ -67,7 +67,7 @@ class ActionFacilityInfo(BaseAction):
                 dispatcher.utter_message(text="🗂️ 층별 구성:\n" + "\n".join(layers))
 
             if etc_info:
-                dispatcher.utter_message(text=f"🛠️ 기타 정보: {etc_info}")
+                dispatcher.utter_message(text=f"🛠️ 기타 정보: {etc_info}\u2063__END__")
 
             logger.info("[SUCCESS] 건물 정보 응답 완료, 슬롯 초기화")
             return self.reset_slots()

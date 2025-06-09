@@ -61,8 +61,9 @@ body, html {
   line-height: 1.4;
   animation: fadeIn 0.3s ease;
   word-break: break-word;
-  white-space: pre-wrap;
   overflow-wrap: break-word;
+  white-space: pre-wrap;
+
 }
 
 .user {
@@ -100,7 +101,8 @@ body, html {
 }
 
 button {
-  padding: 12px 20px;
+  padding: 5px 15px;
+  margin: 1px;
   background-color: #0d6efd;
   color: white;
   border: none;
@@ -171,30 +173,78 @@ button.loading::after {
     min-width: 70px;
   }
   .quick-replies {
-    padding: 10px 20px;
-    background: #fff;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    border-top: 1px solid #ddd;
-    max-width: 480px;
-    margin: 0 auto 20px auto;
-    border-radius: 0 0 16px 16px;
+      padding: 10px 20px;
+      background: #fff;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      border-top: 1px solid #ddd;
+      max-width: 480px;
+      margin: 0 auto 20px auto;
+      border-radius: 0 0 16px 16px;
   }
-
   .quick-reply-btn {
-    background: #0d6efd;
-    color: white;
-    border: none;
-    border-radius: 16px;
-    padding: 6px 10px;
-    cursor: pointer;
-    font-size: 13px;
-    transition: background-color 0.3s;
+      background: #f2f5f9;
+      color: white;
+      border: none;
+      border-radius: 16px;
+      padding: 4px 8px !important;
+      cursor: pointer;
+      font-size: 13px;
+      transition: background-color 0.3s;
   }
-
   .quick-reply-btn:hover {
-    background: #0b5ed7;
+      background: #0b5ed7;
   }
 
 }
+    .message.bot.notice-box,
+    .message.bot.service-box {
+      max-width: 90% !important;
+      background: #e2e3e5;
+      border-bottom-left-radius: 0;
+      border-radius: 12px;
+    }
+
+    .service-box p {
+      margin: 2px 0;
+    }
+
+    .service-box ul {
+      margin: 10px ;
+      padding: 50px, 30px, 0px, 30px;
+
+      line-height: 1.2;
+    }
+
+    .service-box li {
+      margin-bottom: 2px;
+    }
+
+    .pagination-buttons {
+      display: flex;
+      gap: 6px;
+      margin-top: 4px;  /* 버튼 그룹 위쪽 마진 최소화 */
+      margin-bottom: 4px; /* 버튼 그룹 아래쪽 마진 최소화 */
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0; /* 안쪽 여백 제거 */
+    }
+
+    .pagination-buttons button {
+      padding: 4px 10px;  /* 버튼 안쪽 패딩도 더 작게 */
+      min-width: auto;
+      background-color: white;
+      color: #0d6efd;
+      border: 1px solid #0d6efd;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s, color 0.3s;
+      line-height: 1.2;
+    }
+
+    .pagination-buttons button:hover {
+      background-color: #0d6efd;
+      color: white;
+    }

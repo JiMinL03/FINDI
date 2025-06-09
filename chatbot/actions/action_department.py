@@ -1,7 +1,6 @@
 from typing import Any, Text, Dict, List
 from rasa_sdk import Tracker
 from rasa_sdk.executor import CollectingDispatcher
-from rasa_sdk.types import DomainDict
 
 from utils.base_action import BaseAction
 from utils.json_loader import load_json
@@ -9,16 +8,15 @@ from utils.logging_utils import get_logger
 
 logger = get_logger(__name__)
 
-
 class ActionFacultyInfo(BaseAction):
     def name(self) -> Text:
         return "action_faculty_info"
 
     slots_to_reset = ["faculty_name"]
 
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+    def run(
+            self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]
+    ) -> List[Dict[Text, Any]]:
 
         logger.debug("action_faculty_info 실행")
 
@@ -26,7 +24,7 @@ class ActionFacultyInfo(BaseAction):
         logger.debug(f"슬롯(faculty_name): {faculty_name}")
 
         if not faculty_name:
-            return self.fail(dispatcher, "해당 단과대학이 없거나 틀렸습니다. 정확한 이름을 입력해주세요.")
+            return self.fail(dispatcher, "잘못된 입력입니다.")
 
         try:
             colleges = load_json("college.json")
@@ -49,9 +47,13 @@ class ActionFacultyInfo(BaseAction):
 
         if department_names:
             department_list = "\n".join(department_names)
-            dispatcher.utter_message(text=f"{faculty_name} 소속 학과는 다음과 같습니다:\n{department_list}")
+            dispatcher.utter_message(
+                text=f"{faculty_name} 소속 학과는 다음과 같습니다:\n{department_list}\u2063__END__"
+            )
         else:
-            dispatcher.utter_message(text=f"{faculty_name}에는 등록된 학과가 없습니다.")
+            dispatcher.utter_message(
+                text=f"{faculty_name}에는 등록된 학과가 없습니다.\u2063__END__"
+            )
 
         return self.reset_slots()
 
@@ -62,9 +64,9 @@ class ActionDepartmentInfo(BaseAction):
 
     slots_to_reset = ["department_name"]
 
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: DomainDict) -> List[Dict[Text, Any]]:
+    def run(
+            self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]
+    ) -> List[Dict[Text, Any]]:
 
         logger.debug("action_department_info 실행")
 
@@ -72,7 +74,7 @@ class ActionDepartmentInfo(BaseAction):
         logger.debug(f"슬롯(department_name): {department_name}")
 
         if not department_name:
-            return self.fail(dispatcher, "해당하는 학과명이 없습니다.")
+            return self.fail(dispatcher, "잘못된 입력입니다.")
 
         try:
             departments = load_json("department.json")
@@ -92,6 +94,8 @@ class ActionDepartmentInfo(BaseAction):
             return self.fail(dispatcher, f"{department_name}에 대한 정보를 찾을 수 없습니다.")
 
         phone = department_info.get("DEPARTMENT_PHONE", "전화번호 정보 없음")
-        dispatcher.utter_message(text=f"{department_name}의 전화번호는 {phone}입니다.")
+        dispatcher.utter_message(
+            text=f"{department_name}의 전화번호는 {phone}입니다.\u2063__END__"
+        )
 
         return self.reset_slots()
