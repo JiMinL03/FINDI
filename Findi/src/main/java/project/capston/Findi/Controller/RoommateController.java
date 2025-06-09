@@ -33,6 +33,11 @@ public class RoommateController {
     @PostMapping
     public ResponseEntity<String> save(@RequestBody Roommate roommate) {
         System.out.println(" POST 요청 도착: " + roommate);
+        Roommate existing = roommateService.findByName(roommate.getName());
+        if (existing != null) {
+            roommateService.delete(existing); // 기존 데이터 삭제
+            System.out.println("기존 데이터 삭제: " + existing);
+        }
         roommateService.save(roommate);
         return ResponseEntity.ok(" 저장 성공!");
     }
