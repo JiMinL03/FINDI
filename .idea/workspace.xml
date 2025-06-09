@@ -5,29 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8fc7a6e-90f1-4099-a33f-edc78b243315" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/Findi/src/main/resources/static/js/chatPagination.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Findi/src/main/resources/static/js/chatapi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Findi/src/main/resources/static/js/chatmain.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chatbot/utils/send_final_message.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Findi/src/main/resources/static/js/chatbot.js" beforeDir="false" afterPath="$PROJECT_DIR$/Findi/src/main/resources/static/js/chatbot.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Findi/src/main/resources/templates/chatbot.html" beforeDir="false" afterPath="$PROJECT_DIR$/Findi/src/main/resources/templates/chatbot.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chatbot/actions/action_department.py" beforeDir="false" afterPath="$PROJECT_DIR$/chatbot/actions/action_department.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chatbot/actions/action_facility.py" beforeDir="false" afterPath="$PROJECT_DIR$/chatbot/actions/action_facility.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chatbot/actions/action_month.py" beforeDir="false" afterPath="$PROJECT_DIR$/chatbot/actions/action_month.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chatbot/actions/action_notice.py" beforeDir="false" afterPath="$PROJECT_DIR$/chatbot/actions/action_notice.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chatbot/actions/action_professor.py" beforeDir="false" afterPath="$PROJECT_DIR$/chatbot/actions/action_professor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chatbot/actions/action_school.py" beforeDir="false" afterPath="$PROJECT_DIR$/chatbot/actions/action_school.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chatbot/actions/action_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/chatbot/actions/action_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chatbot/data/nlu.yml" beforeDir="false" afterPath="$PROJECT_DIR$/chatbot/data/nlu.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chatbot/data/rules.yml" beforeDir="false" afterPath="$PROJECT_DIR$/chatbot/data/rules.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chatbot/domain.yml" beforeDir="false" afterPath="$PROJECT_DIR$/chatbot/domain.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chatbot/utils/base_action.py" beforeDir="false" afterPath="$PROJECT_DIR$/chatbot/utils/base_action.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,25 +15,25 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2yE6j5zJmOV7Aucp8Y2RDZnDdRr" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "chatbot",
-    "kotlin-language-version-configured": "true",
-    "project.structure.last.edited": "프로젝트",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;chatbot&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;프로젝트&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="디폴트 작업">
