@@ -20,7 +20,8 @@ public class RoommateService {
         return roommateRepository.findByName(name);
     }
     public List<Roommate> findAll() { return roommateRepository.findAll(); }
-
-
+    public void delete(Roommate roommate) {
+        roommateRepository.delete(roommate);
+    }
 
 }
