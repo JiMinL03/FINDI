@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import numpy as np
+import requests  # ✅ 필수
 
 app = Flask(__name__)
 CORS(app, supports_credentials=True, origins=[
@@ -10,7 +11,6 @@ CORS(app, supports_credentials=True, origins=[
     "http://192.168.0.18:8080"
 ])
 
-# ✅ 코사인 유사도 (생활 패턴)
 def weighted_cosine_similarity(vec1, vec2, weights):
     vec1, vec2, weights = np.array(vec1), np.array(vec2), np.array(weights)
     weighted_vec1 = vec1 * weights
@@ -20,80 +20,81 @@ def weighted_cosine_similarity(vec1, vec2, weights):
     norm_b = np.linalg.norm(weighted_vec2)
     return dot_product / (norm_a * norm_b) if norm_a * norm_b != 0 else 0
 
-# ✅ MBTI 유사도 (같은 글자 수 비율)
 def mbti_similarity(mbti1, mbti2):
     return sum(a == b for a, b in zip(mbti1.upper(), mbti2.upper())) / 4
 
-# ✅ 추천 알고리즘
-def recommend_roommates(user_vector, user_gender, user_mbti, user_isSmoking, weights, top_n=3):
-    similarities = []
-
-    for user, data in users_data.items():
-        if data['gender'] != user_gender or data['is_Smoking'] != user_isSmoking:
-            continue
-
-        # 유사도 계산
-        mbti_sim = mbti_similarity(user_mbti, data['mbti'])
-        life_pattern_sim = weighted_cosine_similarity(user_vector, [data["life_pattern"]], weights)
-
-        # 최종 유사도 = MBTI 60% + 생활 패턴 40%
-        final_score = 0.6 * mbti_sim + 0.4 * life_pattern_sim
-        similarities.append((user, final_score))
-
-    similarities.sort(key=lambda x: x[1], reverse=True)
-    return similarities[:top_n]
-
-# ✅ 가짜 사용자 DB
-users_data = {
-    "A": {"gender": 1, "name": "Alice", "birth_year": 2000, "student_id": "2021001", "major": "CS", "mbti": "INTJ", "life_pattern": 1, "is_Smoking": 0},
-    "B": {"gender": 1, "name": "Bob", "birth_year": 1999, "student_id": "2021002", "major": "Math", "mbti": "INTJ", "life_pattern": 1, "is_Smoking": 1},
-    "C": {"gender": 0, "name": "Charlie", "birth_year": 2001, "student_id": "2021003", "major": "Physics", "mbti": "ENTP", "life_pattern": 0, "is_Smoking": 0},
-    "D": {"gender": 1, "name": "David", "birth_year": 1998, "student_id": "2021004", "major": "CS", "mbti": "INTJ", "life_pattern": 0, "is_Smoking": 1},
-    "E": {"gender": 0, "name": "Eve", "birth_year": 2002, "student_id": "2021005", "major": "Bio", "mbti": "ENTP", "life_pattern": 0, "is_Smoking": 1},
-    "F": {"gender": 1, "name": "Frank", "birth_year": 2000, "student_id": "2021006", "major": "CS", "mbti": "ISTP", "life_pattern": 1, "is_Smoking": 0},
-    "G": {"gender": 0, "name": "Holly", "birth_year": 2003, "student_id": "2021007", "major": "CS", "mbti": "ISFJ", "life_pattern": 1, "is_Smoking": 1},
-    "H": {"gender": 0, "name": "Bolly", "birth_year": 2003, "student_id": "20220001", "major": "CS", "mbti": "ISTJ", "life_pattern": 1, "is_Smoking": 1}
-}
-
-# ✅ 매칭 API
-@app.route('/handleMatch', methods=['POST'])
+@app.route("/handleMatch", methods=["POST"])
 def match():
     try:
-        data = request.get_json()
-
-        # 입력값 파싱
-        name = data.get('name')
-        gender = int(data.get('gender'))
-        mbti = data.get('mbti').upper()
-        is_Smoking = int(data.get('is_Smoking'))
-        life_pattern = int(data.get('life_pattern'))
-
-        user_vector = [life_pattern]
+        user = request.get_json()
+        gender = int(user["gender"])
+        mbti = user["mbti"]
+        life = int(user["life_pattern"])
+        smoke = int(user["is_Smoking"])
         weights = [1.0]
+        user_vec = [life]
 
-        results = recommend_roommates(user_vector, gender, mbti, is_Smoking, weights, top_n=3)
+        # ✅ Spring 서버에서 사용자 데이터 가져오기
+        res = requests.get("http://localhost:8080/api/roommate/all")
+        all_users = res.json()
 
-        recommended = []
-        for user_id, score in results:
-            user = users_data[user_id]
-            recommended.append({
-                "name": user["name"],
-                "student_id": user["student_id"],
-                "major": user["major"],
-                "mbti": user["mbti"],
-                "score": round(score, 4)
-            })
+        results = []
+        for u in all_users:
+            if int(u["gender"]) != gender or int(u["is_Smoking"]) != smoke:
+                continue
+            mbti_sim = mbti_similarity(mbti, u["mbti"])
+            life_sim = weighted_cosine_similarity(user_vec, [int(u["life_pattern"])], weights)
+            score = 0.6 * mbti_sim + 0.4 * life_sim
+            results.append((u, score))
 
-        return jsonify({
-            "status": "success",
-            "recommended": recommended
-        })
+        results.sort(key=lambda x: x[1], reverse=True)
+        top_matches = [
+            {
+                "name": u["name"],
+                "student_id": u["student_id"],
+                "major": u["major"],
+                "mbti": u["mbti"],
+                "gender": u["gender"],
+                "life_pattern": u["life_pattern"],
+                "is_Smoking": u["is_Smoking"],
+                "score": round(score, 4),
+            }
+            for u, score in results[:3]
+        ]
+
+        return jsonify({"status": "success", "recommended": top_matches})
     except Exception as e:
-        return jsonify({
-            "status": "error",
-            "message": str(e)
-        }), 500
+        return jsonify({"status": "error", "message": str(e)}), 500
 
-# ✅ 실행
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+@app.route("/send_email", methods=['POST'])
+def send_email():
+    print("send_email 함수 호출됨")
+    data = request.get_json()
+    print("받은 JSON 데이터:", data)
+
+    to_name = data.get('to_name')
+
+    if not to_name:
+        return jsonify({"status": "fail", "message": "'to_name' 값이 없습니다."}), 400
+
+    try:
+        response = requests.post(
+            "http://localhost:8080/api/sendEmail",
+            json={
+                "toName": to_name,
+            }
+        )
+        print("응답 상태 코드:", response.status_code)
+        print("응답 텍스트:", response.text)
+        response.raise_for_status()
+        print("스프링부트 응답 텍스트:", response.text)
+        print("스프링부트 응답:", response.json())  # 디버깅용 출력
+        return jsonify(response.json())
+
+    except requests.exceptions.RequestException as e:
+        print("스프링부트 요청 실패:", str(e))
+        return jsonify({"status": "fail", "message": "스프링부트 요청 실패: " + str(e)}), 500
+
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000, debug=True)

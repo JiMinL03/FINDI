@@ -1,0 +1,168 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #eaf3fb;
+    height: 100vh; /* 화면 전체 높이 */
+    overflow: hidden; /* 바디 전체에서 스크롤 막기 */
+}
+
+.chat-container {
+    display: flex;
+    height: 95vh;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 400px;
+    background: #ffffff;
+    border-right: 1px solid #c6d8ea; /* 파랑계열 보더 */
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.sidebar.right {
+    width: 250px;
+    border-left: 1px solid #c6d8ea;
+}
+
+.profile {
+    text-align: center;
+}
+
+.profile-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.status {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+.status.online {
+    background: #cce6ff;  /* 연한 파랑 배경 */
+    color: #0077cc;        /* 진한 파랑 텍스트 */
+}
+
+.search {
+    margin: 20px 0;
+    padding: 8px;
+    border: 1px solid #aacbe1;
+    border-radius: 8px;
+}
+
+.chat-list {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.chat-item {
+    padding: 10px;
+    border-bottom: 1px solid #e0edf5;
+    cursor: pointer;
+}
+
+.chat-item.active {
+    background: #d4ecff;
+}
+
+.chat-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.chat-header {
+    padding: 20px;
+    background: #fff;
+    border-bottom: 1px solid #c6d8ea;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tabs .tab {
+    border: none;
+    background: none;
+    font-weight: bold;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.tabs .tab.active {
+    border-bottom: 2px solid #3399ff;
+    color: #007acc;
+}
+
+.chat-box,  #chat-box{
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: #e6f1fa;
+    display: flex;           /* 추가 */
+    flex-direction: column;  /* 추가 */
+}
+
+.message {
+    margin-bottom: 15px;
+    max-width: 35%;
+    padding: 10px 15px;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    /* flex-direction: column; 이 부분은 제거해도 무방 */
+}
+
+.message.sent {
+    background: #b3dfff;
+    align-self: flex-end; /* 이게 작동하려면 부모에 display:flex 필요 */
+}
+
+.sender {
+    font-size: 12px;
+    font-weight: bold;
+    color: #336699;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.chat-input {
+    padding: 15px 20px;
+    display: flex;
+    background: #fff;
+    border-top: 1px solid #c6d8ea;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #aacbe1;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+
+.chat-input button {
+    background: #3399ff; /* 파란색 버튼 */
+    border: none;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: inherit;
+    display: block; /* 전체를 클릭 가능하도록 */
+}
+
+
+.chat-item a {
+    display: block;
+}
