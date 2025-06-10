@@ -39,14 +39,14 @@ public class QuestionController {
     }*/
 
     @GetMapping("/question")
-    public String question(Model model, @RequestParam(value = "page", defaultValue = "0") int page) {
-        Page<Question> paging = this.questionService.getPage(page);
-        List<Question> questionList = questionService.getList();
-        model.addAttribute("questionList", questionList);
+    public String question(Model model,
+                           @RequestParam(value = "page", defaultValue = "0") int page,
+                           @RequestParam(value = "kw", defaultValue = "") String kw) {
+        Page<Question> paging = this.questionService.getPage(page, kw);
         model.addAttribute("paging", paging);
+        model.addAttribute("kw", kw);  // 검색어를 뷰에 다시 전달 (입력 유지용)
         return "question_list";
     }
-
     @GetMapping("/question/create")
     public String questionCreate(QuestionForm questionForm, Model model) {
         return "question_create";
@@ -103,4 +103,6 @@ public class QuestionController {
         this.questionService.updateQuestion(question, questionForm.getSubject(), questionForm.getContent(), null);
         return String.format("redirect:/question/detail/%d", id);
     }
+
+
 }
