@@ -32,31 +32,33 @@ public class WebmailController {
 
     @PostMapping("/sendEmail")
     public ResponseEntity<?> sendEmail(@RequestBody Map<String, String> payload) throws Exception {
-        System.out.println("payload: " + payload); // ★ 요청 데이터 확인
+        String toName = payload.get("toName");
+        String name = payload.get("name");
+
+        System.out.println("toName: " + toName);
+        System.out.println("name: " + name);
         try {
-            String toName = payload.get("toName");
-            System.out.println("toName: " + toName);
+            Member fromMember = memberService.getMember(name);
+            Roommate fromRoommate = roommateService.findByName(fromMember.getUsername());
+            Member toMember = memberService.getMember(toName);
 
-            Member member = memberService.getMember(toName);
-            Roommate roommate = roommateService.findByName(member.getUsername());
-
-            if (member == null) {
-                System.err.println("No member found with name: " + toName);
+            if (fromMember == null) {
+                System.err.println("No member found with name: " + name);
                 return ResponseEntity.status(HttpStatus.NOT_FOUND)
                         .body(Map.of("status", "fail", "message", "해당 이름의 이메일을 찾을 수 없습니다."));
             }
 
-            String toEmail = member.getEmail();
+            String toEmail = toMember.getEmail();
             System.out.println("toEmail: " + toEmail);
 
             webmailService.sendRoommateMail(
                     toEmail,
-                    toName, roommate.getStudent_id(), roommate.getMajor(),
-                    roommate.getGender() == 0 ? "남성" : "여성",
-                    roommate.getIs_Smoking() == 0 ? "비흡연" : "흡연",
-                    roommate.getMbti(),
-                    roommate.getLife_pattern() == 0 ? "아침형" : "저녁형",
-                    toEmail
+                    name, fromRoommate.getStudent_id(), fromRoommate.getMajor(),
+                    fromRoommate.getGender() == 0 ? "남성" : "여성",
+                    fromRoommate.getIs_Smoking() == 0 ? "비흡연" : "흡연",
+                    fromRoommate.getMbti(),
+                    fromRoommate.getLife_pattern() == 0 ? "아침형" : "저녁형",
+                    fromMember.getEmail()
             );
 
             return ResponseEntity.ok(Map.of(

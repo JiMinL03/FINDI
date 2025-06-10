@@ -73,6 +73,7 @@ def send_email():
     print("받은 JSON 데이터:", data)
 
     to_name = data.get('to_name')
+    name = data.get('name')
 
     if not to_name:
         return jsonify({"status": "fail", "message": "'to_name' 값이 없습니다."}), 400
@@ -82,6 +83,7 @@ def send_email():
             "http://localhost:8080/api/sendEmail",
             json={
                 "toName": to_name,
+                "name" : name,
             }
         )
         print("응답 상태 코드:", response.status_code)
