@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import project.capston.Findi.Entity.Answer;
@@ -39,9 +40,6 @@ public class QuestionService {
         }
     }
 
-    public List<Question> getList(){
-        return questionRepository.findAll();
-    }
 
     public void deleteQuestion(Integer id){
         questionRepository.deleteById(id);
@@ -54,8 +52,13 @@ public class QuestionService {
         questionRepository.save(question);
     }
 
-    public Page<Question> getPage(int page){
-        Pageable pageable = PageRequest.of(page,10);
-        return this.questionRepository.findAll(pageable);
+
+    public Page<Question> getPage(int page, String kw) {
+        Pageable pageable = PageRequest.of(page, 10, Sort.by(Sort.Direction.DESC, "createDate"));
+        return questionRepository.findAllByKeyword(kw, pageable);
+    }
+
+    public List<Question> getList() {
+        return questionRepository.findAll(Sort.by(Sort.Direction.DESC, "createDate"));
     }
 }
