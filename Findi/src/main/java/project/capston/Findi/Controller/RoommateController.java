@@ -44,7 +44,7 @@ public class RoommateController {
 
     @PostMapping("/match")
     public ResponseEntity<?> matchRoommates(@RequestBody Roommate roommate) {
-        String pythonUrl = "http://192.168.55.13:5000/handleMatch";
+        String pythonUrl = "http://192.168.0.18:5000/handleMatch";
 
         RestTemplate restTemplate = new RestTemplate();
 
