@@ -55,6 +55,9 @@ public class QuestionService {
 
     public Page<Question> getPage(int page, String kw) {
         Pageable pageable = PageRequest.of(page, 10, Sort.by(Sort.Direction.DESC, "createDate"));
+        if (kw == null || kw.isBlank()) {
+            return questionRepository.findAll(pageable);
+        }
         return questionRepository.findAllByKeyword(kw, pageable);
     }
 
