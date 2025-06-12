@@ -16,8 +16,11 @@ nlu:
 
   - intent: fallback
     examples: |
-      - 아무 말이나 했을 때
-      - 이상한 말을 했을 때
+      - kfsfsjfsjfp
+      - 란ㅇ로노랴푸ㅏㅜㅈㅁ아망
+      - 아ㅏㅏ앙아아아아앙아
+      - 렁럳러애내
+      
 
   #--------------------------------------
   - intent: ask_category_school
@@ -67,8 +70,6 @@ nlu:
       - 학과 정보 알려줘
       - 학과 정보 궁금해
       - 학과 정보 알려줄래?
-      - 학과정보 알려줘
-      - 학과정보 궁금해
 
   - intent: get_faculty_info
     examples: |
@@ -224,6 +225,15 @@ nlu:
       - [7월](month) 행사 궁금해
       - [2025년](month) 행사 궁금해
       - [2026년](month) 행사 궁금해
+      - 3월
+      - 4월
+      - 5월
+      - 6월
+      - 7월
+      - 8월
+      - 9월
+      - 2025년
+      - 2026년
 
 
   - intent: ask_category_facility
@@ -260,19 +270,6 @@ nlu:
       - [정보공학관](building_name)
       - [학생군사교육단](building_name)
       - [행복기숙사(미래생활관)](building_name)
-
-  # 시설 정보
-#  - intent: get_facility_info
-#    examples: |
-#      - [산학협력관](building_name) 건물번호 뭐야?
-#      - [정보공학관](building_name) 위치 알려줘
-#      - [법정관](building_name) 정보 줘
-#      - [대학본관](building_name) 건물번호 알려줘
-#      - [제1인문관](building_name) 위치 궁금해
-#      - [도서관](building_name) 정보
-#      - [공학관](building_name) 건물 정보 알려줘
-#      - [제2과학관](building_name) 위치
-#      - [도서관](building_name) 정보 알려줘
 
   - intent: ask_category_services
     examples: |

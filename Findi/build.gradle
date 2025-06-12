@@ -3,8 +3,10 @@ plugins {
 	id 'war'
 	id 'org.springframework.boot' version '3.4.3'
 	id 'io.spring.dependency-management' version '1.1.7'
+	id 'application'
 }
 
+mainClassName = 'project.capston.Findi.FindiApplication'
 group = 'project.capston'
 version = '0.0.1-SNAPSHOT'
 

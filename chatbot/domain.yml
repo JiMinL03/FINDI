@@ -71,9 +71,9 @@ slots:
 
 responses:
   utter_hi:
-    - text: "안녕하세요 ;)"
+    - text: "안녕하세요 ;)\u2063__END__"
   utter_bye:
-    - text: "감사합니다."
+    - text: "감사합니다.\u2063__END__"
   utter_category_school:
     - text: |
         원하시는 정보를 입력하세요.
@@ -107,6 +107,8 @@ responses:
   utter_ask_building:
     - text: "정보를 원하는 건물을 고르세요."
       buttons:
+  utter_default:
+    - text: 죄송해요, 잘 이해하지 못했어요. 다시 한 번 말씀해주시겠어요?\u2063__END__
 
 actions:
   - action_school_location
@@ -116,11 +118,9 @@ actions:
   - action_department_info
   - action_professor_by_name
   - action_academic_calendar
-#  - action_category_transport
   - action_facility_info
   - action_user_services
   - action_notice
-#  - action_default_fallback
 
 
 session_config:
