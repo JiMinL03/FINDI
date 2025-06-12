@@ -116,5 +116,5 @@ rules:
 
 - rule: Fallback 처리
   steps:
-    - intent: "fallback"
+    - intent: fallback
     - action: action_default_fallback
