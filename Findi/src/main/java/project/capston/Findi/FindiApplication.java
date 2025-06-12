@@ -6,6 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import javax.annotation.PostConstruct;
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.Locale;
 
 @SpringBootApplication
 public class FindiApplication {
@@ -15,33 +17,32 @@ public class FindiApplication {
 	}
 
 	@PostConstruct
-	public void startRasaServer() {
-		String rasaPath = System.getenv("RASA_PATH");
-		if (rasaPath == null || rasaPath.isBlank()) {
-			rasaPath = ".";  // 기본값: 현재 디렉토리 (루트)
-		}
+	public void startRasaServers() throws IOException {
+		String rasaPath = "chatbot";    // Rasa 프로젝트 경로
+		String venvPath = ".venv";      // 가상환경 폴더
+		boolean isWindows = System.getProperty("os.name").toLowerCase(Locale.ROOT).contains("win");
 
-		String os = System.getProperty("os.name").toLowerCase();
-		ProcessBuilder pb;
+		// 가상환경 안의 python 실행 파일 경로
+		String pythonPath = isWindows
+				? venvPath + "\\Scripts\\python.exe"
+				: venvPath + "/bin/python";
 
-		try {
-			if (os.contains("win")) {
-				// Windows: .bat 파일 실행
-				pb = new ProcessBuilder("cmd.exe", "/c", "start", "start_chatbot.bat");
-			} else {
-				// Unix/Linux/macOS: .sh 스크립트 실행
-				pb = new ProcessBuilder("sh", "start_chatbot.sh");
-			}
+		// Rasa 메인 서버 명령어
+		ProcessBuilder rasaPb = new ProcessBuilder(
+				pythonPath, "-m", "rasa", "run", "--enable-api", "--cors", "*", "--debug"
+		);
+		rasaPb.directory(new File(rasaPath));
+		rasaPb.inheritIO();
+		rasaPb.start();
 
-			pb.directory(new File(rasaPath));
-			pb.redirectOutput(ProcessBuilder.Redirect.INHERIT);
-			pb.redirectError(ProcessBuilder.Redirect.INHERIT);
-			pb.start();
+		// Rasa 액션 서버 명령어
+		ProcessBuilder actionPb = new ProcessBuilder(
+				pythonPath, "-m", "rasa", "run", "actions"
+		);
+		actionPb.directory(new File(rasaPath));
+		actionPb.inheritIO();
+		actionPb.start();
 
-			System.out.println("✅ Rasa server starting at directory: " + rasaPath);
-		} catch (IOException e) {
-			System.err.println("❌ Failed to start Rasa server: " + e.getMessage());
-			// 필요 시 로그 파일 저장 또는 알림 기능 추가 가능
-		}
+		System.out.println("✅ Rasa and action servers started via Java using venv python.");
 	}
 }
