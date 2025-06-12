@@ -45,7 +45,7 @@
 
 <script>
   const roomId = '[[${roomId}]]';
-  const socket = new WebSocket("ws://localhost:8080/ws/chat/" + roomId);
+  const socket = new WebSocket("ws://211.188.48.110:8082/ws/chat/" + roomId);
 
   socket.onmessage = function(event) {
     const chatBox = document.getElementById("chat-box");
