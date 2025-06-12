@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   addMessage("궁금한 게 있으면 언제든 물어보세요! 😊", "bot");
   addQuickReplies();
-  addQuickReplies();
 
   inputField.addEventListener("keydown", (e) => e.key === "Enter" && sendMessage());
   sendBtn.addEventListener("click", sendMessage);
@@ -27,9 +26,11 @@ function addMessage(text, sender) {
   );
   chatbox.appendChild(messageDiv);
   chatbox.scrollTop = chatbox.scrollHeight;
-  if (sender === "bot") moveQuickReplies();
+  if (sender === "bot") {
+    moveQuickReplies();
+//    addQuickReplies();
+  }
 }
-
 function addQuickReplies() {
   const container = document.getElementById("quickReplies");
   container.innerHTML = "";
@@ -83,9 +84,21 @@ async function sendMessageToRasa(message) {
     });
     const data = await response.json();
 
+    let conversationEnded = false;
+
     for (let msg of data) {
-      if (msg.text) {
-        const cleanText = msg.text.replace("__END__", "").replace("\u2063", "").trim();
+      let cleanText = msg.text?.replace("__END__", "").replace("\u2063", "").trim();
+
+      if (msg.text?.includes("__END__")) {
+        conversationEnded = true;
+      }
+      if (cleanText === "정보를 원하는 건물을 고르세요.") {
+
+        addMessage(cleanText, "bot");
+        renderBuildingQuickReplies();
+        continue;
+      }
+      if (cleanText) {
         addMessage(cleanText, "bot");
       }
 
@@ -100,13 +113,33 @@ async function sendMessageToRasa(message) {
         renderServicesPage(currentPage);
       }
     }
+        if (conversationEnded) {
+          addQuickReplies();
+        }
   } catch (err) {
     console.error(err);
     addMessage("⚠️ 서버 연결 오류가 발생했습니다. 잠시 후 다시 시도해주세요.", "bot");
     addQuickReplies();
   }
 }
+function renderBuildingQuickReplies() {
+  const container = document.getElementById("quickReplies");
+  container.innerHTML = "";
 
+  buildingList.forEach((name) => {
+    const btn = document.createElement("button");
+    btn.className = "quick-reply-btn";
+    btn.textContent = name;
+    btn.onclick = () => {
+      hideQuickReplies();
+      addMessage(name, "user");
+      sendMessageToRasa(name);
+    };
+    container.appendChild(btn);
+  });
+
+  moveQuickReplies();
+}
 function renderNoticesPage(page) {
   const totalPages = Math.ceil(allNotices.length / pageSize);
   const start = (page - 1) * pageSize;
