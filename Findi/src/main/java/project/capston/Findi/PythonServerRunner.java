@@ -11,7 +11,7 @@ public class PythonServerRunner {
     @PostConstruct
     public void startPythonServer() {
         try {
-            ProcessBuilder processBuilder = new ProcessBuilder("python", "C:\\FINDI\\Findi\\Roommate.py");
+            ProcessBuilder processBuilder = new ProcessBuilder("C:\\Users\\jimin\\AppData\\Local\\Programs\\Python\\Python313\\python.exe", "C:\\Users\\jimin\\OneDrive\\Desktop\\FINDI\\Findi\\Roommate.py");
             processBuilder.inheritIO(); // Flask 로그를 Spring 콘솔에 출력
             processBuilder.start();
             System.out.println("✅ Flask 서버 실행 시작됨");
