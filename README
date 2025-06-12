@@ -8,3 +8,7 @@ python -m venv .venv
 
 4. 필요한 패키지 자동 설치
 pip install -r requirements.txt
+
+5. 환경변수 RASA_PATH를 FINDI 프로젝트 파일로 추가
+
+6. 실행
