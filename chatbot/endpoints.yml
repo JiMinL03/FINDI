@@ -42,6 +42,7 @@
 #  queue: queue
 
 rest:
-  url: "http://localhost:5005/webhooks/rest/webhook"
+  url: "http://211.188.48.110:5005/webhooks/rest/webhook"  # 메인 Rasa 서버 포트 (변경하지 않았다면)
+
 action_endpoint:
-    url: "http://localhost:5055/webhook"
+  url: "http://211.188.48.110:8082/webhook"  # 커스텀 액션 서버 (Flask 등)

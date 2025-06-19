@@ -24,6 +24,7 @@ public class SecurityConfig {
                         .requestMatchers(new AntPathRequestMatcher("/api/roommate/**")).permitAll()
                         .requestMatchers(new AntPathRequestMatcher("/api/sendEmail")).permitAll()
                         .requestMatchers(new AntPathRequestMatcher("/api/member/**")).permitAll()
+                        .requestMatchers(new AntPathRequestMatcher("/webhook")).permitAll()
                         .requestMatchers(new AntPathRequestMatcher("/**")).permitAll()
                 )
                 .csrf(csrf -> csrf
@@ -31,7 +32,8 @@ public class SecurityConfig {
                                 new AntPathRequestMatcher("/h2-console/**"),
                                 new AntPathRequestMatcher("/api/sendEmail/**"),
                                 new AntPathRequestMatcher("/api/roommate/**"),
-                                new AntPathRequestMatcher("/api/member/**")
+                                new AntPathRequestMatcher("/api/member/**"),
+                                new AntPathRequestMatcher("/webhook")
                         )
                 )
                 .headers(headers -> headers
